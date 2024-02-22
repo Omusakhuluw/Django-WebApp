@@ -22,23 +22,62 @@
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet"> -->
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.css' %}" >
     <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.min.css' %}" >
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script file -->
+    <!-- Contact Javascript File -->
+    <script src="{% static 'SokoApp/mail/jqBootstrapValidation.min.js' %}" ></script>
+    <script src="{% static 'SokoApp/mail/contact.js' %}"></script>
+
+    <!-- Template Javascript -->
     <script src="{% static 'SokoApp/main.js' %}"></script>
+    <script src="{% static 'SokoApp/lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
     <!-- Include animate.min.css -->
-    <link href="{% static 'your_app/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'SokoApp/animate.min.css' %}" rel="stylesheet">
 
     <!-- Include easing.js -->
-    <script src="{% static 'your_app/easing.js' %}"></script>
+    <script src="{% static 'SokoApp/lib/easing/easing.js' %}"></script>
 
     <!-- Include easing.min.js -->
-    <script src="{% static 'your_app/easing.min.js' %}"></script>
+    <script src="{% static 'SokoApp/lib/easing/easing.min.js' %}"></script>
+
+    <style>
+
+        .owl-carousel {
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping to new lines */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+            scrollbar-width: none; /* Hide scrollbar */
+            -ms-overflow-style: none; /* Hide scrollbar on Edge */
+        }
+    
+        .owl-carousel::-webkit-scrollbar {
+            display: none; /* Hide scrollbar on WebKit browsers */
+        }
+    
+        .owl-carousel > div {
+            flex: 0 0 auto; /* Prevent image from stretching */
+            margin-right: 20px; /* Adjust spacing between images */
+        }
+
+
+</style>
+
     
 </head>
 
@@ -391,7 +430,7 @@
             <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="col-lg-4">
                 <h5 style="color: green; text-align:justify;" >Recent Updates . . .</h5>
                 <div class="product-offer mb-30" style="height: 184px;">
-                    <img class="img-fluid" src="img/hoho.jpg" alt="">
+                    <img class="img-fluid" src="{% static 'SokoApp/hoho.jpg' %}" alt="Special offer: Hoho">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
                         <h3 class="text-white mb-3">Special Offer</h3>
@@ -399,7 +438,7 @@
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 183px;">
-                    <img class="img-fluid" src="img/fruits.jpg" alt="">
+                    <img class="img-fluid" src="{% static 'SokoApp/fruits.jpg' %}" alt="Special offer: Fruits">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 10%</h6>
                         <h3 class="text-white mb-3">Special Offer</h3>
@@ -452,7 +491,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/cabbage.jpg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/cabbage.jpg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Vegetables</h6>
@@ -465,7 +504,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/fruits.jpg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/fruits.jpg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Fruits</h6>
@@ -478,7 +517,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/pota.jpeg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/pota.jpeg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Potatoes</h6>
@@ -491,7 +530,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/rice.jpg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/rice.jpg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Cereals</h6>
@@ -504,7 +543,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/onions2.jpg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/onions2.jpg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green">Onions</h6>
@@ -517,7 +556,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/spices.avif" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/spices.avif' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green">Spices</h6>
@@ -530,7 +569,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/chicken0.jpg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/chicken0.jpg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Birds & Products</h6>
@@ -543,7 +582,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/cow.jpeg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/cow.jpeg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Animals & Products</h6>
@@ -556,7 +595,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/feed.jpeg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/feed.jpeg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Animal Feeds</h6>
@@ -569,7 +608,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/seedlings.jpeg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/seedlings.jpeg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Tree Seedlings</h6>
@@ -582,7 +621,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/sugarcane.jpg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/sugarcane.jpg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Sugarcane</h6>
@@ -595,7 +634,7 @@
                 <a class="text-decoration-none" href="">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/chics.jpeg" alt="">
+                            <img class="img-fluid" src="{% static 'SokoApp/chics.jpeg' %}" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6 style="color: green;">Chics</h6>
@@ -616,7 +655,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-78" src="img/product1.jpg" alt="">
+                        <img class="img-fluid w-78" src="{% static 'SokoApp/product1.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -643,7 +682,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100 h-50" src="img/cabbage.jpg" alt="">
+                        <img class="img-fluid w-100 h-50" src="{% static 'SokoApp/cabbage.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -670,7 +709,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/swtpt.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/swtpt.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -697,7 +736,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/maize.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/maize.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -724,7 +763,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/potato.jpeg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/potato.jpeg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -751,7 +790,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/hoho1.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/hoho1.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -778,7 +817,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/chic.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/chic.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -805,7 +844,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/sheep2.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/sheep2.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -841,7 +880,7 @@
             <div class="row px-xl-5">
                 <div class="col-md-6">
                     <div class="product-offer mb-30" style="height: 300px;">
-                        <img class="img-fluid" src="img/hoho1.jpg" alt="">
+                        <img class="img-fluid" src="{% static 'SokoApp/hoho1.jpg' %}" alt="">
                         <div class="offer-text">
                             <h6 class="text-white text-uppercase">Save 20%</h6>
                             <h3 class="text-white mb-3">Special Offer</h3>
@@ -851,7 +890,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="product-offer mb-30" style="height: 300px;">
-                        <img class="img-fluid" src="img/veges.jpg" alt="">
+                        <img class="img-fluid" src="{% static 'SokoApp/veges.jpg' %}" alt="">
                         <div class="offer-text">
                             <h6 class="text-white text-uppercase">Save 20%</h6>
                             <h3 class="text-white mb-3">Special Offer</h3>
@@ -872,7 +911,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/maize.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/maize.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -899,7 +938,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/kale.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/kale.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -926,7 +965,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product3..jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/product3..jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -953,7 +992,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product6..jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/product6..jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -980,7 +1019,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/sugar.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/sugar.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -1007,7 +1046,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/cow3..jpeg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/cow3..jpeg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -1034,7 +1073,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/tree-nursery..jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/tree-nursery..jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -1061,7 +1100,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product7.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'SokoApp/product7.jpg' %}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -1092,38 +1131,38 @@
 
     <!-- Vendor Start -->
     <div class="container-fluid pt-1 pb-1">
-        <h3 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3"><a style="color: green;">Our Partners</a></span></h3>
-    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="container-fluid py-4">
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel vendor-carousel">
-                    <div class="bg-light p-2">
-                        <img src="img/kilifilogo.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-1">
-                        <img src="img/plp_logo.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-1">
-                        <img src="img/pwani_uni_logo.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-1">
-                        <img src="img/dkut_logo.png" alt="">
-                    </div>
-                    <div class="bg-light p-2">
-                        <img src="img/kilifilogo.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-1">
-                        <img src="img/plp_logo.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-1">
-                        <img src="img/pwani_uni_logo.jpg" alt="">
-                    </div>
-                    <div class="bg-light p-1">
-                        <img src="img/dkut_logo.png" alt="">
+        <h3 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3"><a style="color: green" > Our Partners</a></span></h3>
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="container-fluid py-4"; scroll-behavior: smooth;>
+            <div class="row px-xl-5">
+                <div class="col">
+                    <div class="owl-carousel vendor-carousel">
+                        <div class="bg-light p-2">
+                            <img src="{% static 'SokoApp/kilifilogo.jpg' %}" alt="Kilifi Logo" width="150px", height="150px" >
+                        </div>
+                        <div class="bg-light p-1">
+                            <img src="{% static 'SokoApp/plp_logo.jpg' %}" alt="" width="150px", length="150px" image-align="text-center">
+                        </div>
+                        <div class="bg-light p-1">
+                            <img src="{% static 'SokoApp/pwani_uni_logo.jpg' %}" alt="" width="150px", length="150px">
+                        </div>
+                        <div class="bg-light p-1">
+                            <img src="{% static 'SokoApp/dkut_logo.png' %}" alt="" width="150px", length="150px">
+                        </div>
+                        <div class="bg-light p-2">
+                            <img src="{% static 'SokoApp/kilifilogo.jpg' %}" alt="" width="150px", length="150px">
+                        </div>
+                        <div class="bg-light p-1">
+                            <img src="{% static 'SokoApp/plp_logo.jpg' %}" alt="" width="150px", length="150px">
+                        </div>
+                        <div class="bg-light p-1">
+                            <img src="{% static 'SokoApp/pwani_uni_logo.jpg' %}" alt="" width="150px", length="150px">
+                        </div>
+                        <div class="bg-light p-1">
+                            <img src="{% static 'SokoApp/dkut_logo.png' %}" alt="" width="150px", length="150px">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
     <!-- Vendor End -->
@@ -1176,10 +1215,10 @@
                         </form>
                         <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
                         <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter" style="color: green;"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f" style="color: green;"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in" style="color: green;"></i></a>
-                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="www.twitter.com/share/"><i class="fab fa-twitter" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="www.facebook.com/share"><i class="fab fa-facebook-f" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="www.linkedin.com/share"><i class="fab fa-linkedin-in" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square" href="www.instagram.com/share"><i class="fab fa-instagram" style="color: green;"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1193,7 +1232,7 @@
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
+                <img class="img-fluid" src="{% static 'SokoApp/payments.png' %}" alt="">
             </div>
         </div>
     </div>
@@ -1203,19 +1242,6 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
 </body>
 
 </html>
