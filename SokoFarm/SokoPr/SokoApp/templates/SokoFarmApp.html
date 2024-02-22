@@ -11,7 +11,7 @@
     <meta name="Author" content="Francis Wekesa, Omusakhulu">
 
     <!-- Favicon-->
-    <link rel="icon" type="img/x-icon" href="img/favicon1.png"> 
+    <link rel="icon" type="img/x-icon" href="{% static 'favicon1.png' %}" >
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -26,6 +26,19 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.min.css' %}" >
+
+    <!-- Script file -->
+    <script src="{% static 'SokoApp/main.js' %}"></script>
+
+    <!-- Include animate.min.css -->
+    <link href="{% static 'your_app/animate.min.css' %}" rel="stylesheet">
+
+    <!-- Include easing.js -->
+    <script src="{% static 'your_app/easing.js' %}"></script>
+
+    <!-- Include easing.min.js -->
+    <script src="{% static 'your_app/easing.min.js' %}"></script>
     
 </head>
 
