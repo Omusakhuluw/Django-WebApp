@@ -25,7 +25,13 @@ urlpatterns = [
     path('', include('SokoApp.urls')),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'), 
-    path('about/', views.about, name='about')
+    path('about/', views.about, name='about'),
+    path('detail/', views.detail, name='detail'),
+    path('shop/', views.shop, name='shop'),
+    path('cart/', views.cart, name='cart'),
+    path('checkout/', views.checkout, name='checkout'),
+    path('contact/', views.contact, name='contact'),
+
 ]
 
 if settings.DEBUG:

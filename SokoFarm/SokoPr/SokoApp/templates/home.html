@@ -87,10 +87,14 @@
         <div class="row bg-success py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><b style="color: white;">About</b></a>
-                    <a style="color: black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href=""><b style="color: white;">Contact</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href=""><b style="color: white;">Help</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href=""><b style="color: white;">FAQs</b></a>
+                    <a class="text-body mr-3" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">About</b></a>
+                    <a class="text-body mr-3" href=""; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact</b></a>
+                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Help</b></a>
+                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">FAQs</b></a>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
@@ -350,17 +354,17 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active"><b>Home</b></a>
-                            <a href="shop.html" class="nav-item nav-link"><b>Shop</b></a>
-                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                            <a href="{% url 'home' %}" class="nav-item nav-link active"><b>Home</b></a>
+                            <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
+                            <a href="{% url 'detail' %}" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                    <a href="{% url 'cart' %}" class="dropdown-item">Shopping Cart</a>
+                                    <a href="{% url 'checkout' %}" class="dropdown-item">Checkout</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
@@ -1169,7 +1173,7 @@
 
 
     <!-- Footer Start -->
-    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="container-fluid bg-dark text-secondary mt-2 pt-2">
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="container-fluid bg-success text-secondary mt-2 pt-2">
         <div class="row px-xl-2 pt-2">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-3">Get In Touch</h5>
@@ -1224,7 +1228,7 @@
                 </div>
             </div>
         </div>
-        <div class="row border-top mx-xl-5 py-4" style="border-color: green !important;">
+        <div class="row border-top mx-xl-5 py-4" style="border-color: white !important;">
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-md-left text-secondary">
                     &copy; 2024</a>. All Rights Reserved. Designed
