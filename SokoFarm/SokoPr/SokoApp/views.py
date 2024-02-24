@@ -1,9 +1,11 @@
-
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 
-def SokoApp(request):
-    template = loader.get_template('SokoFarmApp.html')
-    return HttpResponse(template.render())
+def home(request):
+   return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 # Create your views here.
