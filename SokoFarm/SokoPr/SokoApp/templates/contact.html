@@ -399,8 +399,8 @@
 
 
     <!-- Contact Start -->
-    <div class="container-fluid">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Contact Us</span></h2>
+    <div class="container-fluid"; style="color: green; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4 text-success"><span class="bg-secondary pr-3"> Contact Us</span></h2>
         <div class="row px-xl-5">
             <div class="col-lg-7 mb-5">
                 <div class="contact-form bg-light p-30">
@@ -437,13 +437,12 @@
             <div class="col-lg-5 mb-5">
                 <div class="bg-light p-30 mb-30">
                     <iframe style="width: 100%; height: 250px;"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.975460725136!2d40.22506531432954!3d-3.2191869976250456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f4d5b11b1e0a5%3A0x7d1fd46f8c67b16c!2sMalindi%2C%20Kenya!5e0!3m2!1sen!2sbd!4v1645634513634!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
                 <div class="bg-light p-30 mb-3">
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Malindi, Kilifi County, Kenya</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@sokofarm.co.ke</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p>
                 </div>
             </div>
         </div>
@@ -466,23 +465,23 @@
                 <div class="col-md-4 mb-5">
                     <h5 class="text-secondary text-uppercase mb-3">Quick Shop</h5>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                        <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Vegetables</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Fruits</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Potatoes</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Animals</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Birds</a>
+                        <a class="text-secondary" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Cereals</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">
                     <h5 class="text-secondary text-uppercase mb-3">My Account</h5>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                        <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                        <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        <a class="text-secondary mb-2" href="{% url 'home' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Shop</a>
+                        <a class="text-secondary mb-2" href="{% url 'detail' %}"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                        <a class="text-secondary mb-2" href="{% url 'cart' %}"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                        <a class="text-secondary mb-2" href="{% url 'checkout' %}"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                        <a class="text-secondary" href="{% url 'contact' %}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
