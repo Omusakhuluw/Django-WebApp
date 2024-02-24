@@ -89,11 +89,11 @@
                 <div class="d-inline-flex align-items-center h-100">
                     <a class="text-body mr-3" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">About</b></a>
-                    <a class="text-body mr-3" href=""; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    <a class="text-body mr-3" href="{% url 'contact' %}"; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="">
+                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Help</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="">
+                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">FAQs</b></a>
                 </div>
             </div>
@@ -1179,7 +1179,7 @@
                 <h5 class="text-secondary text-uppercase mb-3"> <a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";>Get In Touch </a></h5>
                 <p class="mb-3">In case of any questions, complaints or compliments, just reach to us via chat, a phone call or send us an email via the adress below.</p>
                 <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>127 - 80200, Malindi, Kenya</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@sokofarm.com</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@sokofarm.co.ke</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p>
             </div>
             <div class="col-lg-8 col-md-12">
@@ -1219,10 +1219,14 @@
                         </form>
                         <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
                         <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="www.twitter.com/share/"><i class="fab fa-twitter" style="color: green;"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="www.facebook.com/share"><i class="fab fa-facebook-f" style="color: green;"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="www.linkedin.com/share"><i class="fab fa-linkedin-in" style="color: green;"></i></a>
-                            <a class="btn btn-primary btn-square" href="www.instagram.com/share"><i class="fab fa-instagram" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://twitter.com/intent/tweet?url=www.sokofarm.com=Check out this awesome website!" target="_blank">
+                                <i class="fab fa-twitter" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.facebook.com/sharer/sharer.php?u=www.sokofarm.co.ke" target="_blank">
+                                <i class="fab fa-facebook-f" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.linkedin.com/sharing/share-offsite/?url=www.sokofarm.com" target="_blank">
+                                <i class="fab fa-linkedin-in" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/your_username=www.sokofarm.co.ke" target="_blank">
+                                <i class="fab fa-instagram" style="color: green;"></i></a>
                         </div>
                     </div>
                 </div>

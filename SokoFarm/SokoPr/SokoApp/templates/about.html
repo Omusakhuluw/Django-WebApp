@@ -75,6 +75,27 @@
             margin-right: 20px; /* Adjust spacing between images */
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: green;
+        }
+        p {
+            color: black;
+        }
+
 
 </style>
 
@@ -89,11 +110,11 @@
                 <div class="d-inline-flex align-items-center h-100">
                     <a class="text-body mr-3" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">About</b></a>
-                    <a class="text-body mr-3" href=""; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    <a class="text-body mr-3" href="{% url 'contact' %}"; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="">
+                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Help</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="">
+                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">FAQs</b></a>
                 </div>
             </div>
@@ -141,8 +162,7 @@
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
                 <a href="" class="text-decoration-none">
-                    <span class="h1 text-success bg-primary px-2"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Soko</span>
-                    <span class="h1 text-primary bg-success px-2 ml-n1"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farm</span>
+                    <span class="h1 text-success bg-primary px-2"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Soko</span><span class="h1 text-primary bg-success px-2 ml-n1"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farm</span>
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
@@ -384,9 +404,9 @@
     <!-- Navbar End -->
 
 
-    <div class="container"; style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: justify ;">
-        <h2>About Us. <i class="fas fa-handshake"></i></h2>
-
+    <div class="container max-width: 600px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"; style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: justify ;">
+        <h2 style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: justify"> About Us. <i class="fas fa-handshake"></i></h2>
+        
             <p>
                 SokoFarm is a platform that empowers farmers and connects them directly with consumers. It aims to streamline the agricultural supply 
                 chain by eliminating middlemen and brokers, ensuring fair prices for farmers and affordable products for consumers. SokoFarm addresses 
@@ -411,7 +431,7 @@
                 <h5 class="text-secondary text-uppercase mb-3"; >Get In Touch</h5>
                 <p class="mb-3; text-secondary">In case of any questions, complaints or compliments, just reach to us via chat, a phone call or send us an email via the adress below.</p>
                 <p class="mb-2; text-secondary"><i class="fa fa-map-marker-alt text-primary mr-3"></i>127 - 80200, Malindi, Kenya</p>
-                <p class="mb-2; text-secondary"><i class="fa fa-envelope text-primary mr-3"></i>info@sokofarm.com</p>
+                <p class="mb-2; text-secondary"><i class="fa fa-envelope text-primary mr-3"></i>info@sokofarm.co.ke</p>
                 <p class="mb-0; text-secondary"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p>
             </div>
             <div class="col-lg-8 col-md-12">
@@ -451,10 +471,14 @@
                         </form>
                         <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
                         <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="www.twitter.com/share/"><i class="fab fa-twitter" style="color: green;"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="www.facebook.com/share"><i class="fab fa-facebook-f" style="color: green;"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="www.linkedin.com/share"><i class="fab fa-linkedin-in" style="color: green;"></i></a>
-                            <a class="btn btn-primary btn-square" href="www.instagram.com/share"><i class="fab fa-instagram" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://twitter.com/intent/tweet?url=www.sokofarm.com=Check out this awesome website!" target="_blank">
+                                <i class="fab fa-twitter" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.facebook.com/sharer/sharer.php?u=www.sokofarm.co.ke" target="_blank">
+                                <i class="fab fa-facebook-f" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.linkedin.com/sharing/share-offsite/?url=www.sokofarm.com" target="_blank">
+                                <i class="fab fa-linkedin-in" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/your_username=www.sokofarm.co.ke" target="_blank">
+                                <i class="fab fa-instagram" style="color: green;"></i></a>
                         </div>
                     </div>
                 </div>
