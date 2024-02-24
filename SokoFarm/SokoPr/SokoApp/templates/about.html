@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>About Us</title>
+    <title>SokoFarm</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="SokoFarm, Soko, Farm, online, fresh, cereals, fruits, Francis Wekesa, kilifi, PLP">
@@ -55,29 +55,6 @@
     <script src="{% static 'SokoApp/lib/easing/easing.min.js' %}"></script>
 
     <style>
-      
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3, h4, h5, h6 {
-            color: green;
-        }
-        p {
-            color: black;
-        }
-  
-
 
         .owl-carousel {
             display: flex;
@@ -163,8 +140,9 @@
         </div>
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
-                <a href="{% url 'home' %}" class="text-decoration-none">
-                    <span class="h1 text-success bg-primary px-2"; style="font-family:cursive">Soko</span><span class="h1 text-primary bg-success px-2 ml-n1"; style="font-family:cursive">Farm</span>
+                <a href="" class="text-decoration-none">
+                    <span class="h1 text-success bg-primary px-2"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Soko</span>
+                    <span class="h1 text-primary bg-success px-2 ml-n1"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farm</span>
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
@@ -181,15 +159,15 @@
             </div>
             <div class="col-lg-4 col-6 text-right">
                 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="m-0">Customer Service</p>
-                <h5 class="m-0"; style="color: green;"><i class="fa fa-phone-alt text-success mr-3"></i> (+254) 722 568 920</h5> <!--<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p> -->
+                <h5 class="m-0"; style="color: green;"><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> <!--<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p> -->
             </div>
         </div>
     </div>
     <!-- Topbar End -->
 
-    
+
     <!-- Navbar Start -->
-    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"; class="container-fluid bg-dark mb-30">
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
@@ -366,7 +344,7 @@
             </div>
 
             <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0; navbar:fixed">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <span class="h1 text-uppercase text-dark bg-light px-2">Soko</span>
                         <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Farm</span>
@@ -377,16 +355,16 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{% url 'home' %}" class="nav-item nav-link"><b>Home</b></a>
-                            <a href="shop.html" class="nav-item nav-link"><b>Shop</b></a>
-                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                            <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
+                            <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Pages </b><i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                    <a href="{% url 'cart' %}" class="dropdown-item"><b>Shopping Cart</b></a>
+                                    <a href="{% url 'checkout' %}" class="dropdown-item"><b>Checkout</b></a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{% url 'contact' %}" class="nav-item nav-link"><b>Contact</b></a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
@@ -460,7 +438,7 @@
                             <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-3">
                         <h5 class="text-secondary text-uppercase mb-3">Newsletter</h5>
                         <p style="color: white;">Sign up to receive updates on your favorite products!</p>
                         <form action="">
