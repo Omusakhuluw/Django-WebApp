@@ -75,6 +75,29 @@
             margin-right: 20px; /* Adjust spacing between images */
         }
 
+        body {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: green;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        p {
+            color: black;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
 
 </style>
 
@@ -141,8 +164,7 @@
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
                 <a href="" class="text-decoration-none">
-                    <span class="h1 text-success bg-primary px-2"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Soko</span>
-                    <span class="h1 text-primary bg-success px-2 ml-n1"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farm</span>
+                    <span class="h1 text-success bg-primary px-2"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Soko</span><span class="h1 text-primary bg-success px-2 ml-n1"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farm</span>
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
@@ -159,7 +181,7 @@
             </div>
             <div class="col-lg-4 col-6 text-right">
                 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="m-0">Customer Service</p>
-                <h5 class="m-0"; style="color: green;"><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> <!--<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p> -->
+                <h5 class="m-0"; style="color: green; font-family:'Times New Roman', Times, serif;"><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> <!--<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p> -->
             </div>
         </div>
     </div>
@@ -424,31 +446,38 @@
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Address Line 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
+                            <input class="form-control" type="text" placeholder="P. O. Box, Postal Code">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Address Line 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
+                            <input class="form-control" type="text" placeholder="P.O. Box">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Country</label>
                             <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
+                                <option selected>Kenya</option>
+                                <option>Uganda</option>
+                                <option>Tanzania</option>
+                                <option>Rwanda</option>
+                                <option>Burundi</option>
+                                <option>South Sudan</option>
+                                <option>Ethiopia</option>
+                                <option>South Africa</option>
+                                <option>Malawi</option>
+                                <option>Nigeria</option>
+                                <option>Namibia</option>
                             </select>
                         </div>
                         <div class="col-md-6 form-group">
                             <label>City</label>
-                            <input class="form-control" type="text" placeholder="New York">
+                            <input class="form-control" type="text" placeholder="Nairobi">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
+                            <label>County/State/Province</label>
+                            <input class="form-control" type="text" placeholder="Mombasa">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>ZIP Code</label>
+                            <label>Postal Address</label>
                             <input class="form-control" type="text" placeholder="123">
                         </div>
                         <div class="col-md-12 form-group">
@@ -487,31 +516,38 @@
                             </div>
                             <div class="col-md-6 form-group">
                                 <label>Address Line 1</label>
-                                <input class="form-control" type="text" placeholder="123 Street">
+                                <input class="form-control" type="text" placeholder="P.O. Box">
                             </div>
                             <div class="col-md-6 form-group">
                                 <label>Address Line 2</label>
-                                <input class="form-control" type="text" placeholder="123 Street">
+                                <input class="form-control" type="text" placeholder="P.O. Box">
                             </div>
                             <div class="col-md-6 form-group">
                                 <label>Country</label>
                                 <select class="custom-select">
-                                    <option selected>United States</option>
-                                    <option>Afghanistan</option>
-                                    <option>Albania</option>
-                                    <option>Algeria</option>
+                                    <option selected>Kenya</option>
+                                    <option>Uganda</option>
+                                    <option>Tanzania</option>
+                                    <option>Rwanda</option>
+                                    <option>Burundi</option>
+                                    <option>South Sudan</option>
+                                    <option>Ethiopia</option>
+                                    <option>South Africa</option>
+                                    <option>Malawi</option>
+                                    <option>Nigeria</option>
+                                    <option>Namibia</option>
                                 </select>
                             </div>
                             <div class="col-md-6 form-group">
                                 <label>City</label>
-                                <input class="form-control" type="text" placeholder="New York">
+                                <input class="form-control" type="text" placeholder="Nairobi">
                             </div>
                             <div class="col-md-6 form-group">
-                                <label>State</label>
-                                <input class="form-control" type="text" placeholder="New York">
+                                <label>County/State/Province</label>
+                                <input class="form-control" type="text" placeholder="Nairobi">
                             </div>
                             <div class="col-md-6 form-group">
-                                <label>ZIP Code</label>
+                                <label>Postal Address</label>
                                 <input class="form-control" type="text" placeholder="123">
                             </div>
                         </div>
@@ -524,32 +560,32 @@
                     <div class="border-bottom">
                         <h6 class="mb-3">Products</h6>
                         <div class="d-flex justify-content-between">
-                            <p>Product Name 1</p>
-                            <p>$150</p>
+                            <p>Rice</p>
+                            <p>Ksh.5,000</p>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p>Product Name 2</p>
-                            <p>$150</p>
+                            <p>Rice</p>
+                            <p>Ksh.5,000</p>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p>Product Name 3</p>
-                            <p>$150</p>
+                            <p>Rice</p>
+                            <p>Ksh.5,000</p>
                         </div>
                     </div>
                     <div class="border-bottom pt-3 pb-2">
                         <div class="d-flex justify-content-between mb-3">
                             <h6>Subtotal</h6>
-                            <h6>$150</h6>
+                            <h6>Ksh.15,000</h6>
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
+                            <h6 class="font-weight-medium">Ksh.1000</h6>
                         </div>
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total</h5>
-                            <h5>$160</h5>
+                            <h5>Ksh.16,000</h5>
                         </div>
                     </div>
                 </div>
@@ -588,7 +624,7 @@
     <div class="row px-xl-2 pt-2">
         <div class="col-lg-4 col-md-12 mb-3 pr-3 pr-xl-5">
             <h5 class="text-secondary text-uppercase mb-3"; >Get In Touch</h5>
-            <p class="mb-3; text-secondary">In case of any questions, complaints or compliments, just reach to us via chat, a phone call or send us an email via the adress below.</p>
+            <p class="mb-3; text-secondary">For any questions, complaints or compliments, just reach to us via chat, a phone call or send us an email via the adress below.</p>
             <p class="mb-2; text-secondary"><i class="fa fa-map-marker-alt text-primary mr-3"></i>127 - 80200, Malindi, Kenya</p>
             <p class="mb-2; text-secondary"><i class="fa fa-envelope text-primary mr-3"></i>info@sokofarm.co.ke</p>
             <p class="mb-0; text-secondary"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p>
