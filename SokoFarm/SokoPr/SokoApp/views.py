@@ -23,6 +23,9 @@ def checkout(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def login(request):
+    return render(request, 'login.html')
+
 from django.shortcuts import render
 
 def my_view(request):
@@ -40,5 +43,6 @@ def my_view(request):
 def my_view(request):
     Instagram = "https://www.instagram.com/your_username"  # Replace with your actual URL
     return render(request, 'home.html', 'about.html', 'detail.html', 'shop.html', 'cart.html', 'checkout.html', 'contact.html', {'https://www.instagram.com/your_username': Instagram})
+
 
 # Create your views here.

@@ -75,6 +75,33 @@
             margin-right: 20px; /* Adjust spacing between images */
         }
 
+        .container-fluid {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: green;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        p {
+            
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
 </style>
 
@@ -102,8 +129,8 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>My Account</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button"><a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Log in</a></button>
-                            <button class="dropdown-item" type="button"><a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Sign up</a></button>
+                            <button class="dropdown-item" type="button"><a href="{% url 'login' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black;">Log in</a></button>
+                            <button class="dropdown-item" type="button"><a href="{% url 'login' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black;">Sign up</a></button>
                         </div>
                     </div>
                     <div class="btn-group mx-2">
@@ -399,7 +426,7 @@
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><b>Vegetables</b></h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Order the freshest veges right from the farm!</p>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn"; style="color: white;">Order the freshest veges right from the farm!</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
                                 </div>
                             </div>
@@ -408,8 +435,8 @@
                             <img class="position-absolute w-100 h-100" src="{% static 'SokoApp/fruits1.jpg' %}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><b>Fruits Zone</b></h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Get fresh fruits right from the trees!</p>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"; style="color: white;"><b>Fruits Zone</b></h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn"; style="color: white;">Get fresh fruits right from the trees!</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
                                 </div>
                             </div>
@@ -418,8 +445,8 @@
                             <img class="position-absolute w-100 h-100" src="{% static 'SokoApp/cow.jpeg' %}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><b>Animals Corner</b></h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Get the best deals on farm animals!</p>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"; style="color: white;"><b>Animals Corner</b></h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn"; style="color: white;">Get the best deals on farm animals!</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
                                 </div>
                             </div>
@@ -1143,7 +1170,7 @@
                             <img src="{% static 'SokoApp/kilifilogo.jpg' %}" alt="Kilifi Logo" width="150px", height="150px" >
                         </div>
                         <div class="bg-light p-1">
-                            <img src="{% static 'SokoApp/plp_logo.jpg' %}" alt="" width="150px", length="150px" image-align="text-center">
+                            <img src="{% static 'SokoApp/plp_logo.jpg' %}" alt="" width="150px", length="150px";" >
                         </div>
                         <div class="bg-light p-1">
                             <img src="{% static 'SokoApp/pwani_uni_logo.jpg' %}" alt="" width="150px", length="150px">
@@ -1172,7 +1199,7 @@
 
 
     <!-- Footer Start -->
-    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"; class="container-fluid bg-success text-secondary mt-2 pt-2">
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border-radius: 20px "; class="container-fluid bg-success text-secondary mt-2 pt-2">
         <div class="row px-xl-2 pt-2">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-3"> <a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";>Get In Touch </a></h5>
