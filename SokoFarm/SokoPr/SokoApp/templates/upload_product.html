@@ -1,0 +1,689 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SokoFarm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="SokoFarm, Soko, Farm, online, fresh, cereals, fruits, Francis Wekesa, kilifi, PLP">
+    <meta name="description" content="Linking Farmers with end Consumers" >
+    <meta name="Author" content="Francis Wekesa, Omusakhulu">
+
+    <!-- Favicon-->
+    <link rel="icon" type="img/x-icon" href="{% static 'favicon1.png' %}" >
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <!-- <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet"> -->
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.min.css' %}" >
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{% static 'SokoApp/mail/jqBootstrapValidation.min.js' %}" ></script>
+    <script src="{% static 'SokoApp/mail/contact.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'SokoApp/main.js' %}"></script>
+    <script src="{% static 'SokoApp/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Include animate.min.css -->
+    <link href="{% static 'SokoApp/animate.min.css' %}" rel="stylesheet">
+
+    <!-- Include easing.js -->
+    <script src="{% static 'SokoApp/lib/easing/easing.js' %}"></script>
+
+    <!-- Include easing.min.js -->
+    <script src="{% static 'SokoApp/lib/easing/easing.min.js' %}"></script>
+
+    <style>
+
+        .owl-carousel {
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping to new lines */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+            scrollbar-width: none; /* Hide scrollbar */
+            -ms-overflow-style: none; /* Hide scrollbar on Edge */
+        }
+    
+        .owl-carousel::-webkit-scrollbar {
+            display: none; /* Hide scrollbar on WebKit browsers */
+        }
+    
+        .owl-carousel > div {
+            flex: 0 0 auto; /* Prevent image from stretching */
+            margin-right: 20px; /* Adjust spacing between images */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        
+        p {
+            color: black;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: green;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            justify-content: center;
+            align-items: center;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            color: green;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: green;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        input[type="submit"]:hover {
+            background-color: orange;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .error {
+            color: #ff0000;
+            margin-bottom: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .success {
+            color: #008000;
+            margin-bottom: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .content {
+            margin-left: 2cm;
+            margin-right: 2cm;
+            margin-top: 1.5cm;
+            margin-bottom: 2cm;
+        }
+    </style>
+
+
+</style>
+
+    
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-success py-1 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center h-100">
+                    <a class="text-body mr-3" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">About</b></a>
+                    <a class="text-body mr-3" href="{% url 'contact' %}"; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact</b></a>
+                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Help</b></a>
+                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">FAQs</b></a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>My Account</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button"><a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Log in</a></button>
+                            <button class="dropdown-item" type="button"><a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Sign up</a></button>
+                        </div>
+                    </div>
+                    <div class="btn-group mx-2">
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">KSH</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button">USH</button>
+                            <button class="dropdown-item" type="button">TSH</button>
+                            <button class="dropdown-item" type="button">FRw</button>
+                            <button class="dropdown-item" type="button">BIF</button>
+                            <button class="dropdown-item" type="button">SSP</button>
+                            <button class="dropdown-item" type="button">USD</button>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button">SWA</button>
+                            <button class="dropdown-item" type="button">FR</button>
+                            <button class="dropdown-item" type="button">KIKUYU</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline-flex align-items-center d-block d-lg-none">
+                    <a href="" class="btn px-0 ml-2">
+                        <i class="fas fa-heart text-dark"></i>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                    </a>
+                    <a href="" class="btn px-0 ml-2">
+                        <i class="fas fa-shopping-cart text-dark"></i>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+            <div class="col-lg-4"">
+                <a href="" class="text-decoration-none">
+                    <span class="h1 text-success bg-primary px-2"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Soko</span><span class="h1 text-primary bg-success px-2 ml-n1"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farm</span>
+                </a>
+            </div>
+            <div class="col-lg-4 col-6 text-left">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" placeholder ="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 col-6 text-right">
+                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="m-0">Customer Service</p>
+                <h5 class="m-0"; style="color: green; font-family:'Times New Roman', Times, serif "><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> <!--<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p> -->
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+     <!-- Navbar Start -->
+     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="container-fluid bg-dark mb-30">
+        <div class="row px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+                    <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+                    <div class="navbar-nav w-100">
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vegetables <i class="fa fa-angle-right float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Tomatoes </a>
+                                <a href="" class="dropdown-item">Spinach </a>
+                                <a href="" class="dropdown-item">Cabbage </a>
+                                <a href="" class="dropdown-item">Sukuma Wiki</a>
+                                <a href="" class="dropdown-item">Cowpeas (Kunde)</a>
+                                <a href="" class="dropdown-item">Black nightshade (Managu/Mnavu/Sucha)</a>
+                                <a href="" class="dropdown-item">Saga</a>
+                                <a href="" class="dropdown-item">Amaranth (Mchicha/dodo/terere)</a>
+                                <a href="" class="dropdown-item">Jute mallow (Mrenda)</a>
+                                <a href="" class="dropdown-item">French beans</a>
+                                <a href="" class="dropdown-item">Asian Vegetables </a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Fruits <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Bananas </a>
+                                <a href="" class="dropdown-item">Mangoes  </a>
+                                <a href="" class="dropdown-item">Oranges </a>
+                                <a href="" class="dropdown-item">Pinnaples</a>
+                                <a href="" class="dropdown-item">Avocado</a>
+                                <a href="" class="dropdown-item">Apples </a>
+                                <a href="" class="dropdown-item">Guava</a>
+                                <a href="" class="dropdown-item">Plums</a>
+                                <a href="" class="dropdown-item">Peas</a>
+                                <a href="" class="dropdown-item">Strawberry</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Potatoes <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Irish Potatoes</a>
+                                <a href="" class="dropdown-item">Sweet Potatoes </a>
+                                <a href="" class="dropdown-item">Yams </a>
+                            </div>
+                        </div>
+
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cereals <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Maize </a>
+                                <a href="" class="dropdown-item">Beans </a>
+                                <a href="" class="dropdown-item">Rice </a>
+                                <a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Onions <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Garlic</a>
+                                <a href="" class="dropdown-item">Red Onions  </a>
+                                <a href="" class="dropdown-item">Yellow Onions</a>
+                                <a href="" class="dropdown-item">White Onions</a>
+                                <a href="" class="dropdown-item">Green Onions</a>
+                                <a href="" class="dropdown-item">Sweet Onions</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Spices <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Tangawizi (Ginger) </a>
+                                <a href="" class="dropdown-item">Pilipili (Peper) </a>
+                                <a href="" class="dropdown-item">Dhania (Coriander) </a>
+                                <!--<a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
+                        </div>
+
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Birds & Products <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Chicken - broiler/kienyeji </a>
+                                <a href="" class="dropdown-item">Ducks</a>
+                                <a href="" class="dropdown-item">Geese</a>
+                                <a href="" class="dropdown-item">Quails</a>
+                                <a href="" class="dropdown-item">Turkeys</a>
+                                <a href="" class="dropdown-item">Guinea Fowl </a>
+                                <a href="" class="dropdown-item">Doves</a>
+                                <a href="" class="dropdown-item">Eggs</a>
+                                <a href="" class="dropdown-item">Chicken poop</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Animals & Products <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Cows</a>
+                                <a href="" class="dropdown-item">Goats</a>
+                                <a href="" class="dropdown-item">Sheeps</a>
+                                <a href="" class="dropdown-item">Dogs</a>
+                                <a href="" class="dropdown-item">Donkeys</a>
+                                <a href="" class="dropdown-item">Pigs</a>
+                                <a href="" class="dropdown-item">Cats</a>
+                                <a href="" class="dropdown-item">Milk</a>
+                                <a href="" class="dropdown-item">Meat</a>
+                                <a href="" class="dropdown-item">Ngozi</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Animal Feeds <!--<i class="fa fa-angle-right float-right mt-2"></i>--></a>
+                            <!--<div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Maize: fresh or dried </a>
+                                <a href="" class="dropdown-item">Beans: fresh or dried  </a>
+                                <a href="" class="dropdown-item">Rice </a>
+                                <a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>
+                            </div>-->
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Sugarcane <!--<i class="fa fa-angle-right float-right mt-2"></i>--></a>
+                            <!--<div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Maize: fresh or dried </a>
+                                <a href="" class="dropdown-item">Beans: fresh or dried  </a>
+                                <a href="" class="dropdown-item">Rice </a>
+                                <a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>
+                            </div>-->
+                        </div>
+                     
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tree Seedlings <!--<i class="fa fa-angle-right float-right mt-2"></i>--></a>
+                            <!--<div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Maize: fresh or dried </a>
+                                <a href="" class="dropdown-item">Beans: fresh or dried  </a>
+                                <a href="" class="dropdown-item">Rice </a>
+                                <a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>
+                            </div>-->
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <span class="h1 text-uppercase text-dark bg-light px-2">Soko</span>
+                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Farm</span>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="{% url 'home' %}" class="nav-item nav-link"><b>Home</b></a>
+                            <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
+                            <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Pages </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'cart' %}" class="dropdown-item"><b>Shopping Cart</b></a>
+                                    <a href="{% url 'checkout' %}" class="dropdown-item"><b>Checkout</b></a>
+                                </div>
+                            </div>
+                            <a href="{% url 'contact' %}" class="nav-item nav-link"><b>Contact</b></a>
+                        </div>
+                        <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                            <a href="" class="btn px-0">
+                                <i class="fas fa-heart text-primary"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            </a>
+                            <a href="" class="btn px-0 ml-3">
+                                <i class="fas fa-shopping-cart text-primary"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Upload Section-->
+    <div class="container">
+        <div class="content">
+            <h1>Upload a product</h1>
+        <form action="{% url 'upload_product' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+            
+            <label for="name">Product Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="category">Category:</label>
+            <select id="categories" onchange="showSubcategories()" required> 
+                <!--<option disabled selected>-- Select Category --</option> -->
+                <option value=""; disabled selected>Select Category</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Potatoes">Potatoes</option>
+                <option value="Cereals">Cereals</option>
+                <option value="Onions">Onions</option>
+                <option value="Spices">Spices</option>
+                <option value="Birds, Products & Feeds">Birds, Products & Feeds</option>
+                <option value="Animals, Products & Feeds">Animals, Products & Feeds</option>
+                <option value="Sugarcane">Sugarcane</option>
+                <option value="Seedlings">Seedlings</option>
+            </select>
+
+            <Select id="subcategories">
+                <option value=""; disabled selected>Select Subcategory</option> 
+                <optgroup label="Vegetables" id="Vegetables">
+                    <option value="tomatoes">Tomatoes</option>
+                    <option value="Spinach">Spinach</option>
+                    <option value="Cabbage">Cabbage</option>
+                    <option value="Sukuma wiki">Sukuma Wiki</option>
+                    <option value="Cow_peas">Cow peas (Kunde)</option>
+                    <option value="Managu">Managu/ Mnavu/ Sucha (Black Nightshade)</option>
+                    <option value="Mchicha">Mchicha/ Terere/ Dodo (Amaranth)</option>
+                    <option value="mrendas">Mrenda (Jute Mallow)</option>
+                    <option value="French_beans">French beans</option>
+                    <option value="Asian_Vegetables">Asian Vegetables</option>
+                </optgroup>
+
+                <optgroup label="Fruits" id="Fruits">
+                    <option value="Bananas">Bananas</option>
+                    <option value="Mangoes">Mangoes</option>
+                    <option value="Oranges">Oranges</option>
+                    <option value="Pinnaples">Pinnaples</option>
+                    <option value="Avocadoes">Avocadoes</option>
+                    <option value="Apples">Apples</option>
+                    <option value="Guavas">Guava</option>
+                    <option value="Plums">Plums</option>
+                    <option value="Pears">Pears</option>
+                    <option value="Strawberries">Strawberries</option>   
+                </optgroup>
+
+                <optgroup label="Potatoes" id="Potatoes">
+                    <option value="Irish_Potatoes">Irish Potatoes</option>
+                    <option value="Sweet_Potato">Sweet Potatoes</option>
+                    <option value="Yams">Yams</option>
+                </optgroup> 
+
+                <optgroup label="Cereals" id="Cereals">
+                    <option value="Maize">Maize</option>
+                    <option value="Beans">Beans</option>
+                    <option value="Rice">Rice</option>
+                    <option value="Wheat">Wheat</option>
+                    <option value="Berley">Berley</option>
+                    <option value="Soya">Soya</option>
+                    <option value="Njahe">Njahe (Lablab Beans)</option>
+                    <option value="Millet">Millet</option>
+                    <option value="Sorghum">Sorghum</option> 
+                </optgroup>
+
+                <optgroup label="Onions" id="Onions">
+                    <option value="Garlic">Garlic</option>
+                    <option value="Red_Onions">Red Onions</option>
+                    <option value="White_Onions">White Onions</option>
+                    <option value="Green_Onions">Green Onions</option>
+                    <option value="Sweet_Onions">Sweet Onions</option>
+                    <option value="leafy_onions">Leafy Onions</option>   
+                </optgroup>
+
+                <optgroup label="Spices" id="Spices">
+                    <option value="Tangawizi">Tangawizi</option>
+                    <option value="Pilipipi">Pilipipi (Tear Gas)</option>
+                    <option value="Pilipipi_Hoho">Pilipipi Hoho</option>
+                    <option value="Dhania">Dhania</option>   
+                </optgroup>
+
+                <optgroup label="Birds, Products & Feeds" id="Birds, Products & Feeds">
+                    <option value="Chicken_Kienyeji">Chicken Kienyeji</option>
+                    <option value="Chicken_Broiler">Chicken Broiler</option>
+                    <option value="Ducks">Ducks</option>
+                    <option value="Geese">Geese</option>
+                    <option value="Quails">Quails</option>
+                    <option value="Turkeys">Turkeys</option>
+                    <option value="Guinea_Fowls">Guinea Fowls</option>
+                    <option value="Doves">Doves</option>
+                    <option value="Eggs">Eggs</option>
+                    <option value="Chicken_Poop">Chicken Poop</option> 
+                    <option value="Chicken_Feeds">Chicken Feeds</option>  
+                </optgroup>
+
+                <optgroup label="Animals, Products & Feeds" id="Animals, Products & Feeds">
+                    <option value="Cows">Cows</option>
+                    <option value="Sheep">Sheep</option>
+                    <option value="Goats">Goats</option>
+                    <option value="Donkeys">Donkeys</option>
+                    <option value="Dogs">Dogs</option>
+                    <option value="Pigs">Pigs</option>
+                    <option value="Cats">Cats</option>
+                    <option value="Milk">Milk</option>
+                    <option value="Hide">Hide</option>
+                    <option value="Meat">Meat</option>
+                    <option value="Animal Feeds">Animal Feeds</option>     
+                </optgroup>
+
+                <optgroup label="Seedlings" id="Seedlings">
+                    <option value="Tree_seedlings">Tree seedlings</option>
+                    <option value="Fruits_Seedlings">Fruits Seedlings</option>
+                    <option value="Potato_Seedlings">Potato Seedlings</option>
+                    <option value="Sugarcane_Seedlings">Sugarcane Seedlings</option>  
+                </optgroup>
+
+                <optgroup label="Sugarcane" id="Sugarcane">
+                    <option value="Consumption">Consumption</option>
+                    <option value="For_Factory">For Factory</option>  
+                </optgroup>
+            </select>
+
+            <label for="name"><br>Select 3 images to upload:<br><br></label>
+            <a style="display:flex;">
+                <input type="file" name="image1" accept="image/*" required>
+                <input type="file" name="image2" accept="image/*" required>
+                <input type="file" name="image3" accept="image/*" required>
+            </a>
+
+            
+
+            <label for="location"><br>Location:</label>
+            <select name="location" required>
+                <option value=""; disabled selected>Pick your Location</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Kisumu">Kisumu</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Thika">Thika</option>
+                <option value="Eldoret">Eldoret</option>
+                <option value="Kakamega">Kakamega</option>
+                <option value="Machakos">Machakos</option>
+                <option value="Nyeri">Nyeri</option>
+                <option value="Kitale">Kitale</option>
+                <option value="Narok">Narok</option>
+            </select>
+            <label for="county">County:</label>
+            <select name="county" required>
+                <option value=""; disabled selected>Pick your County</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Kilifi">Kilifi</option>
+                <option value="Kwale">Kwale</option>
+                <option value="Kakamega">Kakamega</option>
+                <option value="Machakos">Machakos</option>
+                <option value="Kisumu">Kisumu</option>
+                <option value="Trans_Nzoia">Trans Nzoia</option>
+                <option value="Uasin_Gishu">Uasin Gishu</option>
+                <option value="Nyeri">Nyeri</option>
+                <option value="Nakuru">Nakuru</option>
+            </select>
+            <label for="price">Price:</label>
+            <input type="text" name="price" required>
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" required>
+            <label for="ready_for_purchase">Ready for Purchase:</label>
+            <select name="ready_for_purchase" required>
+                <option value=""; disabled selected>Pick Yes or No</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <label for="purchase_timeframe">Purchase Timeframe (weeks):</label>
+            <input type="number" name="purchase_timeframe" required>
+            <label for="contact">Contact:</label>
+            <input type="text" name="contact" value="(+254) " required>
+            <input type="submit" value="Submit product">
+           
+        </form>
+
+        <script>
+            function showSubcategories() {
+              var category = document.getElementById("categories").value;
+              var subcategories = document.getElementById("subcategories").getElementsByTagName("optgroup");
+              for (var i = 0; i < subcategories.length; i++) {
+                if (subcategories[i].id === category) {
+                  subcategories[i].style.display = "block";
+                } else {
+                  subcategories[i].style.display = "none";
+                }
+              }
+            }
+        </script>
+        </div>
+        
+        <!-- Error or success messages -->
+        <div class="error">
+           
+        </div>
+        <div class="success">
+          
+        </div>
+    </div>
+</body>
+</html>

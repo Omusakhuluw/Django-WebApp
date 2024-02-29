@@ -230,7 +230,7 @@
                                 <a href="" class="dropdown-item">Apples </a>
                                 <a href="" class="dropdown-item">Guava</a>
                                 <a href="" class="dropdown-item">Plums</a>
-                                <a href="" class="dropdown-item">Peas</a>
+                                <a href="" class="dropdown-item">Pears</a>
                                 <a href="" class="dropdown-item">Strawberry</a>
                             </div>
                         </div>
@@ -383,6 +383,7 @@
                             <a href="{% url 'home' %}" class="nav-item nav-link active"><b>Home</b></a>
                             <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
                             <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
+                            <a href="{% url 'upload_product' %}" class="nav-item nav-link"><b>Post a Product</b></a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Pages </b><i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
@@ -390,8 +391,8 @@
                                     <a href="{% url 'checkout' %}" class="dropdown-item"><b>Checkout</b></a>
                                 </div>
                             </div>
-                            <a href="{% url 'contact' %}" class="nav-item nav-link"><b>Contact</b></a>
-                        </div>
+                                <a href="{% url 'contact' %}" class="nav-item nav-link"><b>Contact</b></a>
+                            </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
                                 <i class="fas fa-heart text-primary"></i>
@@ -685,7 +686,14 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-78" src="{% static 'SokoApp/product1.jpg' %}" alt="">
+                        {% for product in products %}
+                            <div>
+                                <h3>{{ product.name }}</h3>
+                                <p>Category: {{ product.category }}</p>
+                                <p>Subcategory: {{ product.subcategory }}</p>
+
+                            </div>
+                        {% endfor %}
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -693,6 +701,7 @@
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
                         </div>
                     </div>
+                    
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Fresh bananas</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">

@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
+from .forms import ProductForm
+from .models import Product
 
 def home(request):
    return render(request, 'home.html')
@@ -26,7 +28,18 @@ def contact(request):
 def login(request):
     return render(request, 'login.html')
 
-from django.shortcuts import render
+def success(request):
+    return render(request, 'success.html')
+
+def upload_product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home') #Redirect to a success page
+    else:
+        form = ProductForm()
+    return render(request, 'upload_product.html', {'form':form})
 
 def my_view(request):
     Facebook = "https://www.facebook.com/sharer/sharer.php?u"  # Replace with your actual URL
@@ -43,6 +56,8 @@ def my_view(request):
 def my_view(request):
     Instagram = "https://www.instagram.com/your_username"  # Replace with your actual URL
     return render(request, 'home.html', 'about.html', 'detail.html', 'shop.html', 'cart.html', 'checkout.html', 'contact.html', {'https://www.instagram.com/your_username': Instagram})
+
+
 
 
 # Create your views here.
