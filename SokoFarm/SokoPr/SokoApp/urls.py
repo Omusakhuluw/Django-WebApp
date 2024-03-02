@@ -5,6 +5,7 @@ from .views import upload_product
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('upload_product/', upload_product, name='upload_product'),
+    path('upload/', upload_product, name='upload_product'),
+    path('shop/', views.shop, name='shop'),
       
 ]

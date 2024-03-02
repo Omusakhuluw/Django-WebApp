@@ -5,7 +5,8 @@ from .forms import ProductForm
 from .models import Product
 
 def home(request):
-   return render(request, 'home.html')
+    products = Product.objects.all()
+    return render(request, 'home.html', {'products': products})
 
 def about(request):
     return render(request, 'about.html')
@@ -14,7 +15,8 @@ def detail(request):
     return render(request, 'detail.html')
 
 def shop(request):
-    return render(request, 'shop.html')
+    products = Product.objects.all()
+    return render(request, 'shop.html', {'products': products})
 
 def cart(request):
     return render(request, 'cart.html')
@@ -31,12 +33,24 @@ def login(request):
 def success(request):
     return render(request, 'success.html')
 
+def exports(request):
+    return render(request, 'exports.html')
+
+def orders(request):
+    return render(request, 'orders.html')
+
+def shop(request):
+    products = Product.objects.all()
+    return render(request, 'shop.html', {'products': products})
+
 def upload_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('home') #Redirect to a success page
+            product = form.save()
+            for image in request.FILES.getlist('images'):
+                product.images.create(image=image)
+            return redirect('shop') #Redirect to a shop's website' 
     else:
         form = ProductForm()
     return render(request, 'upload_product.html', {'form':form})

@@ -33,7 +33,9 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('login/', views.login, name='login'),
     path('upload_product/', views.upload_product, name='upload_product'),
-    path('success/', views.success, name='success.html'),
+    path('success/', views.success, name='success'),
+    path('exports/', views.exports, name='exports'),
+    path('orders/', views.orders, name='orders'),
 
 ]
 

@@ -81,94 +81,22 @@
             padding: 0;
             background-color: #f0f0f0;
         }
-        
-        p {
-            color: black;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            color: green;
-            margin: 0;
-            padding: 0;
-        }
         .container {
             max-width: 900px;
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            justify-content: center;
-            align-items: center;
         }
         h1, h2, h3, h4, h5, h6 {
-            text-align: center;
-            color: green;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
             color: green;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        input[type="file"] {
-            margin-bottom: 10px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        p {
+            color: black;
         }
-        select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        input[type="text"],
-        input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        input[type="submit"]:hover {
-            background-color: orange;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .error {
-            color: #ff0000;
-            margin-bottom: 10px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .success {
-            color: #008000;
-            margin-bottom: 10px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .content {
-            margin-left: 2cm;
-            margin-right: 2cm;
-            margin-top: 1.5cm;
-            margin-bottom: 2cm;
-        }
-    </style>
 
 
 </style>
@@ -185,7 +113,7 @@
                     <a class="text-body mr-3" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">About</b></a>
                     <a class="text-body mr-3" href="{% url 'contact' %}"; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact</b></a>
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact Us</b></a>
                     <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Help</b></a>
                     <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
@@ -259,8 +187,9 @@
     </div>
     <!-- Topbar End -->
 
-     <!-- Navbar Start -->
-     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="container-fluid bg-dark mb-30">
+
+    <!-- Navbar Start -->
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
@@ -447,24 +376,22 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{% url 'home' %}" class="nav-item nav-link"><b>Home</b></a>
+                            <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home text-primary"></i>
                             <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
-                            <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Pages </b><i class="fa fa-angle-down mt-1"></i></a>
-                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="{% url 'cart' %}" class="dropdown-item"><b>Shopping Cart</b></a>
-                                    <a href="{% url 'checkout' %}" class="dropdown-item"><b>Checkout</b></a>
-                                </div>
-                            </div>
-                            <a href="{% url 'contact' %}" class="nav-item nav-link"><b>Contact</b></a>
+                            <!-- <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
+                            <a href="{% url 'cart' %}" class="nav-item nav-link"><b>Shopping Cart</b></a> -->
+                            <a href="{% url 'checkout' %}" class="nav-item nav-link"><b>Checkout</b></a>
+                            <a href="{% url 'upload_product' %}" class="nav-item nav-link"><b>Post a Product</b></a>
+                            <a href="{% url 'exports' %}" class="nav-item nav-link"><b>Exports</b></a>
+                            <a href="{% url 'orders' %}" class="nav-item nav-link"><b>Orders</b></a>
                         </div>
+                    </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
                                 <i class="fas fa-heart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
-                            <a href="" class="btn px-0 ml-3">
+                            <a href="{% url 'cart' %}" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
@@ -476,214 +403,103 @@
     </div>
     <!-- Navbar End -->
 
-    <!-- Upload Section-->
-    <div class="container">
-        <div class="content">
-            <h1>Upload a product</h1>
-        <form action="{% url 'upload_product' %}" method="post" enctype="multipart/form-data">
+
+    <div class="container max-width: 600px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"; style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: justify ;">
+        <h2 style="text-align: center;"> Upload a product. </h2>
+
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <!-- {{ form.as_p }} -->
-            
-            <label for="name">Product Name:</label>
-            <input type="text" name="name" required>
+            <div class="bg-light p-30 mb-5" style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif";>
+                <div class="row">
+                    <div class="col-md-6 form-group">
 
-            <label for="category">Category:</label>
-            <select id="categories" onchange="showSubcategories()" required> 
-                <!--<option disabled selected>-- Select Category --</option> -->
-                <option value=""; disabled selected>Select Category</option>
-                <option value="Vegetables">Vegetables</option>
-                <option value="Fruits">Fruits</option>
-                <option value="Potatoes">Potatoes</option>
-                <option value="Cereals">Cereals</option>
-                <option value="Onions">Onions</option>
-                <option value="Spices">Spices</option>
-                <option value="Birds, Products & Feeds">Birds, Products & Feeds</option>
-                <option value="Animals, Products & Feeds">Animals, Products & Feeds</option>
-                <option value="Sugarcane">Sugarcane</option>
-                <option value="Seedlings">Seedlings</option>
-            </select>
+                        {{ form.as_p }}
+                        <button type="submit">Upload product</button>
+                    </div>
+                </div>
+            </div>
 
-            <Select id="subcategories">
-                <option value=""; disabled selected>Select Subcategory</option> 
-                <optgroup label="Vegetables" id="Vegetables">
-                    <option value="tomatoes">Tomatoes</option>
-                    <option value="Spinach">Spinach</option>
-                    <option value="Cabbage">Cabbage</option>
-                    <option value="Sukuma wiki">Sukuma Wiki</option>
-                    <option value="Cow_peas">Cow peas (Kunde)</option>
-                    <option value="Managu">Managu/ Mnavu/ Sucha (Black Nightshade)</option>
-                    <option value="Mchicha">Mchicha/ Terere/ Dodo (Amaranth)</option>
-                    <option value="mrendas">Mrenda (Jute Mallow)</option>
-                    <option value="French_beans">French beans</option>
-                    <option value="Asian_Vegetables">Asian Vegetables</option>
-                </optgroup>
-
-                <optgroup label="Fruits" id="Fruits">
-                    <option value="Bananas">Bananas</option>
-                    <option value="Mangoes">Mangoes</option>
-                    <option value="Oranges">Oranges</option>
-                    <option value="Pinnaples">Pinnaples</option>
-                    <option value="Avocadoes">Avocadoes</option>
-                    <option value="Apples">Apples</option>
-                    <option value="Guavas">Guava</option>
-                    <option value="Plums">Plums</option>
-                    <option value="Pears">Pears</option>
-                    <option value="Strawberries">Strawberries</option>   
-                </optgroup>
-
-                <optgroup label="Potatoes" id="Potatoes">
-                    <option value="Irish_Potatoes">Irish Potatoes</option>
-                    <option value="Sweet_Potato">Sweet Potatoes</option>
-                    <option value="Yams">Yams</option>
-                </optgroup> 
-
-                <optgroup label="Cereals" id="Cereals">
-                    <option value="Maize">Maize</option>
-                    <option value="Beans">Beans</option>
-                    <option value="Rice">Rice</option>
-                    <option value="Wheat">Wheat</option>
-                    <option value="Berley">Berley</option>
-                    <option value="Soya">Soya</option>
-                    <option value="Njahe">Njahe (Lablab Beans)</option>
-                    <option value="Millet">Millet</option>
-                    <option value="Sorghum">Sorghum</option> 
-                </optgroup>
-
-                <optgroup label="Onions" id="Onions">
-                    <option value="Garlic">Garlic</option>
-                    <option value="Red_Onions">Red Onions</option>
-                    <option value="White_Onions">White Onions</option>
-                    <option value="Green_Onions">Green Onions</option>
-                    <option value="Sweet_Onions">Sweet Onions</option>
-                    <option value="leafy_onions">Leafy Onions</option>   
-                </optgroup>
-
-                <optgroup label="Spices" id="Spices">
-                    <option value="Tangawizi">Tangawizi</option>
-                    <option value="Pilipipi">Pilipipi (Tear Gas)</option>
-                    <option value="Pilipipi_Hoho">Pilipipi Hoho</option>
-                    <option value="Dhania">Dhania</option>   
-                </optgroup>
-
-                <optgroup label="Birds, Products & Feeds" id="Birds, Products & Feeds">
-                    <option value="Chicken_Kienyeji">Chicken Kienyeji</option>
-                    <option value="Chicken_Broiler">Chicken Broiler</option>
-                    <option value="Ducks">Ducks</option>
-                    <option value="Geese">Geese</option>
-                    <option value="Quails">Quails</option>
-                    <option value="Turkeys">Turkeys</option>
-                    <option value="Guinea_Fowls">Guinea Fowls</option>
-                    <option value="Doves">Doves</option>
-                    <option value="Eggs">Eggs</option>
-                    <option value="Chicken_Poop">Chicken Poop</option> 
-                    <option value="Chicken_Feeds">Chicken Feeds</option>  
-                </optgroup>
-
-                <optgroup label="Animals, Products & Feeds" id="Animals, Products & Feeds">
-                    <option value="Cows">Cows</option>
-                    <option value="Sheep">Sheep</option>
-                    <option value="Goats">Goats</option>
-                    <option value="Donkeys">Donkeys</option>
-                    <option value="Dogs">Dogs</option>
-                    <option value="Pigs">Pigs</option>
-                    <option value="Cats">Cats</option>
-                    <option value="Milk">Milk</option>
-                    <option value="Hide">Hide</option>
-                    <option value="Meat">Meat</option>
-                    <option value="Animal Feeds">Animal Feeds</option>     
-                </optgroup>
-
-                <optgroup label="Seedlings" id="Seedlings">
-                    <option value="Tree_seedlings">Tree seedlings</option>
-                    <option value="Fruits_Seedlings">Fruits Seedlings</option>
-                    <option value="Potato_Seedlings">Potato Seedlings</option>
-                    <option value="Sugarcane_Seedlings">Sugarcane Seedlings</option>  
-                </optgroup>
-
-                <optgroup label="Sugarcane" id="Sugarcane">
-                    <option value="Consumption">Consumption</option>
-                    <option value="For_Factory">For Factory</option>  
-                </optgroup>
-            </select>
-
-            <label for="name"><br>Select 3 images to upload:<br><br></label>
-            <a style="display:flex;">
-                <input type="file" name="image1" accept="image/*" required>
-                <input type="file" name="image2" accept="image/*" required>
-                <input type="file" name="image3" accept="image/*" required>
-            </a>
-
-            
-
-            <label for="location"><br>Location:</label>
-            <select name="location" required>
-                <option value=""; disabled selected>Pick your Location</option>
-                <option value="Nairobi">Nairobi</option>
-                <option value="Kisumu">Kisumu</option>
-                <option value="Mombasa">Mombasa</option>
-                <option value="Thika">Thika</option>
-                <option value="Eldoret">Eldoret</option>
-                <option value="Kakamega">Kakamega</option>
-                <option value="Machakos">Machakos</option>
-                <option value="Nyeri">Nyeri</option>
-                <option value="Kitale">Kitale</option>
-                <option value="Narok">Narok</option>
-            </select>
-            <label for="county">County:</label>
-            <select name="county" required>
-                <option value=""; disabled selected>Pick your County</option>
-                <option value="Nairobi">Nairobi</option>
-                <option value="Mombasa">Mombasa</option>
-                <option value="Kilifi">Kilifi</option>
-                <option value="Kwale">Kwale</option>
-                <option value="Kakamega">Kakamega</option>
-                <option value="Machakos">Machakos</option>
-                <option value="Kisumu">Kisumu</option>
-                <option value="Trans_Nzoia">Trans Nzoia</option>
-                <option value="Uasin_Gishu">Uasin Gishu</option>
-                <option value="Nyeri">Nyeri</option>
-                <option value="Nakuru">Nakuru</option>
-            </select>
-            <label for="price">Price:</label>
-            <input type="text" name="price" required>
-            <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity" required>
-            <label for="ready_for_purchase">Ready for Purchase:</label>
-            <select name="ready_for_purchase" required>
-                <option value=""; disabled selected>Pick Yes or No</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-            <label for="purchase_timeframe">Purchase Timeframe (weeks):</label>
-            <input type="number" name="purchase_timeframe" required>
-            <label for="contact">Contact:</label>
-            <input type="text" name="contact" value="(+254) " required>
-            <input type="submit" value="Submit product">
-           
         </form>
+    </div>
 
-        <script>
-            function showSubcategories() {
-              var category = document.getElementById("categories").value;
-              var subcategories = document.getElementById("subcategories").getElementsByTagName("optgroup");
-              for (var i = 0; i < subcategories.length; i++) {
-                if (subcategories[i].id === category) {
-                  subcategories[i].style.display = "block";
-                } else {
-                  subcategories[i].style.display = "none";
-                }
-              }
-            }
-        </script>
+<!-- Footer Start -->
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border-radius: 20px;"; class="container-fluid bg-success text-secondary mt-2 pt-2">
+    <div class="row px-xl-2 pt-2">
+        <div class="col-lg-4 col-md-12 mb-3 pr-3 pr-xl-5">
+            <h5 class="text-secondary text-uppercase mb-3"; >Get In Touch</h5>
+            <p class="mb-3; text-secondary">For any questions, complaints or compliments, just reach to us via chat, a phone call or send us an email via the adress below.</p>
+            <p class="mb-2; text-secondary"><i class="fa fa-map-marker-alt text-primary mr-3"></i>127 - 80200, Malindi, Kenya</p>
+            <p class="mb-2; text-secondary"><i class="fa fa-envelope text-primary mr-3"></i>info@sokofarm.co.ke</p>
+            <p class="mb-0; text-secondary"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p>
         </div>
-        
-        <!-- Error or success messages -->
-        <div class="error">
-           
-        </div>
-        <div class="success">
-          
+        <div class="col-lg-8 col-md-12">
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <h5 class="text-secondary text-uppercase mb-3">Quick Shop</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Vegetables</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Fruits</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Potatoes</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Animals</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Birds</a>
+                        <a class="text-secondary" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Cereals</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <h5 class="text-secondary text-uppercase mb-3">My Account</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-secondary mb-2" href="{% url 'home' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                        <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Shop</a>
+                        <a class="text-secondary mb-2" href="{% url 'checkout' %}"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                        <a class="text-secondary mb-2" href="{% url 'upload_product' %}"><i class="fa fa-angle-right mr-2"></i>Post a Product</a>
+                        <a class="text-secondary mb-2" href="{% url 'exports' %}"><i class="fa fa-angle-right mr-2"></i>Exports</a>
+                        <a class="text-secondary" href="{% url 'orders' %}"><i class="fa fa-angle-right mr-2"></i>Orders</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-secondary text-uppercase mb-3">Newsletter</h5>
+                    <p style="color: white;">Sign up to receive updates on your favorite products!</p>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Your Email Address">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" style="color: green;">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                    <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-primary btn-square mr-2" href="https://twitter.com/intent/tweet?url=www.sokofarm.com=Check out this awesome website!" target="_blank">
+                            <i class="fab fa-twitter" style="color: green;"></i></a>
+                        <a class="btn btn-primary btn-square mr-2" href="https://www.facebook.com/sharer/sharer.php?u=www.sokofarm.co.ke" target="_blank">
+                            <i class="fab fa-facebook-f" style="color: green;"></i></a>
+                        <a class="btn btn-primary btn-square mr-2" href="https://www.linkedin.com/sharing/share-offsite/?url=www.sokofarm.com" target="_blank">
+                            <i class="fab fa-linkedin-in" style="color: green;"></i></a>
+                        <a class="btn btn-primary btn-square" href="https://www.instagram.com/your_username=www.sokofarm.co.ke" target="_blank">
+                            <i class="fab fa-instagram" style="color: green;"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="row border-top mx-xl-5 py-4" style="border-color: white !important;">
+        <div class="col-md-6 px-xl-0">
+            <p class="mb-md-0 text-center text-md-left text-secondary">
+                &copy; 2024</a>. All Rights Reserved. Designed
+                by Francis Wekesa.
+            </p>
+        </div>
+        <div class="col-md-6 px-xl-0 text-center text-md-right">
+            <img class="img-fluid" src="{% static 'SokoApp/payments.png' %}" alt="">
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary back-to-top "><i class="fa fa-angle-double-up"></i></a>
+
 </body>
 </html>

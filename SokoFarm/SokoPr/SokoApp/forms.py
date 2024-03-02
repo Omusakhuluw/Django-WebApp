@@ -15,7 +15,7 @@ import re
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'category', 'subcategory', 'image1', 'image2', 'image3', 'county', 'price', 'quantity',
+        fields = ['name', 'category', 'subcategory', 'image', 'image2', 'image3', 'county', 'price', 'quantity', 'description',
                    'location', 'ready_for_purchase', 'purchase_timeframe', 'contacts']
 
 
