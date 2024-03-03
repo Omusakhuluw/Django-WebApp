@@ -376,12 +376,12 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home text-primary"></i>
+                            <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home"></i>
                             <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
                             <!-- <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
                             <a href="{% url 'cart' %}" class="nav-item nav-link"><b>Shopping Cart</b></a> -->
                             <a href="{% url 'checkout' %}" class="nav-item nav-link"><b>Checkout</b></a>
-                            <a href="{% url 'upload_product' %}" class="nav-item nav-link"><b>Post a Product</b></a>
+                            <a href="{% url 'upload_product' %}" class="nav-item nav-link active"><b>Post a Product</b></a>
                             <a href="{% url 'exports' %}" class="nav-item nav-link"><b>Exports</b></a>
                             <a href="{% url 'orders' %}" class="nav-item nav-link"><b>Orders</b></a>
                         </div>
@@ -405,7 +405,7 @@
 
 
     <div class="container max-width: 600px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"; style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: justify ;">
-        <h2 style="text-align: center;"> Upload a product. </h2>
+        <h2 style="text-align: center;"> Upload a product. </h2><hr>
 
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -414,7 +414,7 @@
                     <div class="col-md-6 form-group">
 
                         {{ form.as_p }}
-                        <button type="submit">Upload product</button>
+                        <button type="submit"; style="background-color: green; color: white;">Upload product</button>
                     </div>
                 </div>
             </div>

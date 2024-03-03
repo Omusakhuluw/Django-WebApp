@@ -36,6 +36,7 @@ urlpatterns = [
     path('success/', views.success, name='success'),
     path('exports/', views.exports, name='exports'),
     path('orders/', views.orders, name='orders'),
+    path('product/<int:product_id>/', views.detail, name='detail'),
 
 ]
 

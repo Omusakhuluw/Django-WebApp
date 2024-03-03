@@ -102,3 +102,20 @@
     
 })(jQuery);
 
+function openModal(productId) {
+    // Get product details using AJAX or from existing data
+    const product = getProductById(productId); // Implement this function
+
+    // Update modal content with product details
+    document.getElementById("modal-title").textContent = product.name;
+    document.getElementById("modal-description").textContent = product.description;
+
+    // Display the modal
+    document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+    // Hide the modal
+    document.getElementById("myModal").style.display = "none";
+}
+

@@ -110,7 +110,7 @@
         <div class="row bg-success py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    <a class="text-body mr-3 {% if request.path == '/about/' %} text-primary{% endif %}" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">About</b></a>
                     <a class="text-body mr-3" href="{% url 'contact' %}"; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                         <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact Us</b></a>
@@ -376,7 +376,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home text-primary"></i>
+                            <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home"></i>
                             <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
                             <!-- <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
                             <a href="{% url 'cart' %}" class="nav-item nav-link"><b>Shopping Cart</b></a> -->

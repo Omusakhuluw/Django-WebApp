@@ -380,7 +380,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home text-primary"></i>
+                            <a href="{% url 'home' %}" class="nav-item nav-link active"><i class="fas fa-home"></i>
                             <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
                             <!-- <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
                             <a href="{% url 'cart' %}" class="nav-item nav-link"><b>Shopping Cart</b></a> -->
@@ -936,11 +936,11 @@
     <div class="container-fluid pt-3 pb-3">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3"><a style="color: green;">Recent Products</a> </span></h2>
         <div class="row px-xl-5"> 
-            {% for product in products %}
+            {% for product in latest_products %}
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <img class="img-fluid w-100" src="{{ product.image1.url }}" alt="{{ product.name }}">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -949,11 +949,12 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">{{ product.name }}</a><br>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'detail' product.id %}" style="color: black;">{{ product.name }}</a><br>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Ksh.{{ product.price }}</h5><h6 class="text-muted ml-2"><del>Ksh.{{ product.price }}</del></h6><br>
-                            <!-- <h6>Location: {{ product.location }}</h6><br>
-                            <h6>Timeframe: {{ product.timeframe }}</h6><br> -->
+                            <h5>Ksh.{{ product.price }}</h5><h6 class="text-muted ml-2"><del>Ksh.{{ product.price }}</del></h6>
+                        </div>
+                        <div>
+                            <h6 style="color: orange;">{{ product.location }}</h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
