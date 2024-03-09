@@ -12,7 +12,7 @@ def home(request):
     latest_products = Product.objects.order_by('-created_at')[:12]
     return render(request, 'home.html', {'latest_products': latest_products})
 
-def home(request):
+#def home(request):
     categories = ['Vegetables', 'Fruits', 'Potatotes', 'Cereals', 'Onions', 'Spices', 'Birds', 'Animals', 'Feeds', 'Seedlings', 'Farm Inputs', 'Farm Machinery' ]
     context = {
         'categories': categories,

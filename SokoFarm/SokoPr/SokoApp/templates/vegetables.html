@@ -422,22 +422,21 @@
 
     <!-- Breadcrumb Start -->
     <div class="container-fluid" >
-        <div class="row px-xl-5">
+        <div class="row">
             <div class="col-12 ">
-                <nav class="mb-30">
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";><h6>Vegetables</h6></button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";><h6>Fruits</h6></button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";><h6>Potatoes</h6></button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";><h6>Cereals</h6></button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Onions</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Spices</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Birds</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Animals</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Feeds</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Seedlings</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Farm Inputs</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Farm Machinery</button>
-                    </span>
+                <nav class="mb-30 text-success">
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'vegetables' %}" style="color: white;" >Vegetables</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'fruits' %}" style="color: white;">Fruits</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'potatoes' %}" style="color: white;" >Potatoes</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'cereals' %}" style="color: white;">Cereals</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'onions' %}" style="color: white;">Onions</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'spices' %}" style="color: white;">Spices</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'birds' %}" style="color: white;">Birds</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'animals' %}" style="color: white;">Animals</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'feeds' %}" style="color: white;">Feeds</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'seedlings' %}" style="color: white;">Seedlings</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'farm_inputs' %}" style="color: white;">F.Inputs</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'farm_machinery' %}" style="color: white;">F.Machinery</a></button>
                 </nav>
             </div>
         </div>

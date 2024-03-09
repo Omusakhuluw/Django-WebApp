@@ -422,22 +422,21 @@
 
     <!-- Breadcrumb Start -->
     <div class="container-fluid" >
-        <div class="row px-xl-5">
+        <div class="row">
             <div class="col-12 ">
-                <nav class="mb-30">
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";><h6>Vegetables</h6></button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";><h6>Fruits</h6></button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";><h6>Potatoes</h6></button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";><h6>Cereals</h6></button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Onions</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Spices</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Birds</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Animals</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Feeds</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Seedlings</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Farm Inputs</button>
-                    <button type="button" class="btn btn-sm btn-light mr-1 "; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>Farm Machinery</button>
-                    </span>
+                <nav class="mb-30 text-success">
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'vegetables' %}" style="color: white;" >Vegetables</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'fruits' %}" style="color: white;">Fruits</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'potatoes' %}" style="color: white;" >Potatoes</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'cereals' %}" style="color: white;">Cereals</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'onions' %}" style="color: white;">Onions</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'spices' %}" style="color: white;">Spices</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'birds' %}" style="color: white;">Birds</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'animals' %}" style="color: white;">Animals</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'feeds' %}" style="color: white;">Feeds</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'seedlings' %}" style="color: white;">Seedlings</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'farm_inputs' %}" style="color: white;">F.Inputs</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'farm_machinery' %}" style="color: white;">F.Machinery</a></button>
                 </nav>
             </div>
         </div>
@@ -448,201 +447,15 @@
     <!-- Shop Start -->
     <div class="container-fluid" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
         <div class="row px-xl-5">
-            <!-- Shop Sidebar Start -->
-            <div class="col-lg-3 col-md-4">
-                <!-- Price Start -->
-                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by price</span></h5>
-                <div class="bg-light p-4 mb-30">
-                    <form>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" checked id="price-all">
-                            <label class="custom-control-label" for="price-all">All Price</label>
-                            <span class="badge border font-weight-normal">1000</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-1">
-                            <label class="custom-control-label" for="price-1">Ksh.0 - Ksh.100</label>
-                            <span class="badge border font-weight-normal">150</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-2">
-                            <label class="custom-control-label" for="price-2">Ksh.100 - Ksh.1k</label>
-                            <span class="badge border font-weight-normal">295</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-3">
-                            <label class="custom-control-label" for="price-3">Ksh.1k - Ksh.10k</label>
-                            <span class="badge border font-weight-normal">246</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-4">
-                            <label class="custom-control-label" for="price-4">Ksh.10k - Ksh.100k</label>
-                            <span class="badge border font-weight-normal">145</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-5">
-                            <label class="custom-control-label" for="price-5">Ksh.100k - 500k</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-5">
-                            <label class="custom-control-label" for="price-5">Ksh.500k - Ksh.1M</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-                            <input type="checkbox" class="custom-control-input" id="price-5">
-                            <label class="custom-control-label" for="price-5">Ksh.1M +</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                        
-                    </form>
-                </div>
-                <!-- Price End -->
-                
-                <!-- Color Start -->
-                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by Region</span></h5>
-                <div class="bg-light p-4 mb-30">
-                    <form>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" checked id="riftvalley">
-                            <label class="custom-control-label" for="riftvalley">Rift Valley</label>
-                            <span class="badge border font-weight-normal">1000</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="western">
-                            <label class="custom-control-label" for="western">Western</label>
-                            <span class="badge border font-weight-normal">150</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="eastern">
-                            <label class="custom-control-label" for="eastern">Eastern</label>
-                            <span class="badge border font-weight-normal">295</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="central">
-                            <label class="custom-control-label" for="central">Central</label>
-                            <span class="badge border font-weight-normal">246</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="coastal">
-                            <label class="custom-control-label" for="coastal">Coastal</label>
-                            <span class="badge border font-weight-normal">145</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-                            <input type="checkbox" class="custom-control-input" id="nairobi">
-                            <label class="custom-control-label" for="nairobi">Nairobi</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                    </form>
-                </div>
-                <!-- Color End -->
-
-                <!-- Size Start -->
-                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by Type</span></h5>
-                <div class="bg-light p-4 mb-30">
-                    <form>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="vegetables">
-                            <label class="custom-control-label" for="vegetables">Vegetables</label>
-                            <span class="badge border font-weight-normal">1000</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="fruits">
-                            <label class="custom-control-label" for="fruits">Fruits</label>
-                            <span class="badge border font-weight-normal">150</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="potatoes">
-                            <label class="custom-control-label" for="potatoes">Potatoes</label>
-                            <span class="badge border font-weight-normal">295</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="cereals">
-                            <label class="custom-control-label" for="cereals">Cereals</label>
-                            <span class="badge border font-weight-normal">246</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="onions">
-                            <label class="custom-control-label" for="onions">Onions</label>
-                            <span class="badge border font-weight-normal">145</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="spices">
-                            <label class="custom-control-label" for="spices">Spices</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="birds">
-                            <label class="custom-control-label" for="birds">Birds & Products</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="animals">
-                            <label class="custom-control-label" for="animals">Animals & Products</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="feeds">
-                            <label class="custom-control-label" for="feeds">Animal Feeds</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="inputs">
-                            <label class="custom-control-label" for="inputs">Farm Inputs</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="seedlings">
-                            <label class="custom-control-label" for="seedlings">Tree Seedlings</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-                            <input type="checkbox" class="custom-control-input" id="machinery">
-                            <label class="custom-control-label" for="machinery">Farm Machinery</label>
-                            <span class="badge border font-weight-normal">168</span>
-                        </div>
-                    </form>
-                </div>
-                <!-- Size End -->
-            </div>
-            <!-- Shop Sidebar End -->
-
-
             <!-- Shop Product Start -->
-            <div class="col-lg-9 col-md-8">
-                <div class="row pb-3">
-                    <div class="col-12 pb-1">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <div>
-                                <button class="btn btn-sm btn-light"><i class="fa fa-th-large"></i></button>
-                                <button class="btn btn-sm btn-light ml-2"><i class="fa fa-bars"></i></button>
-                            </div>
-                            <div class="ml-2">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Sorting</button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Latest</a>
-                                        <a class="dropdown-item" href="#">Popularity</a>
-                                        <a class="dropdown-item" href="#">Best Rating</a>
-                                    </div>
-                                </div>
-                                <div class="btn-group ml-2">
-                                    <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Showing</button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">10</a>
-                                        <a class="dropdown-item" href="#">20</a>
-                                        <a class="dropdown-item" href="#">30</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
+            <div class="col-lg-12">
+                <div class="row pb-0"> <!-- Adjusted padding here -->
+                    <!-- Product Items Start -->
                     {% for product in products %}
-                    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                        <div class="product-item bg-light mb-4">
-                            <div class="product-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{{ product.image1.url }}" alt="{{ product.name }}">
+                    <div class="col-lg-3 col-md-4 col-sm-6 pb-2"> <!-- Adjust column sizes and spacing as needed -->
+                        <div class="product-item bg-light mb-2 rounded" style="padding: 0;">
+                            <div class="product-img position-relative overflow-hidden" style="max-height: 200px; overflow: hidden;">
+                                <img class="img-fluid rounded-top" src="{{ product.image1.url }}" alt="{{ product.name }}" style="object-fit: cover; width: 100%; height: 200px;">
                                 <div class="product-action">
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -650,45 +463,39 @@
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
-                            <div class="text-center py-1">
+                            <div class="text-center pt-2 pb-1">
                                 <a class="h6 text-decoration-none text-truncate" href="{% url 'detail' product.id %}" style="color: black;">{{ product.name }}</a><br>
-                                <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>Ksh.{{ product.price }}</h5><h6 class="text-muted ml-2"><!--<del>Ksh.{{ product.price }}</del></h6> -->
-                                </div>
-                                <div>
-                                    <h6 style="color: orange;">{{ product.location }}</h6>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-center mb-1">
-                                    <small class="fa fa-star text-primary mr-1"></small>
-                                    <small class="fa fa-star text-primary mr-1"></small>
-                                    <small class="fa fa-star text-primary mr-1"></small>
-                                    <small class="far fa-star text-primary mr-1"></small>
-                                    <small class="far fa-star text-primary mr-1"></small>
-                                    <small>(99)</small>
+                                <div class="d-flex align-items-center justify-content-center mt-1">
+                                    <h5>Ksh.{{ product.price }}</h5><h6 class="text-muted ml-1"><!--<del>Ksh.{{ product.price }}</del></h6> -->
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                </div>
+                <div class="row pb-0"> <!-- Adjusted padding here -->
+                    {% endif %}
                     {% endfor %}
+                    <!-- Product Items End -->
+                </div>
 
-                    
-                    <div class="col-12">
-                        <nav>
-                          <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
+                <!-- Pagination Start -->
+                <div class="col-12">
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                          </ul>
-                        </nav>
-                    </div>
+                        </ul>
+                    </nav>
                 </div>
+                <!-- Pagination End -->
             </div>
             <!-- Shop Product End -->
         </div>
     </div>
-
     <!-- Shop End -->
 
 
