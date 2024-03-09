@@ -104,44 +104,53 @@ def upload_product(request):
 def offers(request):
     return render(request, 'offers.html')
 
-def animals(request):
-    products = Product.objects.filter(category='animals')
-    return render(request, 'animals.html', {'products': products})
-
-def birds(request):
-    products = Product.objects.filter(category='birds')
-    return render(request, 'birds.html', {'products': products})
-
-def cereals(request):
-    products = Product.objects.filter(category='cereals')
-    return render(request, 'cereals.html', {'products': products})
+def farm_machinery(request):
+    farmmachinery_category = get_object_or_404(Category, name='Farm Machinery')
+    farmmachinery_products = Product.objects.filter(category=farmmachinery_category)
+    return render(request, 'farm_machinery.html', {'products': farmmachinery_products})
 
 def farm_inputs(request):
-    products = Product.objects.filter(category='farm_input')
-    return render(request, 'farm_input.html', {'products': products})
+    farminputs_category = get_object_or_404(Category, name='Farm Inputs')
+    farminputs_products = Product.objects.filter(category=farminputs_category)
+    return render(request, 'farm_inputs.html', {'products': farminputs_products})
 
-def farm_machinery(request):
-    products = Product.objects.filter(category='farm_machinery')
-    return render(request, 'farm_machinery.html', {'products': products})
+def animals(request):
+    animals_category = get_object_or_404(Category, name='Animals')
+    animals_products = Product.objects.filter(category=animals_category)
+    return render(request, 'animals.html', {'products': animals_products})
+
+def birds(request):
+    birds_category = get_object_or_404(Category, name='Birds')
+    birds_products = Product.objects.filter(category=birds_category)
+    return render(request, 'birds.html', {'products': birds_products})
+
+def cereals(request):
+    cereals_category = get_object_or_404(Category, name='Cereals')
+    cereals_products = Product.objects.filter(category=cereals_category)
+    return render(request, 'cereals.html', {'products': cereals_products})
 
 def featured_products(request):
     return render(request, 'featured_products.html')
 
 def fruits(request):
-    products = Product.objects.filter(category='fruits')
-    return render(request, 'fruits.html', {'products': products})
+    fruits_category = get_object_or_404(Category, name='Fruits')
+    fruits_products = Product.objects.filter(category=fruits_category)
+    return render(request, 'fruits.html', {'products': fruits_products})
 
 def onions(request):
-    products = Product.objects.filter(category='onions')
-    return render(request, 'onions.html', {'products': products})
+    onions_category = get_object_or_404(Category, name='Onions')
+    onions_products = Product.objects.filter(category=onions_category)
+    return render(request, 'onions.html', {'products': onions_products})
 
 def potatoes(request):
-    products = Product.objects.filter(category='potatoes')
-    return render(request, 'potatoes.html', {'products': products})
+    potatoes_category = get_object_or_404(Category, name='Potatoes')
+    potatoes_products = Product.objects.filter(category=potatoes_category)
+    return render(request, 'potatoes.html', {'products': potatoes_products})
 
 def seedlings(request):
-    products = Product.objects.filter(category='seedlings')
-    return render(request, 'seedlings.html', {'products': products})
+    seedlings_category = get_object_or_404(Category, name='Seedlings')
+    seedlings_products = Product.objects.filter(category=seedlings_category)
+    return render(request, 'seedlings.html', {'products': seedlings_products})
 
 def spices(request):
     spices_category = get_object_or_404(Category, name='Spices')
