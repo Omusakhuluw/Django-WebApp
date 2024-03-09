@@ -159,7 +159,8 @@ a {
 
 a:hover {
   color: #e6b400;
-  text-decoration: underline;
+  text-decoration:#a71d2a ;
+  
 }
 
 a:not([href]):not([class]) {
@@ -9754,3 +9755,45 @@ a.text-dark:hover, a.text-dark:focus {
   color: red; /* Adjust the color of the map pin icon */
   margin-left: 5px; /* Adjust the spacing between location name and map pin icon */
 }
+.product-img {
+    width: 100%; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+/* Ensure uniform display of product images */
+.product-img-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    overflow: hidden;
+}
+
+/* Style product action buttons */
+.product-action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show product action buttons on hover */
+.product-item:hover .product-action {
+    opacity: 1;
+}
+
+.product-img-container {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+

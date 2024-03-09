@@ -125,8 +125,8 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>My Account</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button"><a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Log in</a></button>
-                            <button class="dropdown-item" type="button"><a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Sign up</a></button>
+                            <button class="dropdown-item" type="button"><a href="{% url 'login' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: green;">Log in</a></button>
+                            <button class="dropdown-item" type="button"><a href="{% url 'login' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: green;">Sign up</a></button>
                         </div>
                     </div>
                     <div class="btn-group mx-2">
@@ -192,7 +192,7 @@
     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100 " data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
                     <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
@@ -317,49 +317,66 @@
                         </div>
 
                         <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Animal Feeds <!--<i class="fa fa-angle-right float-right mt-2"></i>--></a>
-                            <!--<div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                                <a href="" class="dropdown-item">Maize: fresh or dried </a>
-                                <a href="" class="dropdown-item">Beans: fresh or dried  </a>
-                                <a href="" class="dropdown-item">Rice </a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Feeds <i class="fa fa-angle-right float-right mt-2"></i></a>
+                                <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Animal Feeds</a>
+                                <a href="" class="dropdown-item">Chicken Feeds </a>
+                                <!--<a href="" class="dropdown-item">Rice </a>
                                 <a href="" class="dropdown-item">Wheat</a>
                                 <a href="" class="dropdown-item">Barley</a>
                                 <a href="" class="dropdown-item">Soya </a>
                                 <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
                                 <a href="" class="dropdown-item">Millet</a>
-                                <a href="" class="dropdown-item">Sorghum</a>
-                            </div>-->
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
                         </div>
 
                         <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Sugarcane <!--<i class="fa fa-angle-right float-right mt-2"></i>--></a>
-                            <!--<div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                                <a href="" class="dropdown-item">Maize: fresh or dried </a>
-                                <a href="" class="dropdown-item">Beans: fresh or dried  </a>
-                                <a href="" class="dropdown-item">Rice </a>
-                                <a href="" class="dropdown-item">Wheat</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Seedlings <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Tree Seedlings</a>
+                                <a href="" class="dropdown-item">Vegetable Seedlings</a>
+                                <a href="" class="dropdown-item">Fruit Seedlings</a>
+                                <!--<a href="" class="dropdown-item">Wheat</a>
                                 <a href="" class="dropdown-item">Barley</a>
                                 <a href="" class="dropdown-item">Soya </a>
                                 <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
                                 <a href="" class="dropdown-item">Millet</a>
-                                <a href="" class="dropdown-item">Sorghum</a>
-                            </div>-->
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
                         </div>
                      
 
                         <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tree Seedlings <!--<i class="fa fa-angle-right float-right mt-2"></i>--></a>
-                            <!--<div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                                <a href="" class="dropdown-item">Maize: fresh or dried </a>
-                                <a href="" class="dropdown-item">Beans: fresh or dried  </a>
-                                <a href="" class="dropdown-item">Rice </a>
-                                <a href="" class="dropdown-item">Wheat</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Farm Inputs <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Seeds (High Yield Varieties)</a>
+                                <a href="" class="dropdown-item">Fertilizers</a>
+                                <a href="" class="dropdown-item">Veterinary Medicines </a>
+                                <a href="" class="dropdown-item">Herbicides & Pesticides  </a>
+                                <a href="" class="dropdown-item">Irrigation Technology </a>
+                                <a href="" class="dropdown-item">Information Technology</a>
+                                <a href="" class="dropdown-item">Packaging materials</a>
+                                <!--<a href="" class="dropdown-item"> </a>
+                                <a href="" class="dropdown-item">Bio Control Agents</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Farm Machinery <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Tractors </a>
+                                <a href="" class="dropdown-item">Agricultural Machineries(thrasher, harvester) </a>
+                                <a href="" class="dropdown-item">Agricultural Implements & Tools </a>
+                                <!--<a href="" class="dropdown-item">Wheat</a>
                                 <a href="" class="dropdown-item">Barley</a>
                                 <a href="" class="dropdown-item">Soya </a>
                                 <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
                                 <a href="" class="dropdown-item">Millet</a>
-                                <a href="" class="dropdown-item">Sorghum</a>
-                            </div>-->
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
                         </div>
                     </div>
                 </nav>

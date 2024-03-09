@@ -37,6 +37,22 @@ urlpatterns = [
     path('exports/', views.exports, name='exports'),
     path('orders/', views.orders, name='orders'),
     path('product/<int:product_id>/', views.detail, name='detail'),
+    path('offers/', views.offers, name='offers'),
+    path('featured_products/', views.featured_products, name='featured_products'),
+    path('vegetables/', views.vegetables, name='vegetables'),
+    path('fruits/', views.fruits, name='fruits'),
+    path('potatoes/', views.potatoes, name='potatoes'),
+    path('spices/', views.spices, name='spices'),
+    path('onions/', views.onions, name='onions'),
+    path('seedlings/', views.seedlings, name='seedlings'),
+    path('animals/', views.animals, name='animals'),
+    path('birds/', views.birds, name='birds'),
+    path('cereals/', views.cereals, name='cereals'),
+    path('farm_machinery/', views.farm_machinery, name='farm_machinery'),
+    path('farm_inputs/', views.farm_inputs, name='farm_inputs'),
+    path('feeds/', views.feeds, name='feeds'),
+    path('recent_products/', views.recent_products, name='recent_products'),
+    path('category_view/', views.category_view, name='category_view'),
 
 ]
 
