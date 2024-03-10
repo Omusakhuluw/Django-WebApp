@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Category Dropdown</title>
+<style>
+  #subcategories {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<select id="categories" onchange="showSubcategories()">
+  <option value="">Select Category</option>
+  <option value="cat1">Category 1</option>
+  <option value="cat2">Category 2</option>
+  <option value="cat3">Category 3</option>
+</select>
+
+<select id="subcategories">
+  <option value="">Select Subcategory</option>
+  <optgroup label="Category 1" id="cat1">
+    <option value="subcat1">Subcategory 1</option>
+    <option value="subcat2">Subcategory 2</option>
+  </optgroup>
+  <optgroup label="Category 2" id="cat2">
+    <option value="subcat3">Subcategory 3</option>
+    <option value="subcat4">Subcategory 4</option>
+  </optgroup>
+  <optgroup label="Category 3" id="cat3">
+    <option value="subcat5">Subcategory 5</option>
+    <option value="subcat6">Subcategory 6</option>
+  </optgroup>
+</select>
+
+<script>
+  function showSubcategories() {
+    var category = document.getElementById("categories").value;
+    var subcategories = document.getElementById("subcategories").getElementsByTagName("optgroup");
+    for (var i = 0; i < subcategories.length; i++) {
+      if (subcategories[i].id === category) {
+        subcategories[i].style.display = "block";
+      } else {
+        subcategories[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

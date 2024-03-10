@@ -9,14 +9,14 @@ class MyModel(models.Model):
 
 class Category(models.Model):
      CATEGORY_CHOICES = [
-       ('Vegetables', 'Vegetables'),
+        ('Vegetables', 'Vegetables'),
         ('Fruits', 'Fruits'),
-        ('Potatoes', 'Potaoes'),
+        ('Potatoes', 'Potatoes'),
         ('Cereals', 'Cereals'),
         ('Onions', 'Onions'),
         ('Spices', 'Spices'),
-        ('Birds', 'Birds'),
-        ('Animals', 'Animals'),
+        ('Birds', 'Birds & Products'),
+        ('Animals', 'Animals & Products'),
         ('Feeds', 'Feeds'),
         ('Seedlings', 'Seedlings'),
         ('Farm Inputs', 'Farm Inputs'),
@@ -33,7 +33,7 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default='Fruits')    
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default='1')    
     
    
     COUNTRY_CHOICES = [
@@ -289,7 +289,7 @@ class Product(models.Model):
     county = forms.ChoiceField(choices=COUNTY_CHOICES)
     country = forms.ChoiceField(choices=COUNTRY_CHOICES)
 
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=50)
     image1 = models.ImageField(upload_to='products/')
     image2 = models.ImageField(upload_to='products/')
     image3 = models.ImageField(upload_to='products/')

@@ -82,6 +82,23 @@ def upload_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
+            category_name = form.cleaned_data['category']
+            product = form.save()
+
+            print("Product uploaded successfully!:", product.name)
+
+            for image in request.FILES.getlist('images'):
+                product.images.create(image=image)
+            return redirect('shop')
+    else:
+        form = ProductForm()
+    return render(request, 'upload_product.html', {'form':form})
+
+#def upload_product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            category_name = form.cleaned_data['category']
             product = form.save()
 
             print("Product uploaded successfully!:", product.name)
@@ -120,10 +137,23 @@ def animals(request):
     return render(request, 'animals.html', {'products': animals_products})
 
 def birds(request):
-    birds_category = get_object_or_404(Category, name='Birds')
-    birds_products = Product.objects.filter(category=birds_category)
-    return render(request, 'birds.html', {'products': birds_products})
-
+    # Retrieve all Category objects with the name 'Birds'
+    birds_categories = Category.objects.filter(name='Birds')
+    
+    # Check if any Category objects are found
+    if birds_categories.exists():
+        # Choose one of the Category objects (e.g., the first one)
+        birds_category = birds_categories.first()
+        
+        # Retrieve all Product objects associated with the chosen category
+        birds_products = Product.objects.filter(category=birds_category)
+        
+        return render(request, 'birds.html', {'products': birds_products})
+    else:
+        # Handle the case where no Category objects are found
+        return HttpResponse("Birds category not found")
+    
+    
 def cereals(request):
     cereals_category = get_object_or_404(Category, name='Cereals')
     cereals_products = Product.objects.filter(category=cereals_category)

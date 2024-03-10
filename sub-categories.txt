@@ -1,0 +1,23 @@
+﻿<label for="category">Category:</label>
+<select name="category" required>
+    <option disabled selected>-- Select Category --</option>
+    <optgroup label="Electronics">
+        <option value="phones">Phones</option>
+        <option value="laptops">Laptops</option>
+        <option value="cameras">Cameras</option>
+        <!-- Add more options as needed -->
+    </optgroup>
+    <optgroup label="Clothing">
+        <option value="men">Men's Clothing</option>
+        <option value="women">Women's Clothing</option>
+        <option value="kids">Kids' Clothing</option>
+        <!-- Add more options as needed -->
+    </optgroup>
+    <optgroup label="Furniture">
+        <option value="living_room">Living Room Furniture</option>
+        <option value="bedroom">Bedroom Furniture</option>
+        <option value="kitchen">Kitchen Furniture</option>
+        <!-- Add more options as needed -->
+    </optgroup>
+    <!-- Add more optgroup sections for additional categories -->
+</select>

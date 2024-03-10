@@ -4,17 +4,18 @@ import re
         
 class ProductForm(forms.ModelForm):
     CATEGORY_CHOICES = [
-       ('Vegetables', 'Vegetables'),
-       ('Fruits', 'Fruits'),
-       ('Potatoes', 'Potatoes'),
-       ('Cereals', 'Cereals'),
-       ('Onions', 'Onions'),
-       ('Spices', 'Spices'),
-       ('Birds & Products', 'Birds & Products'),
-       ('Animals & Products', 'Animals & Products'),
-       ('Feeds', 'Feeds'),
-       ('Sugarcane', 'Sugarcane'),
-       ('Seedlings', 'Seedlings'),
+        ('Vegetables', 'Vegetables'),
+        ('Fruits', 'Fruits'),
+        ('Potatoes', 'Potatoes'),
+        ('Cereals', 'Cereals'),
+        ('Onions', 'Onions'),
+        ('Spices', 'Spices'),
+        ('Birds', 'Birds'),
+        ('Animals', 'Animals'),
+        ('Feeds', 'Feeds'),
+        ('Seedlings', 'Seedlings'),
+        ('Farm Inputs', 'Farm Inputs'),
+        ('Farm Machinery', 'Farm Machinery'), 
        
     ]
    
