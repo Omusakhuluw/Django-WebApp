@@ -12,6 +12,12 @@ urlpatterns = [
     path('shop/<int:page>/', views.shop, name='shop_with_page'),
     path('fetch-products/', fetch_products, name='fetch_products'),
     path('category/<str:category>/', views.category_view, name='category_view'),
+
+    path('search/', views.search_products, name='search_products'),
+    
+    path('add-to-cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
+    path('add-to-favorites/<int:product_id>/', views.add_to_favorites, name='add_to_favorites'),
+    path('sync-product/<int:product_id>/', views.sync_product, name='sync_product'),
     
     path('category/vegetables/', views.vegetables, name='vegetables'),
     path('category/fruits/', views.fruits, name='fruits'),

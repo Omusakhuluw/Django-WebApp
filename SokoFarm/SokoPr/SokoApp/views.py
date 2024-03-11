@@ -21,6 +21,31 @@ def category_view(request, category):
     return render(request, 'category_view.html', context)
 
 
+def search_products(request):
+    query = request.GET.get('q')
+    if query:
+        # Perform the search query on the Product model
+        search_results = Product.objects.filter(name__icontains=query)
+    else:
+        search_results = None
+    
+    return render(request, 'shop.html', {'search_results': search_results, 'query': query})
+
+def add_to_cart(request):
+    product_id = request.POST.get('product_id')
+    # Logic to add product to cart
+    return JsonResponse({'message': 'Product added to cart'})
+
+def add_to_favorites(request):
+    product_id = request.POST.get('product_id')
+    # Logic to add product to favorites
+    return JsonResponse({'message': 'Product added to favorites'})
+
+def sync_product(request):
+    product_id = request.POST.get('product_id')
+    # Logic to sync product
+    return JsonResponse({'message': 'Product synced'})
+
 def shop(request):
     latest_products = Product.objects.order_by('-created_at')  # Order products by created_at in descending order
     return render(request, 'shop.html', {'latest_products': latest_products})
