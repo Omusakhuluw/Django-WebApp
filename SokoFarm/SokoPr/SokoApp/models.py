@@ -22,7 +22,10 @@ class Category(models.Model):
         ('Farm Inputs', 'Farm Inputs'),
         ('Farm Machinery', 'Farm Machinery'), 
     ]
-     name = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+     name = models.CharField(max_length=50)
+     
+     def __str__(self):
+        return self.name
     
 
 #class Subcategory(models.Model):
@@ -33,7 +36,7 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default='1')    
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')   
     
    
     COUNTRY_CHOICES = [
@@ -309,6 +312,11 @@ class Product(models.Model):
 def __str__(self):
     return self.name
 
+class Meta:
+    model = Product
+    fields = ['name', 'category', 'subcategory', 'image1', 'image2', 'image3', 'price', 'quantity', 'ready_for_purchase', 'purchase_timeframe',
+               'location', 'county', 'description', 'additional_info', 'contacts', 'country',]
+    exclude = ['created_at']
 
 
 
