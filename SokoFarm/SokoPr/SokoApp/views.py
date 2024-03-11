@@ -22,8 +22,8 @@ def category_view(request, category):
 
 
 def shop(request):
-    all_products = Product.objects.all()
-    return render(request, 'shop.html', {'all_products': all_products})
+    latest_products = Product.objects.order_by('-created_at')  # Order products by created_at in descending order
+    return render(request, 'shop.html', {'latest_products': latest_products})
 
 
 def about(request):
