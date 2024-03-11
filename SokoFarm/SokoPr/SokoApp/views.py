@@ -22,8 +22,8 @@ def category_view(request, category):
 
 
 def shop(request):
-    products = Product.objects.all()
-    return render(request, 'shop.html', {'products': products})
+    all_products = Product.objects.all()
+    return render(request, 'shop.html', {'all_products': all_products})
 
 
 def about(request):
@@ -39,12 +39,10 @@ def upload_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            product = form.save(commit=False)
-            category_name = form.cleaned_data['category']
-            category_instance = Category.objects.get(name=category_name)
-            product.category = category_instance
-            product.save()
-            return redirect('shop')
+            new_product = form.save(commit=False)
+            new_product.user = request.user  # Associate the logged-in user with the product
+            new_product.save()
+            return redirect('product_detail', product_id=new_product.id)  
     else:
         form = ProductForm()
     return render(request, 'upload_product.html', {'form': form})
@@ -151,8 +149,9 @@ def fetch_products(request):
     return JsonResponse({'products': list(products)})
 
 
-def recent_products(request):
-    return render(request, 'recent_products.html')
+#def recent_products(request):
+    recent_products = Product.objects.order_by('-created_at')[:12]  # Get the latest 12 products
+    return render(request, 'recent_products.html', {'recent_products': recent_products})
 
 def featured_products(request):
     return render(request, 'featured_products.html')
