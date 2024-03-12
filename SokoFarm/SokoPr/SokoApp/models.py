@@ -43,3 +43,34 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class Order(models.Model):
+    CATEGORY_CHOICES = [
+        ('Cereals & Grains', 'Cereals & Grains'),
+        ('Vegetables', 'Vegetables'),
+        ('Fruits', 'Fruits'),
+        ('Potatoes', 'Potatoes'),
+        ('Onions', 'Onions'),
+        ('Spices', 'Spices'),
+        ('Birds & Products', 'Birds & Products'),
+        ('Animals & Products', 'Animals & Products'),
+        ('Seedlings', 'Seedlings'),
+        ('Farm Inputs', 'Farm Inputs'),
+        ('Farm Machinery', 'Farm Machinery'),
+    ]
+
+    name = models.CharField(max_length=50)
+    category = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
+    variety = models.CharField(max_length=100)
+    quantity = models.CharField(max_length=100)
+    price_range = models.CharField(max_length=100)
+    location = models.CharField(max_length=255)
+    timeframe = models.CharField(max_length=100)
+    description = models.TextField()
+    additional_info = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    contact1 = models.CharField(max_length=15)
+    contact2 = models.CharField(max_length=15)
+
+    def __str__(self):
+        return f"{self.quantity} {self.category} - {self.location}"

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, JsonResponse
-from .forms import ProductForm
+from .forms import ProductForm, OrderForm, Order
 from .models import Product, Category
+
 
 
 def home(request):
@@ -228,3 +229,18 @@ def seedlings(request):
 def recent_products(request):
     return render(request, 'recent_products.html')
 
+
+def create_order(request):
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('orders')  # Redirect to the orders page after successful submission
+    else:
+        form = OrderForm()
+    return render(request, 'create_order.html', {'form': form})
+
+
+def orders(request):
+    orders = Order.objects.all()
+    return render(request, 'orders.html', {'orders': orders})

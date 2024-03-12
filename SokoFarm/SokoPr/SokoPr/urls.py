@@ -53,6 +53,8 @@ urlpatterns = [
     path('feeds/', views.feeds, name='feeds'),
     path('recent_products/', views.recent_products, name='recent_products'),
     path('category_view/', views.category_view, name='category_view'),
+    path('orders/', views.orders, name='orders'),
+    path('create_order/', views.create_order, name='create_order'),
 
 ]
 

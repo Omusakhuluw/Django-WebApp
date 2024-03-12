@@ -31,4 +31,6 @@ urlpatterns = [
     path('category/seedlings/', views.seedlings, name='seedlings'),
     path('category/farm_inputs/', views.farm_inputs, name='farm_inputs'),
     path('category/farm_machinery/', views.farm_machinery, name='farm_machinery'),
+    path('create_order/', views.create_order, name='create_order'),
+    path('orders/', views.orders, name='orders'),
 ]
