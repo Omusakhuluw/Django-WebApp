@@ -57,6 +57,7 @@ urlpatterns = [
     path('create_order/', views.create_order, name='create_order'),
     path('upload_exports/', views.upload_exports, name='upload_exports'),
     path('exports/', views.exports, name='exports'),
+    path('export_order/', views.export_order, name='export_order'),
 
 ]
 

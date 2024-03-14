@@ -245,6 +245,10 @@ def orders(request):
     orders = Order.objects.all()
     return render(request, 'orders.html', {'orders': orders})
 
+def export_order(request):
+    export_order = Order.objects.all()
+    return render(request, 'export_order.html', {'export_order': export_order})
+
 def upload_exports(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)

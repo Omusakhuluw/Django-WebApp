@@ -35,4 +35,6 @@ urlpatterns = [
     path('orders/', views.orders, name='orders'),
     path('upload_exports/', views.upload_exports, name='upload_exports'),
     path('exports/', views.exports, name='exports'),
+    path('export_order/', views.export_order, name='export_order'),
+    
 ]
