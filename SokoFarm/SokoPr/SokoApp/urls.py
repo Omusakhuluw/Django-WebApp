@@ -33,4 +33,6 @@ urlpatterns = [
     path('category/farm_machinery/', views.farm_machinery, name='farm_machinery'),
     path('create_order/', views.create_order, name='create_order'),
     path('orders/', views.orders, name='orders'),
+    path('upload_exports/', views.upload_exports, name='upload_exports'),
+    path('exports/', views.exports, name='exports'),
 ]

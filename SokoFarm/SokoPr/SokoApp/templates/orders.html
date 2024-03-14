@@ -459,7 +459,7 @@
 
         <ol style="padding: 50; margin-left: 10px; margin-right: 10px ">
             {% for order in orders %}
-            <li class="text-align: justify;" > {{order.quantity}} of {{order.name}}: {{order.variety}}. I am at: {{order.location}}. I want it in {{order.timeframe}} weeks time. Price range: Ksh.{{order.price_range}}. Contact me via: {{order.contact1}} or {{order.contact2}} </li><br>
+            <li class="text-align: justify;" > {{order.quantity}} of <b>{{order.name}}</b>: {{order.variety}}. I am at: {{order.location}}. I want it in {{order.timeframe}} weeks time. Price range: Ksh.{{order.price_range}}. Contact me via: {{order.contact1}} or {{order.contact2}} </li><br>
             {% endfor %}
         </ol><br>
             

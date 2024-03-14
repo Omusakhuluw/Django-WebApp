@@ -55,6 +55,8 @@ urlpatterns = [
     path('category_view/', views.category_view, name='category_view'),
     path('orders/', views.orders, name='orders'),
     path('create_order/', views.create_order, name='create_order'),
+    path('upload_exports/', views.upload_exports, name='upload_exports'),
+    path('exports/', views.exports, name='exports'),
 
 ]
 

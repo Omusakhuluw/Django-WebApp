@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, JsonResponse
-from .forms import ProductForm, OrderForm, Order
+from .forms import ProductForm, OrderForm, Order, ExportsForm, Exports
 from .models import Product, Category
 
 
@@ -244,3 +244,39 @@ def create_order(request):
 def orders(request):
     orders = Order.objects.all()
     return render(request, 'orders.html', {'orders': orders})
+
+def upload_exports(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_product = form.save(commit=False)
+            new_product.user = request.user  # Associate the logged-in user with the product
+            new_product.save()
+            return redirect('exports', product_id=new_product.id)  
+    else:
+        form = ProductForm()
+    return render(request, 'upload_exports.html', {'form': form})
+
+
+#def upload_exports(request):
+    #if request.method == 'POST':
+        #form = ExportsForm(request.POST, request.FILES)
+        #if form.is_valid():
+            #new_product = form.save(commit=False)
+            #new_product.user = request.user  # Associate the logged-in user with the product
+            #new_product.save()
+            #return redirect('exports', product_id=new_product.id)  
+
+
+#def upload_exports(request):
+    #if request.method == 'POST':
+        #form = ExportsForm(request.POST, request.FILES)
+        #if form.is_valid():
+            #new_product = form.save(commit=False)
+            #new_product.user = request.user  # Associate the logged-in user with the product
+            #new_product.save()
+            #return redirect('exports', product_id=new_product.id)  
+
+def exports(request):
+    exports = Order.objects.all()
+    return render(request, 'exports.html', {'exports': exports})

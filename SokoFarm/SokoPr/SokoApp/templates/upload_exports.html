@@ -93,23 +93,9 @@
             color: green;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
         p {
             color: black;
         }
-
-        .fixed-buttons {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            transition: top 0.3s; /* Add smooth transition effect */
-        }
-
-        .fixed-buttons.fixed {
-            position: fixed;
-        }
-
 
 
 </style>
@@ -407,9 +393,8 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home"></i>
-
-                            <a href="{% url 'exports' %}" class="nav-item nav-link active mr-1"><b>Exports</b></a>
-                            <a href="{% url 'upload_exports' %}" class="nav-item nav-link mr-1"><b>Post Exports</b></a>
+                            <a href="{% url 'exports' %}" class="nav-item nav-link"><b>Exports</b></a>
+                            <a href="{% url 'upload_exports' %}" class="nav-item nav-link active"><b>Post Exports</b></a>
                         </div>
                     </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
@@ -429,62 +414,26 @@
     </div>
     <!-- Navbar End -->
 
+    <!--Create Order Otart-->
 
-    <!-- Breadcrumb Start -->
-    <div class="container-fluid" >
-        <div class="row">
-            <div class="col-12 ">
-                <nav class="mb-20 text-success">
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'vegetables' %}" style="color: white;" >Vegetables</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'fruits' %}" style="color: white;">Fruits</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'potatoes' %}" style="color: white;" >Potatoes</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'cereals' %}" style="color: white;">Cereals</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'onions' %}" style="color: white;">Onions</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'spices' %}" style="color: white;">Spices</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'birds' %}" style="color: white;">Birds</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'animals' %}" style="color: white;">Animals</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'feeds' %}" style="color: white;">Feeds</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'seedlings' %}" style="color: white;">Seedlings</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'farm_inputs' %}" style="color: white;">F.Inputs</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'farm_machinery' %}" style="color: white;">F.Machinery</a></button>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
+    <div class="container mt-3" style="width: calc(100% - 10px); margin: 10px auto; padding: 10px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); color: black; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify;">
+        <h2 style="text-align: center;"> Post a Product for Export. </h2><hr>
 
+            <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="bg-light p-30 mb-5" style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif";>
+                <div class="row">
+                    <div class="col-md-12 form-group">
 
-
-    <!--Exports Display Starts-->
-
-    <div class="container mt-3" style="max-width: calc(100% - 30px); margin: 10px auto; padding: 10px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); color: black; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify;">
-        <h3 style="text-align: center;"> Exports </h3> <hr>
-
-        <ol style="padding: 50; margin-left: 10px; margin-right: 10px ">
-            {% for export in exports %}
-            <li class="text-align: justify;" > {{export.quantity}} of <b>{{exports.name}}</b>: {{exports.variety}}. I am at: {{export.location}}. I want it in {{export.timeframe}} weeks time. Price range: Ksh.{{export.price_range}}. Contact me via: {{export.contact1}} or {{order.contact2}} </li><br>
-            {% endfor %}
-        </ol><br>
-            
-                    
-                    <div class="col-12 mt-5 ">
-                        <nav>
-                          <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                          </ul>
-                        </nav>
+                        {{ form.as_p }}
+                        <button type="submit"; style="background-color: green; color: white;">Post Product</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!--Exports Display End-->
+        </form>
+    </div> 
 
-    
+    <!--Create Order End-->
 
     <!-- Footer Start -->
     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border-radius: 20px;"; class="container-fluid bg-success text-secondary mt-2 pt-2">
