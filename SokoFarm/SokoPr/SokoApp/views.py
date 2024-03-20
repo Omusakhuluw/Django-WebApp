@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, JsonResponse
-from .forms import ProductForm, OrderForm, Order, ExportsForm, Exports
-from .models import Product, Category
+from .forms import ProductForm, OrderForm, Order, ExportsForm, Exports, OfferForm, Offer
+from .models import Product, Category, Offer
 
 
 
@@ -50,6 +50,32 @@ def sync_product(request):
 def shop(request):
     latest_products = Product.objects.order_by('-created_at')  # Order products by created_at in descending order
     return render(request, 'shop.html', {'latest_products': latest_products})
+
+
+#def offers(request):
+    latest_offers = Offer.objects.order_by('-created_at')
+    return render(request, 'offers.html', {'latest_offers': latest_offers})
+
+def offers(request):
+    latest_offers = Offer.objects.order_by('-created_at')  # Order offers by created_at in descending order
+    return render(request, 'offers.html', {'latest_offers': latest_offers})
+
+def upload_offers(request):
+    if request.method == 'POST':
+        form = OfferForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_offer = form.save(commit=False)
+            new_offer.user = request.user  # Associate the logged-in user with the offer
+            new_offer.save()
+            return redirect('offers')  # Redirect to the offers page after successful upload
+    else:
+        form = OfferForm()
+    return render(request, 'upload_offers.html', {'form': form})
+
+def offer_detail(request, offer_id):
+    # Retrieve the offer object by its ID
+    offer = get_object_or_404(Offer, pk=offer_id)
+    return render(request, 'offer_detail.html', {'offer': offer})
 
 
 def about(request):
@@ -101,9 +127,6 @@ def exports(request):
 def orders(request):
     return render(request, 'orders.html')
 
-
-def offers(request):
-    return render(request, 'offers.html')
 
 
 def farm_machinery(request):
@@ -246,8 +269,14 @@ def orders(request):
     return render(request, 'orders.html', {'orders': orders})
 
 def export_order(request):
-    export_order = Order.objects.all()
-    return render(request, 'export_order.html', {'export_order': export_order})
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('export_order')  # Redirect to the orders page after successful submission
+    else:
+        form = OrderForm()
+    return render(request, 'export_order.html', {'form': form})
 
 def upload_exports(request):
     if request.method == 'POST':

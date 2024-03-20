@@ -1,0 +1,546 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SokoFarm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="SokoFarm, Soko, Farm, online, fresh, cereals, fruits, Francis Wekesa, kilifi, PLP">
+    <meta name="description" content="Linking Farmers with end Consumers" >
+    <meta name="Author" content="Francis Wekesa, Omusakhulu">
+
+    <!-- Favicon-->
+    <link rel="icon" type="img/x-icon" href="{% static 'favicon1.png' %}" >
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <!-- <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet"> -->
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.min.css' %}" >
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{% static 'SokoApp/mail/jqBootstrapValidation.min.js' %}" ></script>
+    <script src="{% static 'SokoApp/mail/contact.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'SokoApp/main.js' %}"></script>
+    <script src="{% static 'SokoApp/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Include animate.min.css -->
+    <link href="{% static 'SokoApp/animate.min.css' %}" rel="stylesheet">
+
+    <!-- Include easing.js -->
+    <script src="{% static 'SokoApp/lib/easing/easing.js' %}"></script>
+
+    <!-- Include easing.min.js -->
+    <script src="{% static 'SokoApp/lib/easing/easing.min.js' %}"></script>
+
+    <style>
+
+        .owl-carousel {
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping to new lines */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+            scrollbar-width: none; /* Hide scrollbar */
+            -ms-overflow-style: none; /* Hide scrollbar on Edge */
+        }
+    
+        .owl-carousel::-webkit-scrollbar {
+            display: none; /* Hide scrollbar on WebKit browsers */
+        }
+    
+        .owl-carousel > div {
+            flex: 0 0 auto; /* Prevent image from stretching */
+            margin-right: 20px; /* Adjust spacing between images */
+        }
+
+        body {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: green;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        p {
+            color: black;
+        }
+
+
+</style>
+
+    
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+            <div class="col-lg-4">
+                <a href="{% url 'home' %}" class="text-decoration-none">
+                    <span class="h1 text-success bg-primary px-2"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Soko</span><span class="h1 text-primary bg-success px-2 ml-n1"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farm</span>
+                </a>
+            </div>
+            <div class="col-lg-4 col-6 text-left">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" placeholder ="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 col-6 text-right">
+                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="m-0">Customer Service</p>
+                <h5 class="m-0"; style="color: green; font-family:'Times New Roman', Times, serif;"><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> 
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="container-fluid bg-dark mb-30">
+        <div class="row px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+                    <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+                    <div class="navbar-nav w-100">
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vegetables <i class="fa fa-angle-right float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Tomatoes </a>
+                                <a href="" class="dropdown-item">Spinach </a>
+                                <a href="" class="dropdown-item">Cabbage </a>
+                                <a href="" class="dropdown-item">Sukuma Wiki</a>
+                                <a href="" class="dropdown-item">Cowpeas (Kunde)</a>
+                                <a href="" class="dropdown-item">Black nightshade (Managu/Mnavu/Sucha)</a>
+                                <a href="" class="dropdown-item">Saga</a>
+                                <a href="" class="dropdown-item">Amaranth (Mchicha/dodo/terere)</a>
+                                <a href="" class="dropdown-item">Jute mallow (Mrenda)</a>
+                                <a href="" class="dropdown-item">French beans</a>
+                                <a href="" class="dropdown-item">Asian Vegetables </a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Fruits <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Bananas </a>
+                                <a href="" class="dropdown-item">Mangoes  </a>
+                                <a href="" class="dropdown-item">Oranges </a>
+                                <a href="" class="dropdown-item">Pinnaples</a>
+                                <a href="" class="dropdown-item">Avocado</a>
+                                <a href="" class="dropdown-item">Apples </a>
+                                <a href="" class="dropdown-item">Guava</a>
+                                <a href="" class="dropdown-item">Plums</a>
+                                <a href="" class="dropdown-item">Peas</a>
+                                <a href="" class="dropdown-item">Strawberry</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Potatoes <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Irish Potatoes</a>
+                                <a href="" class="dropdown-item">Sweet Potatoes </a>
+                                <a href="" class="dropdown-item">Yams </a>
+                            </div>
+                        </div>
+
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cereals <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Maize </a>
+                                <a href="" class="dropdown-item">Beans </a>
+                                <a href="" class="dropdown-item">Rice </a>
+                                <a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Onions <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Garlic</a>
+                                <a href="" class="dropdown-item">Red Onions  </a>
+                                <a href="" class="dropdown-item">Yellow Onions</a>
+                                <a href="" class="dropdown-item">White Onions</a>
+                                <a href="" class="dropdown-item">Green Onions</a>
+                                <a href="" class="dropdown-item">Sweet Onions</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Spices <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Tangawizi (Ginger) </a>
+                                <a href="" class="dropdown-item">Pilipili (Peper) </a>
+                                <a href="" class="dropdown-item">Dhania (Coriander) </a>
+                                <!--<a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
+                        </div>
+
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Birds & Products <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Chicken - broiler/kienyeji </a>
+                                <a href="" class="dropdown-item">Ducks</a>
+                                <a href="" class="dropdown-item">Geese</a>
+                                <a href="" class="dropdown-item">Quails</a>
+                                <a href="" class="dropdown-item">Turkeys</a>
+                                <a href="" class="dropdown-item">Guinea Fowl </a>
+                                <a href="" class="dropdown-item">Doves</a>
+                                <a href="" class="dropdown-item">Eggs</a>
+                                <a href="" class="dropdown-item">Chicken poop</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Animals & Products <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Cows</a>
+                                <a href="" class="dropdown-item">Goats</a>
+                                <a href="" class="dropdown-item">Sheeps</a>
+                                <a href="" class="dropdown-item">Dogs</a>
+                                <a href="" class="dropdown-item">Donkeys</a>
+                                <a href="" class="dropdown-item">Pigs</a>
+                                <a href="" class="dropdown-item">Cats</a>
+                                <a href="" class="dropdown-item">Milk</a>
+                                <a href="" class="dropdown-item">Meat</a>
+                                <a href="" class="dropdown-item">Ngozi</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Feeds <i class="fa fa-angle-right float-right mt-2"></i></a>
+                                <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Animal Feeds</a>
+                                <a href="" class="dropdown-item">Chicken Feeds </a>
+                                <!--<a href="" class="dropdown-item">Rice </a>
+                                <a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Seedlings <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Tree Seedlings</a>
+                                <a href="" class="dropdown-item">Vegetable Seedlings</a>
+                                <a href="" class="dropdown-item">Fruit Seedlings</a>
+                                <!--<a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
+                        </div>
+                     
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Farm Inputs <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Seeds (High Yield Varieties)</a>
+                                <a href="" class="dropdown-item">Fertilizers</a>
+                                <a href="" class="dropdown-item">Veterinary Medicines </a>
+                                <a href="" class="dropdown-item">Herbicides & Pesticides  </a>
+                                <a href="" class="dropdown-item">Irrigation Technology </a>
+                                <a href="" class="dropdown-item">Information Technology</a>
+                                <a href="" class="dropdown-item">Packaging materials</a>
+                                <!--<a href="" class="dropdown-item"> </a>
+                                <a href="" class="dropdown-item">Bio Control Agents</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Farm Machinery <i class="fa fa-angle-right float-right mt-2"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="" class="dropdown-item">Tractors </a>
+                                <a href="" class="dropdown-item">Agricultural Machineries(thrasher, harvester) </a>
+                                <a href="" class="dropdown-item">Agricultural Implements & Tools </a>
+                                <!--<a href="" class="dropdown-item">Wheat</a>
+                                <a href="" class="dropdown-item">Barley</a>
+                                <a href="" class="dropdown-item">Soya </a>
+                                <a href="" class="dropdown-item">Njahi (Lablab bean)</a>
+                                <a href="" class="dropdown-item">Millet</a>
+                                <a href="" class="dropdown-item">Sorghum</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <span class="h1 text-uppercase text-dark bg-light px-2">Soko</span>
+                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Farm</span>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home"></i>
+                            <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'offers' %}" class="nav-link  active dropdown-toggle" data-toggle="dropdown"><b>Offers! </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'offers' %}" class="dropdown-item">Today's Offers</a>
+                                    <a href="{% url 'upload_offers' %}" class="dropdown-item">Post an Offer</a>
+                                </div>
+                            </div>
+                            <!-- <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
+                            <a href="{% url 'cart' %}" class="nav-item nav-link"><b>Shopping Cart</b></a> -->
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'orders' %}" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Orders  </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'upload_product' %}" class="dropdown-item">Post a Product</a>
+                                    <a href="{% url 'orders' %}" class="dropdown-item">Create an Order</a>
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'exports' %}" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Exports  </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'exports' %}" class="dropdown-item">Discover Exports</a>
+                                    <a href="{% url 'upload_exports' %}" class="dropdown-item">Post Exports</a>
+                                    <a href="{% url 'export_order' %}" class="dropdown-item">Create Exports Order</a>
+                                </div>
+                            </div>
+                            <a href="{% url 'checkout' %}" class="nav-item nav-link"><b>Checkout</b></a>
+                            <i class="fas fa-check-circle" style="color: green; display: flex; align-items: center;"></i>
+                        </div>
+                    </div>
+                        <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                            <a href="" class="btn px-0">
+                                <i class="fas fa-heart text-primary"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            </a>
+                            <a href="{% url 'cart' %}" class="btn px-0 ml-3">
+                                <i class="fas fa-shopping-cart text-primary"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-12 ">
+                <nav class="mb-30 text-success">
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'vegetables' %}" --><a style="color: white;" >Vegetables</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'fruits' %}" --><a style="color: white;">Fruits</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'potatoes' %}" --><a style="color: white;" >Potatoes</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'cereals' %}" --><a style="color: white;">Cereals</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'onions' %}" --><a style="color: white;">Onions</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'spices' %}" --><a style="color: white;">Spices</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'birds' %}" --><a style="color: white;">Birds</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'animals' %}" --><a style="color: white;">Animals</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'feeds' %}" --><a style="color: white;">Feeds</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'seedlings' %}" --><a style="color: white;">Seedlings</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'farm_inputs' %}" --><a style="color: white;">F.Inputs</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1"><!--<a href="{% url 'farm_machinery' %}" --><a style="color: white;">F.Machinery</a></button>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    
+    <!-- Shop Product Start -->
+    <div class="container-fluid ml-2">
+        <div class="row pb-4">
+            <!-- Product Items Start -->
+            <div class="row pb-2">
+                {% for offer in latest_offers %}
+                <div class="col-lg-3 col-md-3 col-sm-4 col-6 pb-4"> <!-- Adjust column widths -->
+                    <div class="product-item bg-light mb-8 rounded">
+                        <div class="product-img position-relative overflow-hidden" style="height: 150px;"> <!-- Set a fixed height for the image container -->
+                            <img class="img-fluid w-100 rounded-top" src="{{ offer.image1.url }}" alt="{{ offer.name }}" style="object-fit: cover; height: 100%;"> <!-- Use object-fit: cover; for autozooming -->
+                            <div class="product-action">
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href="{% url 'offer_detail' offer.id %}"><i class="fa fa-search"></i></a> <!-- Use correct URL tag and offer.id -->
+                            </div>
+                        </div>
+                        <div class="text-center py-1">
+                            <a class="h5 text-decoration-none text-truncate" href="{% url 'offer_detail' offer.id %}" style="color: black; font-size: 16px;">{{ offer.name }}</a><br> <!-- Adjusted font size here -->
+                            <div class="d-flex align-items-center justify-content-center mt-1"> <!-- Adjusted margin top here -->
+                                <h6 class="text-muted ml-6">Ksh.<del style="color: red;">{{ offer.initial_price }} </h6></del><a style="font-size: 14px;color: green;"><h6>  {{ offer.current_price }}</h5>
+                            </div>
+                            <div>
+                                <h6 style="color: blue; font-size: 14px;"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ offer.location }}</h6> <!-- Adjusted font size here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:6 and not forloop.last %}
+            </div>
+            <div class="row pb-2"> 
+                {% endif %}
+                {% endfor %}
+                <!-- Product Items End -->
+            </div>
+
+            <!-- Pagination Start -->
+            <div class="col-12">
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Pagination End -->
+        </div>
+    </div>
+    <!-- Offers End -->
+
+
+    <!-- Footer Start -->
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border-radius: 20px;"; class="container-fluid bg-success text-secondary mt-2 pt-2">
+        <div class="row px-xl-2 pt-2">
+            <div class="col-lg-4 col-md-12 mb-3 pr-3 pr-xl-5">
+                <h5 class="text-secondary text-uppercase mb-3"; >Get In Touch</h5>
+                <p class="mb-3; text-secondary">For any questions, complaints or compliments, just reach to us via chat, a phone call or send us an email via the adress below.</p>
+                <p class="mb-2; text-secondary"><i class="fa fa-map-marker-alt text-primary mr-3"></i>127 - 80200, Malindi, Kenya</p>
+                <p class="mb-2; text-secondary"><i class="fa fa-envelope text-primary mr-3"></i>info@sokofarm.co.ke</p>
+                <p class="mb-0; text-secondary"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-3">Quick Shop</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Vegetables</a>
+                            <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Fruits</a>
+                            <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Potatoes</a>
+                            <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Animals</a>
+                            <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Birds</a>
+                            <a class="text-secondary" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Cereals</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-3">My Account</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="{% url 'home' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-secondary mb-2" href="{% url 'shop' %}"><i class="fa fa-angle-right mr-2"></i>Shop</a>
+                            <a class="text-secondary mb-2" href="{% url 'checkout' %}"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                            <a class="text-secondary mb-2" href="{% url 'upload_product' %}"><i class="fa fa-angle-right mr-2"></i>Post a Product</a>
+                            <a class="text-secondary mb-2" href="{% url 'exports' %}"><i class="fa fa-angle-right mr-2"></i>Exports</a>
+                            <a class="text-secondary" href="{% url 'orders' %}"><i class="fa fa-angle-right mr-2"></i>Orders</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 class="text-secondary text-uppercase mb-3">Newsletter</h5>
+                        <p style="color: white;">Sign up to receive updates on your favorite products!</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Your Email Address">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" style="color: green;">Sign Up</button>
+                                </div>
+                            </div>
+                        </form>
+                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-square mr-2" href="https://twitter.com/intent/tweet?url=www.sokofarm.com=Check out this awesome website!" target="_blank">
+                                <i class="fab fa-twitter" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.facebook.com/sharer/sharer.php?u=www.sokofarm.co.ke" target="_blank">
+                                <i class="fab fa-facebook-f" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.linkedin.com/sharing/share-offsite/?url=www.sokofarm.com" target="_blank">
+                                <i class="fab fa-linkedin-in" style="color: green;"></i></a>
+                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/your_username=www.sokofarm.co.ke" target="_blank">
+                                <i class="fab fa-instagram" style="color: green;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row border-top mx-xl-5 py-4" style="border-color: white !important;">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-secondary">
+                    &copy; 2024</a>. All Rights Reserved. Designed
+                    by Francis Wekesa.
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="{% static 'SokoApp/payments.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top "><i class="fa fa-angle-double-up"></i></a>
+
+</body>
+</html>

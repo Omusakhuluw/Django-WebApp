@@ -407,9 +407,33 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home"></i>
-
-                            <a href="{% url 'orders' %}" class="nav-item nav-link active mr-1"><b>Orders</b></a>
-                            <a href="{% url 'create_order' %}" class="nav-item nav-link mr-1"><b>Create an Order</b></a>
+                            <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'offers' %}" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Offers! </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'offers' %}" class="dropdown-item">Today's Offers</a>
+                                    <a href="{% url 'upload_offers' %}" class="dropdown-item">Post an Offer</a>
+                                </div>
+                            </div>
+                            <!-- <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
+                            <a href="{% url 'cart' %}" class="nav-item nav-link"><b>Shopping Cart</b></a> -->
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'orders' %}" class="nav-link active dropdown-toggle" data-toggle="dropdown"><b>Orders  </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'upload_product' %}" class="dropdown-item">Post a Product</a>
+                                    <a href="{% url 'orders' %}" class="dropdown-item">Create an Order</a>
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'exports' %}" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Exports  </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'exports' %}" class="dropdown-item">Discover Exports</a>
+                                    <a href="{% url 'upload_exports' %}" class="dropdown-item">Post Exports</a>
+                                    <a href="{% url 'export_order' %}" class="dropdown-item">Create Exports Order</a>
+                                </div>
+                            </div>
+                            <a href="{% url 'checkout' %}" class="nav-item nav-link"><b>Checkout</b></a>
+                            <i class="fas fa-check-circle" style="color: green; display: flex; align-items: center;"></i>
                         </div>
                     </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">

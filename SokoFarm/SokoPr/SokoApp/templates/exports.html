@@ -407,10 +407,33 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{% url 'home' %}" class="nav-item nav-link"><i class="fas fa-home"></i>
-
-                            <a href="{% url 'exports' %}" class="nav-item nav-link active mr-1"><b>Exports</b></a>
-                            <a href="{% url 'upload_exports' %}" class="nav-item nav-link mr-1"><b>Post Exports</b></a>
-                            <a href="{% url 'export_order' %}" class="nav-item nav-link mr-1"><b>Exports Order</b></a>
+                            <a href="{% url 'shop' %}" class="nav-item nav-link"><b>Shop</b></a>
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'offers' %}" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Offers! </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'offers' %}" class="dropdown-item">Today's Offers</a>
+                                    <a href="{% url 'upload_offers' %}" class="dropdown-item">Post an Offer</a>
+                                </div>
+                            </div>
+                            <!-- <a href="{% url 'detail' %}" class="nav-item nav-link"><b>Shop Detail</b></a>
+                            <a href="{% url 'cart' %}" class="nav-item nav-link"><b>Shopping Cart</b></a> -->
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'orders' %}" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Orders  </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'upload_product' %}" class="dropdown-item">Post a Product</a>
+                                    <a href="{% url 'orders' %}" class="dropdown-item">Create an Order</a>
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="{% url 'exports' %}" class="nav-link active dropdown-toggle" data-toggle="dropdown"><b>Exports  </b><i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'exports' %}" class="dropdown-item">Discover Exports</a>
+                                    <a href="{% url 'upload_exports' %}" class="dropdown-item">Post Exports</a>
+                                    <a href="{% url 'export_order' %}" class="dropdown-item">Create Exports Order</a>
+                                </div>
+                            </div>
+                            <a href="{% url 'checkout' %}" class="nav-item nav-link"><b>Checkout</b></a>
+                            <i class="fas fa-check-circle" style="color: green; display: flex; align-items: center;"></i>
                         </div>
                     </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
@@ -458,29 +481,66 @@
 
     <!--Exports Display Starts-->
 
-    <div class="container mt-3" style="max-width: calc(100% - 30px); margin: 10px auto; padding: 10px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); color: black; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify;">
-        <h3 style="text-align: center;"> For Export </h3> <hr>
+            <!-- Shop Product Start -->
+            <div class="col-lg-9 col-md-8">
+                <div class="row pb-2"> <!-- Adjusted padding here -->
+                    <!-- Product Items Start -->
+                    {% for export in latest_exports %}
+                    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                        <div class="product-item bg-light mb-4">
+                            <div class="product-img position-relative overflow-hidden" style="height: 200px;"> <!-- Set a fixed height for the image container -->
+                                <img class="img-fluid w-100 rounded-top" src="{{ export.image1.url }}" alt="{{ export.name }}" style="object-fit: cover; height: 100%;"> <!-- Use object-fit: cover; for autozooming -->
+                                <div class="product-action">
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-1">
+                                <a class="h5 text-decoration-none text-truncate" href="{% url 'detail' export.id %}" style="color: black; font-size: 16px;">{{ export.name }}</a><br> <!-- Adjusted font size here -->
+                                <div class="d-flex align-items-center justify-content-center mt-1"> <!-- Adjusted margin top here -->
+                                    <h5 style="font-size: 14px;">Ksh.{{ product.price }}</h5><!--<h6 class="text-muted ml-2"><del>Ksh.{{ product.price }}</del></h6> -->
+                                </div>
+                                <div>
+                                    <h6 style="color: blue; font-size: 14px;"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ product.location }}</h6> <!-- Adjusted font size here -->
+                                </div>
+                                <!-- <div class="d-flex align-items-center justify-content-center mb-1 mt-1"> <!-- Adjusted margin top and bottom here -->
+                                    <!--<small class="fa fa-star text-primary mr-1"></small>
+                                    <small class="fa fa-star text-primary mr-1"></small>
+                                    <small class="fa fa-star text-primary mr-1"></small>
+                                    <small class="far fa-star text-primary mr-1"></small>
+                                    <small class="far fa-star text-primary mr-1"></small>
+                                    <small style="font-size: 12px;">(99)</small> 
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                </div>
+                <div class="row pb-2"> 
+                    {% endif %}
+                    {% endfor %}
+                    <!-- Product Items End -->
+                </div>
 
-        <ol style="padding: 50; margin-left: 10px; margin-right: 10px ">
-            {% for export in exports %}
-            <li class="text-align: justify;" > {{export.quantity}} of <b>{{export.name}}</b>: {{export.variety}}. I am at: {{export.location}}. I want it in {{export.timeframe}} weeks time. Price range: Ksh.{{export.price_range}}. Contact me via: {{export.contact1}} or {{order.contact2}} </li><br>
-            {% endfor %}
-        </ol><br>
-            
-                    
-                    <div class="col-12 mt-5 ">
-                        <nav>
-                          <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
+                <!-- Pagination Start -->
+                <div class="col-12">
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                          </ul>
-                        </nav>
-                    </div>
+                        </ul>
+                    </nav>
                 </div>
+                <!-- Pagination End -->
+
             </div>
+            <!-- Shop Product End -->
+
         </div>
     </div>
     <!--Exports Display End-->

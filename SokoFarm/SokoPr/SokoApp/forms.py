@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Category, Order, Exports
+from .models import Product, Category, Order, Exports, Offer
 
 
 class ProductForm(forms.ModelForm):
@@ -38,5 +38,12 @@ class ExportsForm(forms.ModelForm):
     class Meta:
         model = Exports
         fields = ['name', 'category', 'subcategory', 'image1', 'image2', 'image3', 'price', 'quantity', 'ready_for_purchase', 'purchase_timeframe',
+                  'location', 'description', 'additional_info', 'contacts',]
+        exclude = ['created_at']
+
+class OfferForm(forms.ModelForm):
+    class Meta:
+        model = Offer
+        fields = ['name', 'category', 'subcategory', 'image1', 'image2', 'image3', 'quantity', 'initial_price', 'current_price', 'purchase_timeframe',
                   'location', 'description', 'additional_info', 'contacts',]
         exclude = ['created_at']
