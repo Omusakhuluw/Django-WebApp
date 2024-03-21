@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, JsonResponse
-from .forms import ProductForm, OrderForm, Order, ExportsForm, Exports, OfferForm, Offer
+from .forms import ProductForm, OrderForm, Order, ExportForm, OfferForm, Offer, Export
 from .models import Product, Category, Offer
 
 
@@ -72,10 +72,27 @@ def upload_offers(request):
         form = OfferForm()
     return render(request, 'upload_offers.html', {'form': form})
 
+def upload_exports(request):
+    if request.method == 'POST':
+        form = ExportForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('exports')  
+    else:
+        form = ExportForm()
+    return render(request, 'upload_exports.html', {'form': form})
+
+
 def offer_detail(request, offer_id):
     # Retrieve the offer object by its ID
     offer = get_object_or_404(Offer, pk=offer_id)
     return render(request, 'offer_detail.html', {'offer': offer})
+
+
+def export_detail(request, export_id):
+    # Retrieve the offer object by its ID
+    export = get_object_or_404(Offer, pk=export_id)
+    return render(request, 'export_detail.html', {'export': export})
 
 
 def about(request):
@@ -118,10 +135,6 @@ def login(request):
 
 def success(request):
     return render(request, 'success.html')
-
-
-def exports(request):
-    return render(request, 'exports.html')
 
 
 def orders(request):
@@ -278,38 +291,41 @@ def export_order(request):
         form = OrderForm()
     return render(request, 'export_order.html', {'form': form})
 
-def upload_exports(request):
+#def upload_exports(request):
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
+        form = ExportForm(request.POST)
         if form.is_valid():
-            new_product = form.save(commit=False)
-            new_product.user = request.user  # Associate the logged-in user with the product
-            new_product.save()
-            return redirect('exports', product_id=new_product.id)  
+            form.save()
+            return redirect('exports')  
     else:
-        form = ProductForm()
+        form = ExportForm()
     return render(request, 'upload_exports.html', {'form': form})
 
 
-#def upload_exports(request):
-    #if request.method == 'POST':
-        #form = ExportsForm(request.POST, request.FILES)
-        #if form.is_valid():
-            #new_product = form.save(commit=False)
-            #new_product.user = request.user  # Associate the logged-in user with the product
-            #new_product.save()
-            #return redirect('exports', product_id=new_product.id)  
-
-
-#def upload_exports(request):
-    #if request.method == 'POST':
-        #form = ExportsForm(request.POST, request.FILES)
-        #if form.is_valid():
-            #new_product = form.save(commit=False)
-            #new_product.user = request.user  # Associate the logged-in user with the product
-            #new_product.save()
-            #return redirect('exports', product_id=new_product.id)  
-
 def exports(request):
+    latest_exports = Export.objects.order_by('-created_at')  
+    return render(request, 'exports.html', {'latest_exports': latest_exports})
+
+
+#def upload_exports(request):
+    #if request.method == 'POST':
+        #form = ExportsForm(request.POST, request.FILES)
+        #if form.is_valid():
+            #new_product = form.save(commit=False)
+            #new_product.user = request.user  # Associate the logged-in user with the product
+            #new_product.save()
+            #return redirect('exports', product_id=new_product.id)  
+
+
+#def upload_exports(request):
+    #if request.method == 'POST':
+        #form = ExportsForm(request.POST, request.FILES)
+        #if form.is_valid():
+            #new_product = form.save(commit=False)
+            #new_product.user = request.user  # Associate the logged-in user with the product
+            #new_product.save()
+            #return redirect('exports', product_id=new_product.id)  
+
+#def exports(request):
     exports = Order.objects.all()
     return render(request, 'exports.html', {'exports': exports})

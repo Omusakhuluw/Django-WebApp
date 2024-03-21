@@ -411,14 +411,15 @@
                             <div class="nav-item dropdown">
                                 <a href="{% url 'orders' %}" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Orders  </b><i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="{% url 'orders' %}" class="dropdown-item">Orders</a>
                                     <a href="{% url 'upload_product' %}" class="dropdown-item">Post a Product</a>
-                                    <a href="{% url 'orders' %}" class="dropdown-item">Create an Order</a>
+                                    <a href="{% url 'create_order' %}" class="dropdown-item">Create an Order</a>
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
                                 <a href="{% url 'exports' %}" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Exports  </b><i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="{% url 'exports' %}" class="dropdown-item">Discover Exports</a>
+                                    <a href="{% url 'exports' %}" class="dropdown-item">Products 4 Export</a>
                                     <a href="{% url 'upload_exports' %}" class="dropdown-item">Post Exports</a>
                                     <a href="{% url 'export_order' %}" class="dropdown-item">Create Exports Order</a>
                                 </div>

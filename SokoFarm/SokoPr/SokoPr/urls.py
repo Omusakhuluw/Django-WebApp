@@ -56,10 +56,10 @@ urlpatterns = [
     path('orders/', views.orders, name='orders'),
     path('create_order/', views.create_order, name='create_order'),
     path('upload_exports/', views.upload_exports, name='upload_exports'),
-    path('exports/', views.exports, name='exports'),
+    path('exports/<int:export_id>/', views.exports, name='exports'),
     #path('export_order/', export_order, name='export_order'),
     path('upload_offers/', views.upload_offers, name='upload_offers'),
-    path('offers/<int:product_id>/', views.offers, name='offers'),
+    path('offers/<int:export_id>/', views.offers, name='offers'),
     path('offers/<int:offer_id>/', views.offers, name='offers'),
     path('offers/<int:offer_id>/', views.offer_detail, name='offer_detail'),
 
