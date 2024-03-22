@@ -810,7 +810,7 @@
 
     <!-- Featured Products Start -->
     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3"><a href="{% url 'featured_products' %}" style="color: green;"> Featured Products</a></span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3"><a href="{% url 'shop' %}" style="color: green;"> Featured Products</a></span></h2>
         <div class="row px-xl-5">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4 rounded">
@@ -824,7 +824,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Sweeet potatoes</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'potatoes' %}">Sweeet potatoes</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.4,500.00</h6>
                         </div>
@@ -855,7 +855,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Sweeet potatoes</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'vegetables' %}">Cabbages</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.4,500.00</h6>
                         </div>
@@ -886,7 +886,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">New Holland Farm Tractor</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'farm_machinery' %}">New Holland Farm Tractor</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.4,500.00</h6>
                         </div>
@@ -917,7 +917,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Cabbages</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'vegetables' %}">Cabbages</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.4,500.00</h6>
                         </div>
@@ -948,7 +948,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Sheep</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'vegetables' %}">Sheep</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.5,500.00</h6>
                         </div>
@@ -979,7 +979,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Mwea Pishoni Rice</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'cereals' %}">Mwea Pishoni Rice</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.150.00</h6>
                         </div>
@@ -1010,7 +1010,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Oranges</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'fruits' %}">Oranges</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.4,500.00</h6>
                         </div>
@@ -1041,7 +1041,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Green Maize</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'cereals' %}">Green Maize</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.60,000.00</h6>
                         </div>
@@ -1072,7 +1072,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Hoho</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'spices' %}">Hoho</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.2,800.00</h6>
                         </div>
@@ -1103,7 +1103,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Fresh Onions</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'onions' %}">Fresh Onions</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.2,500.00</h6>
                         </div>
@@ -1134,7 +1134,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Fresh Cabbages</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'vegetables' %}">Fresh Cabbages</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.10.00</h6>
                         </div>
@@ -1165,7 +1165,7 @@
                         </div>
                     </div>
                     <div class="text-center py-2">
-                        <a class="h6 text-decoration-none text-truncate" href="">Sweeet potatoes</a>
+                        <a class="h6 text-decoration-none text-truncate" href="{% url 'potatoes' %}">Sweeet potatoes</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h6>Ksh.4,500.00</h6>
                         </div>
