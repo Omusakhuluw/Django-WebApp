@@ -62,6 +62,10 @@ urlpatterns = [
     path('offers/<int:export_id>/', views.offers, name='offers'),
     path('offers/<int:offer_id>/', views.offers, name='offers'),
     path('offers/<int:offer_id>/', views.offer_detail, name='offer_detail'),
+    path('farmer/', views.farmer_dashboard, name='farmer_dashboard'),
+    path('buyer/', views.buyer_dashboard, name='buyer_dashboard'),
+    path('guest/', views.guest_dashboard, name='guest_dashboard'),
+    
 
 ]
 

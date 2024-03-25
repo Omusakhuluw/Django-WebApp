@@ -3,6 +3,66 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, JsonResponse
 from .forms import ProductForm, OrderForm, Order, ExportForm, OfferForm, Offer, Export
 from .models import Product, Category, Offer
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
+from .models import CustomUser
+from django.contrib.auth import authenticate, login, logout
+from .forms import UserRegistrationForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
+
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)  # Ensure user is not None before calling login()
+            return redirect('home')  # Redirect to the homepage after successful login
+        else:
+            # Invalid login
+            messages.error(request, 'Invalid username or password. Please try again.')
+            return redirect('login')  # Redirect back to the login page with error message
+    else:
+        return render(request, 'login.html')
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')
+
+@login_required
+def dashboard(request):
+    return render(request, 'dashboard.html')
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # Redirect to login page after successful registration
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
+
+
+@login_required
+def farmer_dashboard(request):
+    if not request.user.is_farmer:
+        return HttpResponseForbidden("You don't have permission to access this page.")
+    # Render farmer dashboard
+
+@login_required
+def buyer_dashboard(request):
+    if not request.user.is_buyer:
+        return HttpResponseForbidden("You don't have permission to access this page.")
+    # Render buyer dashboard
+
+def guest_dashboard(request):
+    if request.user.is_authenticated:
+        return HttpResponseForbidden("You are already logged in.")
+    # Render guest dashboard
 
 
 

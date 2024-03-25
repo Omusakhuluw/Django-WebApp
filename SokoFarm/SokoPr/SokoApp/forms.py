@@ -1,5 +1,13 @@
 from django import forms
-from .models import Product, Category, Order, Offer, Export
+from .models import Product, Category, Order, Offer, Export, CustomUser
+
+
+class UserRegistrationForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email', 'password', 'is_farmer']
 
 
 class ProductForm(forms.ModelForm):
