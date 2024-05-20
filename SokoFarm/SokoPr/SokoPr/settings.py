@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7#uw84@g$c@4%ff#!tbr)lyg4jnm#fx)6%zci2237657uku!t&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sokofarm.com', 'www.sokofarm.com', 'sokofarm.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'SokoApp',
+    'tvapp',
 ]
 
 MIDDLEWARE = [

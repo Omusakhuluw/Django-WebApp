@@ -65,6 +65,7 @@ urlpatterns = [
     path('farmer/', views.farmer_dashboard, name='farmer_dashboard'),
     path('buyer/', views.buyer_dashboard, name='buyer_dashboard'),
     path('guest/', views.guest_dashboard, name='guest_dashboard'),
+    path('fisheries/', views.fisheries, name='fisheries'),
     
     
     

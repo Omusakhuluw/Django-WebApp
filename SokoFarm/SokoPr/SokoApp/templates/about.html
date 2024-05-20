@@ -6,7 +6,7 @@
     <title>SokoFarm</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="SokoFarm, Soko, Farm, online, fresh, cereals, fruits, Francis Wekesa, kilifi, PLP">
+    <meta name="keywords" content="SokoFarm, Soko, Farm, online, fresh, cereals, fruits, Francis Wekesa, kilifi, PLP, Kilifi County">
     <meta name="description" content="Linking Farmers with end Consumers" >
     <meta name="Author" content="Francis Wekesa, Omusakhulu">
 
@@ -22,12 +22,6 @@
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <!-- <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet"> -->
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.css' %}" >
@@ -99,7 +93,7 @@
         }
 
 
-</style>
+    </style>
 
     
 </head>
@@ -198,6 +192,53 @@
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
+                        <div class="nav-item dropdown dropright">
+                            <a href="{% url 'fisheries' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Fish <i class="fa fa-angle-right float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Tilapia </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Nile Perch </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Tuna (Yellowfin Tuna, Skipjack Tuna) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Snapper (Red Snapper, Mangrove Snapper)</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Mackerel (Indian Mackerel, Spanish Mackerel)</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Sardines</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Barracuda</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Grouper (Coral Grouper, Malabar Grouper)</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Catfish</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Emperor Fish</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Trevally </a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="{% url 'fisheries' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Crustaceans & Mollusks <i class="fa fa-angle-right float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Prawns (Kamba) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Crabs (Kaa) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Lobsters (Kamba wa Bahari) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Octopus (Pweza) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Squid (Ngisi) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Clams (Kambale) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Oysters (Mchemo) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Mussels (Mabuyu) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Scallops (Kitomondo) </a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="{% url 'fisheries' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Shellfish & Other Seafood <i class="fa fa-angle-right float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Sea Urchins (Mnyoo) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Abalone (Sombi) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Cockles </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Razor Clams</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Periwinkles</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Sea Cucumbers</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Saga</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Jellyfish</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Sea Vegetables</a>
+                            </div>
+                        </div>
+
                         <div class="nav-item dropdown dropright">
                             <a href="{% url 'vegetables' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Vegetables <i class="fa fa-angle-right float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">

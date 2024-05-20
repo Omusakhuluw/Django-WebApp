@@ -12,6 +12,7 @@ class UserRegistrationForm(forms.ModelForm):
 
 class ProductForm(forms.ModelForm):
     CATEGORY_CHOICES = [
+        ('Fisheries', 'Fisheries'),
         ('Vegetables', 'Vegetables'),
         ('Fruits', 'Fruits'),
         ('Potatoes', 'Potatoes'),
@@ -26,7 +27,7 @@ class ProductForm(forms.ModelForm):
         ('Farm Machinery', 'Farm Machinery'),
     ]
     
-    category = forms.ModelChoiceField(queryset=Category.objects.all())  # Use ModelChoiceField for category
+    category = forms.ModelChoiceField(queryset=Category.objects.all())  
 
     class Meta:
         model = Product

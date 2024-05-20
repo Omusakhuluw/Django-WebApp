@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
-from .views import upload_product, fetch_products, vegetables, fruits, potatoes, onions, spices, cereals, birds, feeds, animals, upload_offers, user_login
+from .views import upload_product, fetch_products, fisheries, vegetables, fruits, potatoes, onions, spices, cereals, birds, feeds, animals, upload_offers, user_login
 
 
 urlpatterns = [
@@ -47,7 +47,6 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('register/', views.register, name='register'),
     path('login/', user_login, name='user_login'),
-    
-    
+    path('category/fisheries/', views.fisheries, name='fisheries'),
     
 ]

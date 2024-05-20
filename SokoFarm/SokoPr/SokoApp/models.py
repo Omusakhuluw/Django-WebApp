@@ -18,6 +18,7 @@ class CustomUser(AbstractUser):
 
 class Category(models.Model):
     CATEGORY_CHOICES = [
+        ('Fisheries', 'Fisheries'),
         ('Vegetables', 'Vegetables'),
         ('Fruits', 'Fruits'),
         ('Potatoes', 'Potatoes'),
@@ -60,6 +61,7 @@ class Product(models.Model):
 
 class Order(models.Model):
     CATEGORY_CHOICES = [
+        ('Fisheries', 'Fisheries'),
         ('Cereals & Grains', 'Cereals & Grains'),
         ('Vegetables', 'Vegetables'),
         ('Fruits', 'Fruits'),
@@ -91,6 +93,7 @@ class Order(models.Model):
 
 class Export(models.Model):
     CATEGORY_CHOICES = [
+        ('Fisheries', 'Fisheries'),
         ('Cereals & Grains', 'Cereals & Grains'),
         ('Vegetables', 'Vegetables'),
         ('Fruits', 'Fruits'),
@@ -128,6 +131,7 @@ class Export(models.Model):
 
 class Offer(models.Model):
     CATEGORY_CHOICES = [
+        ('Fisheries', 'Fisheries'),
         ('Cereals & Grains', 'Cereals & Grains'),
         ('Vegetables', 'Vegetables'),
         ('Fruits', 'Fruits'),
