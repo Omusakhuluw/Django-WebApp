@@ -140,6 +140,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'omusakhuluw@gmail.com'
 EMAIL_HOST_PASSWORD = 'projectx'
+DEFAULT_FROM_EMAIL = 'wwinfranc@gmail.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

@@ -1,16 +1,16 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.models import Group as AuthGroup  # Import Django's Group model
-from django.contrib.auth.models import Permission as AuthPermission  # Import Django's Permission model
+from django.contrib.auth.models import Group as AuthGroup  
+from django.contrib.auth.models import Permission as AuthPermission 
 
 
 class CustomUser(AbstractUser):
     is_farmer = models.BooleanField(default=False)
     is_buyer = models.BooleanField(default=False)
     is_guest = models.BooleanField(default=False)
-    groups = models.ManyToManyField(AuthGroup, related_name='customuser_set', blank=True)  # Specify a unique related_name
-    user_permissions = models.ManyToManyField(AuthPermission, related_name='customuser_set', blank=True)  # Specify a unique related_name
+    groups = models.ManyToManyField(AuthGroup, related_name='customuser_set', blank=True)  
+    user_permissions = models.ManyToManyField(AuthPermission, related_name='customuser_set', blank=True)  
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'

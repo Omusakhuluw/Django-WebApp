@@ -66,6 +66,8 @@ urlpatterns = [
     path('buyer/', views.buyer_dashboard, name='buyer_dashboard'),
     path('guest/', views.guest_dashboard, name='guest_dashboard'),
     
+    
+    
 
 ]
 

@@ -390,24 +390,24 @@
             <!-- Product Items Start -->
             <div class="row pb-2">
                 {% for offer in latest_offers %}
-                <div class="col-lg-3 col-md-3 col-sm-4 col-6 pb-4"> <!-- Adjust column widths -->
+                <div class="col-lg-3 col-md-3 col-sm-4 col-6 pb-4"> 
                     <div class="product-item bg-light mb-8 rounded">
-                        <div class="product-img position-relative overflow-hidden" style="height: 150px;"> <!-- Set a fixed height for the image container -->
-                            <img class="img-fluid w-100 rounded-top" src="{{ offer.image1.url }}" alt="{{ offer.name }}" style="object-fit: cover; height: 100%;"> <!-- Use object-fit: cover; for autozooming -->
+                        <div class="product-img position-relative overflow-hidden" style="height: 150px;"> 
+                            <img class="img-fluid w-100 rounded-top" src="{{ offer.image1.url }}" alt="{{ offer.name }}" style="object-fit: cover; height: 100%;"> 
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="{% url 'offer_detail' offer.id %}"><i class="fa fa-search"></i></a> <!-- Use correct URL tag and offer.id -->
+                                <a class="btn btn-outline-dark btn-square" href="{% url 'offer_detail' offer.id %}"><i class="fa fa-search"></i></a> 
                             </div>
                         </div>
                         <div class="text-center py-1">
-                            <a class="h5 text-decoration-none text-truncate" href="{% url 'offer_detail' offer.id %}" style="color: black; font-size: 16px;">{{ offer.name }}</a><br> <!-- Adjusted font size here -->
-                            <div class="d-flex align-items-center justify-content-center mt-1"> <!-- Adjusted margin top here -->
+                            <a class="h5 text-decoration-none text-truncate" href="{% url 'offer_detail' offer.id %}" style="color: black; font-size: 16px;">{{ offer.name }}</a><br>
+                            <div class="d-flex align-items-center justify-content-center mt-1"> 
                                 <h6 class="text-muted ml-6">Ksh.<del style="color: red;">{{ offer.initial_price }} </h6></del><a style="font-size: 14px;color: green;"><h6>  {{ offer.current_price }}</h5>
                             </div>
                             <div>
-                                <h6 style="color: blue; font-size: 14px;"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ offer.location }}</h6> <!-- Adjusted font size here -->
+                                <h6 style="color: blue; font-size: 14px;"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ offer.location }}</h6> 
                             </div>
                         </div>
                     </div>

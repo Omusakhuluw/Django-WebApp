@@ -48,4 +48,6 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('login/', user_login, name='user_login'),
     
+    
+    
 ]

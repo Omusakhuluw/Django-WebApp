@@ -263,7 +263,10 @@ def seedlings(request):
     seedlings_products = Product.objects.filter(category=seedlings_category)
     return render(request, 'seedlings.html', {'products': seedlings_products})
 
-
+def fisheries(request):
+    fisheries_category = get_object_or_404(Category, name='Fisheries')
+    fisheries_products = Product.objects.filter(category=fisheries_category)
+    return render(request, 'fisheries.html', {'products': fisheries_products})
 
 def fetch_products(request):
     categories = request.GET.getlist('categories[]')
@@ -314,6 +317,11 @@ def feeds(request):
     feeds_category = get_object_or_404(Category, name='Feeds')
     feeds_products = Product.objects.filter(category=feeds_category)
     return render(request, 'feeds.html', {'products': feeds_products})
+
+def fisheries(request):
+    fisheries_category = get_object_or_404(Category, name='Fisheries')
+    fisheries_products = Product.objects.filter(category=fisheries_category)
+    return render(request, 'fisheries.html', {'products': fisheries_products})
 
 
 def seedlings(request):
@@ -389,3 +397,7 @@ def exports(request):
 #def exports(request):
     exports = Order.objects.all()
     return render(request, 'exports.html', {'exports': exports})
+
+
+
+
