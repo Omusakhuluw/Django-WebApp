@@ -20,21 +20,22 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <!-- <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
-    <link href="{% static 'SokoApp/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet"> -->
+
+    <!-- Include Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Include jQuery (required by Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Include Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.css' %}" >
     <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.min.css' %}" >
     
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
     <!-- Contact Javascript File -->
@@ -42,11 +43,11 @@
     <script src="{% static 'SokoApp/mail/contact.js' %}"></script>
 
     <!-- Template Javascript -->
-    <script src="{% static 'SokoApp/main.js' %}"></script>
     <script src="{% static 'SokoApp/lib/owlcarousel/owl.carousel.min.js' %}"></script>
-
+    <script src="{% static 'SokoApp/main.js' %}"></script>
+    
     <!-- Include animate.min.css -->
-    <link href="{% static 'SokoApp/animate.min.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'animate.min.css' %}" rel="stylesheet">
 
     <!-- Include easing.js -->
     <script src="{% static 'SokoApp/lib/easing/easing.js' %}"></script>
@@ -75,6 +76,10 @@
             margin-right: 20px; /* Adjust spacing between images */
         }
 
+        .container-fluid {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -88,17 +93,26 @@
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         h1, h2, h3, h4, h5, h6 {
             color: green;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         p {
-            color: black;
+            
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        .no-underline {
+            text-decoration: none;
+        }
+        .no-underline:hover {
+            text-decoration: none;
+            color: orange;
+        }
 
-</style>
+    </style>
 
     
 </head>
@@ -109,25 +123,26 @@
         <div class="row bg-success py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">About</b></a>
-                    <a class="text-body mr-3" href="{% url 'contact' %}"; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact Us</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Help</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">FAQs</b></a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'about' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">About</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">Contact Us</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">Help</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">FAQs</b>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button"><a href="{% url 'login' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: green;">Log in</a></button>
-                            <button class="dropdown-item" type="button"><a href="{% url 'login' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: green;">Sign up</a></button>
-                        </div>
+                        <a href="{% url 'login' %}" class="btn btn-sm btn-light" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black; text-decoration: none;">LOG IN</a>
                     </div>
+                    
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">KSH</button>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -180,7 +195,7 @@
             </div>
             <div class="col-lg-4 col-6 text-right">
                 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="m-0">Customer Service</p>
-                <h5 class="m-0"; style="color: green; font-family:'Times New Roman', Times, serif;"><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> 
+                <h5 class="m-0"; style="color: green; font-family:'Times New Roman', Times, serif;"><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> <!--<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p> -->
             </div>
         </div>
     </div>
@@ -197,6 +212,53 @@
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
+                        <div class="nav-item dropdown dropright">
+                            <a href="{% url 'fisheries' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Fish <i class="fa fa-angle-right float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Tilapia </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Nile Perch </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Tuna (Yellowfin Tuna, Skipjack Tuna) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Snapper (Red Snapper, Mangrove Snapper)</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Mackerel (Indian Mackerel, Spanish Mackerel)</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Sardines</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Barracuda</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Grouper (Coral Grouper, Malabar Grouper)</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Catfish</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Emperor Fish</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Trevally </a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="{% url 'fisheries' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Crustaceans & Mollusks <i class="fa fa-angle-right float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Prawns (Kamba) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Crabs (Kaa) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Lobsters (Kamba wa Bahari) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Octopus (Pweza) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Squid (Ngisi) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Clams (Kambale) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Oysters (Mchemo) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Mussels (Mabuyu) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Scallops (Kitomondo) </a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown dropright">
+                            <a href="{% url 'fisheries' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Shellfish & Other Seafood <i class="fa fa-angle-right float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Sea Urchins (Mnyoo) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Abalone (Sombi) </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Cockles </a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Razor Clams</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Periwinkles</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Sea Cucumbers</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Saga</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Jellyfish</a>
+                                <a href="{% url 'fisheries' %}" class="dropdown-item">Sea Vegetables</a>
+                            </div>
+                        </div>
+
                         <div class="nav-item dropdown dropright">
                             <a href="{% url 'vegetables' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Vegetables <i class="fa fa-angle-right float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
@@ -416,22 +478,46 @@
 
 
     <!-- Breadcrumb Start -->
-    <div class="container-fluid" >
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12 ">
+            <div class="col-12 d-flex justify-content-center">
                 <nav class="mb-30 text-success">
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'fisheries' %}" style="color: white;">Fisheries</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'vegetables' %}" style="color: white;" >Vegetables</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'fruits' %}" style="color: white;">Fruits</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'potatoes' %}" style="color: white;" >Potatoes</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'cereals' %}" style="color: white;">Cereals</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'onions' %}" style="color: white;">Onions</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'spices' %}" style="color: white;">Spices</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'birds' %}" style="color: white;">Birds</a></button>
-                    <button type="button" class="btn btn-primary px-3 mr-1"><a href="{% url 'feeds' %}" style="color: green;">Feeds</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'seedlings' %}" style="color: white;">Seedlings</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'farm_inputs' %}" style="color: white;">F.Inputs</a></button>
-                    <button type="button" class="btn btn-success px-3 mr-1"><a href="{% url 'farm_machinery' %}" style="color: white;">F.Machinery</a></button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'fisheries' %}" style="color: white;">Fisheries</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'vegetables' %}" style="color: white;">Vegetables</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'fruits' %}" style="color: white;">Fruits</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'potatoes' %}" style="color: white;">Potatoes</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'cereals' %}" style="color: white;">Cereals</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'onions' %}" style="color: white;">Onions</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'spices' %}" style="color: white;">Spices</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'birds' %}" style="color: white;">Birds</a>
+                    </button>
+                    <button type="button" class="btn btn-primary px-3 mr-1">
+                        <a href="{% url 'feeds' %}" style="color: green;">Feeds</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'seedlings' %}" style="color: white;">Seedlings</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'farm_inputs' %}" style="color: white;">F.Inputs</a>
+                    </button>
+                    <button type="button" class="btn btn-success px-3 mr-1">
+                        <a href="{% url 'farm_machinery' %}" style="color: white;">F.Machinery</a>
+                    </button>
                 </nav>
             </div>
         </div>

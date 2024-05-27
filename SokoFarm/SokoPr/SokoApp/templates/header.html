@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SokoFarm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="SokoFarm, Soko, Farm, online, fresh, cereals, fruits, Francis Wekesa, kilifi, PLP">
+    <meta name="description" content="Linking Farmers with end Consumers" >
+    <meta name="Author" content="Francis Wekesa, Omusakhulu">
+
+    <!-- Favicon-->
+    <link rel="icon" type="img/x-icon" href="{% static 'favicon1.png' %}" >
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+
+    <!-- Include Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Include jQuery (required by Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Include Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.min.css' %}" >
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{% static 'SokoApp/mail/jqBootstrapValidation.min.js' %}" ></script>
+    <script src="{% static 'SokoApp/mail/contact.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'SokoApp/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'SokoApp/main.js' %}"></script>
+    
+    <!-- Include animate.min.css -->
+    <link type="text/css" href="{% static 'animate.min.css' %}" rel="stylesheet">
+
+    <!-- Include easing.js -->
+    <script src="{% static 'SokoApp/lib/easing/easing.js' %}"></script>
+
+    <!-- Include easing.min.js -->
+    <script src="{% static 'SokoApp/lib/easing/easing.min.js' %}"></script>
+
+    <style>
+
+        .owl-carousel {
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping to new lines */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+            scrollbar-width: none; /* Hide scrollbar */
+            -ms-overflow-style: none; /* Hide scrollbar on Edge */
+        }
+    
+        .owl-carousel::-webkit-scrollbar {
+            display: none; /* Hide scrollbar on WebKit browsers */
+        }
+    
+        .owl-carousel > div {
+            flex: 0 0 auto; /* Prevent image from stretching */
+            margin-right: 20px; /* Adjust spacing between images */
+        }
+
+        .container-fluid {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: green;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        p {
+            
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .no-underline {
+            text-decoration: none;
+        }
+        .no-underline:hover {
+            text-decoration: none;
+            color: orange;
+        }
+
+    </style>
+
+    
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-success py-1 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center h-100">
+                    <a class="text-body mr-3 no-underline" href="{% url 'about' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">About</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">Contact Us</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">Help</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">FAQs</b>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <div class="btn-group">
+                        <a href="{% url 'login' %}" class="btn btn-sm btn-light" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black; text-decoration: none;">LOG IN</a>
+                    </div>
+                    
+                    <div class="btn-group mx-2">
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">KSH</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button">USH</button>
+                            <button class="dropdown-item" type="button">TSH</button>
+                            <button class="dropdown-item" type="button">FRw</button>
+                            <button class="dropdown-item" type="button">BIF</button>
+                            <button class="dropdown-item" type="button">SSP</button>
+                            <button class="dropdown-item" type="button">USD</button>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button">SWA</button>
+                            <button class="dropdown-item" type="button">FR</button>
+                            <button class="dropdown-item" type="button">KIKUYU</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline-flex align-items-center d-block d-lg-none">
+                    <a href="" class="btn px-0 ml-2">
+                        <i class="fas fa-heart text-dark"></i>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                    </a>
+                    <a href="" class="btn px-0 ml-2">
+                        <i class="fas fa-shopping-cart text-dark"></i>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+            <div class="col-lg-4">
+                <a href="{% url 'home' %}" class="text-decoration-none">
+                    <span class="h1 text-success bg-primary px-2"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Soko</span><span class="h1 text-primary bg-success px-2 ml-n1"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farm</span>
+                </a>
+            </div>
+            <div class="col-lg-4 col-6 text-left">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" placeholder ="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 col-6 text-right">
+                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="m-0">Customer Service</p>
+                <h5 class="m-0"; style="color: green; font-family:'Times New Roman', Times, serif;"><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> <!--<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p> -->
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->

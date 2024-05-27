@@ -104,6 +104,14 @@
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        .no-underline {
+            text-decoration: none;
+        }
+        .no-underline:hover {
+            text-decoration: none;
+            color: orange;
+        }
+
     </style>
 
     
@@ -115,25 +123,26 @@
         <div class="row bg-success py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">About</b></a>
-                    <a class="text-body mr-3" href="{% url 'contact' %}"; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact Us</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Help</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">FAQs</b></a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'about' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">About</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">Contact Us</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">Help</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">FAQs</b>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button"><a href="{% url 'login' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black;">Log in</a></button>
-                            <button class="dropdown-item" type="button"><a href="{% url 'register' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black;">Sign up</a></button>
-                        </div>
+                        <a href="{% url 'login' %}" class="btn btn-sm btn-light" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black; text-decoration: none;">LOG IN</a>
                     </div>
+                    
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">KSH</button>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -606,8 +615,8 @@
 
             <!--Updates Section-->   
             <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="col-lg-4">
-                <a href="{% url 'offers' %}" >
-                    <span class="h3 text-white bg-success px-2 ml-n1"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Today's Offers!</span><br><br>
+                <a href="{% url 'offers' %}" class="no-underline">
+                    <span class="h3 text-white bg-success px-2 ml-n1" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Today's Offers!</span><br><br>
                 </a>
                 <div class="product-offer mb-30" style="height: 171px;">
                     <img class="img-fluid" src="{% static 'SokoApp/hoho.jpg' %}" alt="Special offer: Hoho">
@@ -1370,7 +1379,7 @@
                             <a class="text-secondary mb-2" href="{% url 'vegetables' %}"><i class="fa fa-angle-right mr-2"></i>Vegetables</a>
                             <a class="text-secondary mb-2" href="{% url 'fruits' %}"><i class="fa fa-angle-right mr-2"></i>Fruits</a>
                             <a class="text-secondary mb-2" href="{% url 'potatoes' %}"><i class="fa fa-angle-right mr-2"></i>Potatoes</a>
-                            <a class="text-secondary mb-2" href="{% url 'animals' %}"><i class="fa fa-angle-right mr-2"></i>Animals</a>
+                            <a class="text-secondary mb-2" href="{% url 'fisheries' %}"><i class="fa fa-angle-right mr-2"></i>Fisheries</a>
                             <a class="text-secondary mb-2" href="{% url 'birds' %}"><i class="fa fa-angle-right mr-2"></i>Birds</a>
                             <a class="text-secondary" href="{% url 'cereals' %}"><i class="fa fa-angle-right mr-2"></i>Cereals</a>
                         </div>

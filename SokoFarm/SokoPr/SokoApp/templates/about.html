@@ -6,7 +6,7 @@
     <title>SokoFarm</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="SokoFarm, Soko, Farm, online, fresh, cereals, fruits, Francis Wekesa, kilifi, PLP, Kilifi County">
+    <meta name="keywords" content="SokoFarm, Soko, Farm, online, fresh, cereals, fruits, Francis Wekesa, kilifi, PLP">
     <meta name="description" content="Linking Farmers with end Consumers" >
     <meta name="Author" content="Francis Wekesa, Omusakhulu">
 
@@ -20,15 +20,22 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Include Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Include jQuery (required by Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Include Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.css' %}" >
     <link rel="stylesheet" type="text/css" href="{% static 'SokoApp/style.min.css' %}" >
     
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
     <!-- Contact Javascript File -->
@@ -36,11 +43,11 @@
     <script src="{% static 'SokoApp/mail/contact.js' %}"></script>
 
     <!-- Template Javascript -->
-    <script src="{% static 'SokoApp/main.js' %}"></script>
     <script src="{% static 'SokoApp/lib/owlcarousel/owl.carousel.min.js' %}"></script>
-
+    <script src="{% static 'SokoApp/main.js' %}"></script>
+    
     <!-- Include animate.min.css -->
-    <link href="{% static 'SokoApp/animate.min.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'animate.min.css' %}" rel="stylesheet">
 
     <!-- Include easing.js -->
     <script src="{% static 'SokoApp/lib/easing/easing.js' %}"></script>
@@ -69,6 +76,10 @@
             margin-right: 20px; /* Adjust spacing between images */
         }
 
+        .container-fluid {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -82,16 +93,24 @@
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         h1, h2, h3, h4, h5, h6 {
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: green;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         p {
-            color: black;
+            
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        .no-underline {
+            text-decoration: none;
+        }
+        .no-underline:hover {
+            text-decoration: none;
+            color: orange;
+        }
 
     </style>
 
@@ -104,25 +123,26 @@
         <div class="row bg-success py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3 {% if request.path == '/about/' %} text-primary{% endif %}" href="{% url 'about' %}"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">About</b></a>
-                    <a class="text-body mr-3" href="{% url 'contact' %}"; style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Contact Us</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">Help</b></a>
-                    <a style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="text-body mr-3" href="{% url 'contact' %}">
-                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'"; style="color: white;">FAQs</b></a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'about' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='orange'" style="color: orange;">About</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">Contact Us</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">Help</b>
+                    </a>
+                    <a class="text-body mr-3 no-underline" href="{% url 'contact' %}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white;">
+                        <b onmouseover="this.style.color='#FFD333'" onmouseout="this.style.color='white'" style="color: white;">FAQs</b>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"; style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";>My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button"><a href="{% url 'login' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: green;">Log in</a></button>
-                            <button class="dropdown-item" type="button"><a href="{% url 'login' %}"; style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: green;">Sign up</a></button>
-                        </div>
+                        <a href="{% url 'login' %}" class="btn btn-sm btn-light" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black; text-decoration: none;">LOG IN</a>
                     </div>
+                    
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">KSH</button>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -175,7 +195,7 @@
             </div>
             <div class="col-lg-4 col-6 text-right">
                 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"; class="m-0">Customer Service</p>
-                <h5 class="m-0"; style="color: green; font-family:'Times New Roman', Times, serif "><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> <!--<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p> -->
+                <h5 class="m-0"; style="color: green; font-family:'Times New Roman', Times, serif;"><i class="fa fa-phone-alt text-success mr-3"></i>(+254) 722 568 920</h5> <!--<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+254) 722 568 920</p> -->
             </div>
         </div>
     </div>
@@ -457,16 +477,16 @@
     <div class="container max-width: 600px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"; style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: justify ;">
         <h2 style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: center; text-decoration: underline;"> About Us <i class="fas fa-handshake"></i></h2>
         
-            <p>
+            <p style="color: black;">
                 SokoFarm is a platform that empowers farmers and connects them directly with consumers. It aims to streamline the agricultural supply 
                 chain by eliminating middlemen and brokers, ensuring fair prices for farmers and affordable products for consumers. SokoFarm addresses 
                 challenges faced by farmers in accessing markets and selling their produce, such as wastage and financial insecurity. 
             </p> 
-            <p>Farmers can create profiles, list their products, and connect directly with consumers in their local communities. The platform provides 
+            <p style="color: black;">Farmers can create profiles, list their products, and connect directly with consumers in their local communities. The platform provides 
                 tools to help farmers manage inventory, track sales, and build relationships with customers. 
             </p>
 
-            <p>For consumers, SokoFarm offers a convenient way to discover and purchase farm-fresh products directly from local producers. The platform's 
+            <p style="color: black;">For consumers, SokoFarm offers a convenient way to discover and purchase farm-fresh products directly from local producers. The platform's 
                 user-friendly interface and secure payment system make shopping simple, safe, and reliable. Together, SokoFarm aims to support farmers, 
                 strengthen local economies, and ensure a steady supply of fresh, nutritious food for all.
             </p>
