@@ -482,99 +482,44 @@
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
                 <nav class="mb-30 text-success">
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'fisheries' %}" style="color: white;">Fisheries</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'vegetables' %}" style="color: white;">Vegetables</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'fruits' %}" style="color: white;">Fruits</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'potatoes' %}" style="color: white;">Potatoes</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'cereals' %}" style="color: white;">Cereals</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'onions' %}" style="color: white;">Onions</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'spices' %}" style="color: white;">Spices</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'birds' %}" style="color: white;">Birds</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'feeds' %}" style="color: white;">Feeds</a>
-                    </button>
-                    <button type="button" class="btn btn-primary px-3 mr-1">
-                        <a href="{% url 'seedlings' %}" style="color: green;">Seedlings</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'farm_inputs' %}" style="color: white;">F.Inputs</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'farm_machinery' %}" style="color: white;">F.Machinery</a>
-                    </button>
+                    <a href="{% url 'fisheries' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">Fisheries</button>
+                    </a>
+                    <a href="{% url 'vegetables' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">Vegetables</button>
+                    </a>
+                    <a href="{% url 'fruits' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">Fruits</button>
+                    </a>
+                    <a href="{% url 'potatoes' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">Potatoes</button>
+                    </a>
+                    <a href="{% url 'cereals' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">Cereals</button>
+                    </a>
+                    <a href="{% url 'onions' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">Onions</button>
+                    </a>
+                    <a href="{% url 'spices' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">Spices</button>
+                    </a>
+                    <a href="{% url 'birds' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">Birds</button>
+                    </a>
+                    <a href="{% url 'feeds' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">Feeds</button>
+                    </a>
+                    <a href="{% url 'seedlings' %}">
+                        <button type="button" class="btn btn-primary px-3 mr-1" style="color: green;">Seedlings</button>
+                    </a>
+                    <a href="{% url 'farm_inputs' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">F.Inputs</button>
+                    </a>
+                    <a href="{% url 'farm_machinery' %}">
+                        <button type="button" class="btn btn-success px-3 mr-1" style="color: white;">F.Machinery</button>
+                    </a>
                 </nav>
             </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
-
-
-    <!-- Shop Start -->
-    <div class="container-fluid" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-        <div class="row px-xl-5">
-            <!-- Shop Product Start -->
-            <div class="col-lg-12">
-                <div class="row pb-0"> <!-- Adjusted padding here -->
-                    <!-- Product Items Start -->
-                    {% for product in products %}
-                    <div class="col-lg-3 col-md-4 col-sm-6 pb-2"> <!-- Adjust column sizes and spacing as needed -->
-                        <div class="product-item bg-light mb-2 rounded" style="padding: 0;">
-                            <div class="product-img position-relative overflow-hidden" style="max-height: 200px; overflow: hidden;">
-                                <img class="img-fluid rounded-top" src="{{ product.image1.url }}" alt="{{ product.name }}" style="object-fit: cover; width: 100%; height: 200px;">
-                                <div class="product-action">
-                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                    <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center pt-2 pb-1">
-                                <a class="h6 text-decoration-none text-truncate" href="{% url 'detail' product.id %}" style="color: black;">{{ product.name }}</a><br>
-                                <div class="d-flex align-items-center justify-content-center mt-1">
-                                    <h5>Ksh.{{ product.price }}</h5><h6 class="text-muted ml-1"><!--<del>Ksh.{{ product.price }}</del></h6> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:4 and not forloop.last %}
-                </div>
-                <div class="row pb-0"> <!-- Adjusted padding here -->
-                    {% endif %}
-                    {% endfor %}
-                    <!-- Product Items End -->
-                </div>
-
-                <!-- Pagination Start -->
-                <div class="col-12">
-                    <nav>
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- Pagination End -->
-            </div>
-            <!-- Shop Product End -->
         </div>
     </div>
     <!-- Shop End -->
