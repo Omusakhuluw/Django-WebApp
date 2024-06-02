@@ -112,6 +112,21 @@
             color: orange;
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
     </style>
 
     
@@ -477,81 +492,105 @@
     <!-- Navbar End -->
 
 
-    <!-- Breadcrumb Start -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <nav class="mb-25 text-success">
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'fisheries' %}" style="color: white;">Fisheries</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'vegetables' %}" style="color: white;">Vegetables</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'fruits' %}" style="color: white;">Fruits</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'potatoes' %}" style="color: white;">Potatoes</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'cereals' %}" style="color: white;">Cereals</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'onions' %}" style="color: white;">Onions</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'spices' %}" style="color: white;">Spices</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'birds' %}" style="color: white;">Birds</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'feeds' %}" style="color: white;">Feeds</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'seedlings' %}" style="color: white;">Seedlings</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'farm_inputs' %}" style="color: white;">F.Inputs</a>
-                    </button>
-                    <button type="button" class="btn btn-success px-3 mr-1">
-                        <a href="{% url 'farm_machinery' %}" style="color: white;">F.Machinery</a>
-                    </button>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
-
-
     <div class="container mt-3" style="max-width: calc(100% - 30px); margin: 10px auto; padding: 10px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); color: black; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify;">
-        <h3 style="text-align: center;"> Orders </h3> <hr>
-
-        <ol style="padding: 50; margin-left: 10px; margin-right: 10px ">
-            {% for order in orders %}
-            <li class="text-align: justify;" > {{order.quantity}} of <b>{{order.name}}</b> - {{order.variety}} variety. I need the good(s) at: <b>{{order.location}}</b> in {{order.timeframe}} time. Price range: Ksh.{{order.price_range}}. Contact me via: {{order.contact1}} or {{order.contact2}} </li><br>
-            {% endfor %}
-        </ol><br>
-            
-                    
-                    <div class="col-12 mt-5 ">
-                        <nav>
-                          <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                          </ul>
-                        </nav>
-                    </div>
+        <h3 style="text-align: center;">Orders</h3>
+        <hr style="border: .5px solid orange; margin-top: 5px; margin-bottom: 2px;"><br>
+    
+        <!-- Breadcrumb Start -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <nav class="mb-0 breadcrumbs">
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'fisheries' %}" style="color: white;">Fisheries</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'vegetables' %}" style="color: white;">Vegetables</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'fruits' %}" style="color: white;">Fruits</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'potatoes' %}" style="color: white;">Potatoes</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'cereals' %}" style="color: white;">Cereals</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'onions' %}" style="color: white;">Onions</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'spices' %}" style="color: white;">Spices</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'birds' %}" style="color: white;">Birds</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'feeds' %}" style="color: white;">Feeds</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'seedlings' %}" style="color: white;">Seedlings</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5 mr-1">
+                            <a href="{% url 'farm_inputs' %}" style="color: white;">F. Inputs</a>
+                        </button>
+                        <button type="button" class="btn btn-success px-2.5">
+                            <a href="{% url 'farm_machinery' %}" style="color: white;">F. Machinery</a>
+                        </button>
+                    </nav>
                 </div>
             </div>
-            <!-- Shop Product End -->
+        </div><br>
+        <!-- <hr style="border: .5px solid orange; margin-top: 5px; margin-bottom: 2px;"><br> -->
+        <!-- Breadcrumb End -->
+
+        <table style="width: 100%; border-collapse: collapse; margin-left: 10px; margin-right: 10px;">
+            <tr>
+                <th>S/No.</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Variety</th>
+                <th>Location</th>
+                <th>Timeframe</th>
+                <th>Price Range</th>
+                <th>Contact 1</th>
+                <th>Contact 2</th>
+            </tr>
+            {% for order in orders %}
+            <tr>
+                <td>{{ created_at }}</td>
+                <td>{{ order.name }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>{{ order.variety }}</td>
+                <td>{{ order.location }}</td>
+                <td>{{ order.timeframe }}</td>
+                <td>Ksh.{{ order.price_range }}</td>
+                <td>{{ order.contact1 }}</td>
+                <td>{{ order.contact2 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+                    
+        <div class="col-12 mt-5">
+            <nav>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav><br>
         </div>
+    
     </div>
     <!-- Shop End -->
+    
+    <style>
+        .breadcrumbs button {
+            font-size: 15px; /* Adjust font size for breadcrumbs */
+        }
+    </style>
 
 
     <!-- Footer Start -->

@@ -3,7 +3,41 @@ from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import Group as AuthGroup  
 from django.contrib.auth.models import Permission as AuthPermission 
+from django.contrib.auth.models import User
 
+
+class ContactMessage(models.Model):
+    SUBJECT_CHOICES = [
+        ('Enquiry', 'Enquiry'),
+        ('Complaint', 'Complaint'),
+        ('Complement', 'Complement'),
+        ('Refund', 'Refund'),
+        
+    ]
+     
+    def __str__(self):
+        return self.name
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    location = models.CharField(max_length=100)
+    subject = models.CharField(max_length=100, choices=SUBJECT_CHOICES)
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.name} - {self.message[:20]}'
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.subject
 
 class CustomUser(AbstractUser):
     is_farmer = models.BooleanField(default=False)

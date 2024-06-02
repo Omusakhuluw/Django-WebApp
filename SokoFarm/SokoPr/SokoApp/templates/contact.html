@@ -474,21 +474,53 @@
     <!-- Navbar End -->
 
 
-    <!-- Breadcrumb Start -->
-    <div class="container-fluid">
-        <div class="row px-xl-5">
-            <div class="col-12">
-                <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="{% url 'home' %}">Home</a>
-                    <span class="breadcrumb-item active">Contact</span>
-                </nav>
-            </div>
-        </div>
+    <!-- Contact Start -->
+    <div class="container max-width: 800px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"; style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: justify ;">
+        <h2 style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: center;"><b>Contact Us <i class="fas fa-envelope"></i></b></h2>
+        <hr style="border: .5px solid orange; margin-top: 5px; margin-bottom: 10px;">
+        <form method="post" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: green;">
+            {% csrf_token %}
+                <div class="bg-light p-30 mb-3" style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif";>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            {{ form.as_p }}
+                        </div>
+                    </div>
+                </div>
+            <button class="btn btn-block btn-success text font-weight-bold py-2" type="submit" value="submit">Send Message  <i class = "fas fa-paper-plane"></i></button>
+        </form>
     </div>
-    <!-- Breadcrumb End -->
-
 
     <!-- Contact Start -->
+      <!--  <div class="container">
+            <h2>Contact Us</h2>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                    <div class="text-danger">{{ form.name.errors }}</div>
+                </div>
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    <div class="text-danger">{{ form.email.errors }}</div>
+                </div>
+                <div class="form-group">
+                    {{ form.subject.label_tag }}
+                    {{ form.subject }}
+                    <div class="text-danger">{{ form.subject.errors }}</div>
+                </div>
+                <div class="form-group">
+                    {{ form.message.label_tag }}
+                    {{ form.message }}
+                    <div class="text-danger">{{ form.message.errors }}</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div> -->
+
+    <!--
     <div class="container-fluid"; style="color: green; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";>
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4 text-success"><span class="bg-secondary pr-3"> Contact Us</span></h2>
         <div class="row px-xl-5">
@@ -536,7 +568,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Contact End -->
 
 

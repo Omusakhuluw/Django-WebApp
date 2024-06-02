@@ -1,5 +1,7 @@
 from django import forms
-from .models import Product, Category, Order, Offer, Export, CustomUser
+from .models import Product, Category, Order, Offer, Export, CustomUser, Contact
+from .models import ContactMessage
+
 
 
 class UserRegistrationForm(forms.ModelForm):
@@ -56,3 +58,20 @@ class OfferForm(forms.ModelForm):
         fields = ['name', 'category', 'subcategory', 'image1', 'image2', 'image3', 'quantity', 'initial_price', 'current_price', 'purchase_timeframe',
                   'location', 'description', 'additional_info', 'contacts',]
         exclude = ['created_at']
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100, required=True)
+    email = forms.EmailField(required=True)
+    subject = forms.CharField(max_length=100, required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)
+
+"""class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'subject', 'message']"""
+
+
+class ContactMessageForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['name', 'email', 'location', 'subject', 'message', ]

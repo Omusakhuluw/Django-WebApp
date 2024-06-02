@@ -475,18 +475,21 @@
 
     <!--Create Order Otart-->
 
-    <div class="container mt-3" style="max-width: calc(100% - 50px); margin: 10px auto; padding: 10px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); color: black; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: justify;">
-        <h2 style="text-align: center;"> Create an Order. </h2><hr>
+    <div class="container max-width: 600px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"; style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: justify ;">
+        <h2 style="text-align: center;">Create Orders </h2>
+        <hr style="border: .5px solid orange; margin-top: 5px; margin-bottom: 2px;">
+
 
             <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="bg-light p-30 mb-5" style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif";>
+            <div class="bg-light p-30 mb-1" style="color: green ; font-family:Verdana, Geneva, Tahoma, sans-serif";>
                 <div class="row">
                     <div class="col-md-12 form-group">
 
                         {{ form.as_p }}
-                        <button type="submit"; style="background-color: green; color: white;">Create an Order</button>
+                        
                     </div>
+                    <button class="btn btn-block btn-success text font-weight-bold py-2" type="submit" value="submit">Initiate Order!  <i class = "fas fa-paper-plane"></i></button>
                 </div>
             </div>
         </form>

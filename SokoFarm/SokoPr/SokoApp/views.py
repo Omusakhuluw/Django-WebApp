@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, JsonResponse
-from .forms import ProductForm, OrderForm, Order, ExportForm, OfferForm, Offer, Export
-from .models import Product, Category, Offer
+from .forms import ProductForm, OrderForm, Order, ExportForm, OfferForm, Offer, Export, ContactForm
+from .models import Product, Category, Offer, Contact
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
 from .models import CustomUser
@@ -10,7 +10,65 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import UserRegistrationForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from .forms import ContactForm
+from django.core.mail import send_mail, BadHeaderError
+from .forms import ContactMessageForm
+from .models import ContactMessage
+import logging
 
+logger = logging.getLogger(__name__)
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactMessageForm(request.POST)
+        if form.is_valid():
+            contact_message = form.save(commit=False)
+            if request.user.is_authenticated:
+                contact_message.user = request.user
+            contact_message.save()
+            return redirect('success')
+    else:
+        form = ContactMessageForm()
+
+    return render(request, 'contact.html', {'form': form})
+
+def contact_success_view(request):
+    return render(request, 'success.html')
+
+
+
+"""def contact_view(request):
+    try:
+        subject = "Your subject"
+        message = "Your message"
+        from_email = "omusakhuluw@gmail.com"
+        send_mail(subject, message, from_email, ['recipient-email@example.com'])
+        return HttpResponse("Email sent successfully")
+    except Exception as e:
+        logger.error(f"An error occurred: {e}")
+        return HttpResponse(f"An error occurred: {e}")"""
+
+
+
+""" def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            from_email = form.cleaned_data['email']
+            try:
+                send_mail(subject, message, from_email, ['your-email@example.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('success')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
+def success_view(request):
+    return HttpResponse('Success! Thank you for your message.') """
 
 
 def user_login(request):

@@ -20,6 +20,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from SokoApp import views
 
+urlpatterns = [
+    
+]
+
 
 urlpatterns = [
     path('', include('SokoApp.urls')),
@@ -68,8 +72,6 @@ urlpatterns = [
     path('fisheries/', views.fisheries, name='fisheries'),
     
     
-    
-
 ]
 
 if settings.DEBUG:
