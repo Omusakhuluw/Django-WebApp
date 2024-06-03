@@ -628,32 +628,32 @@
                     <div class="border-bottom">
                         <h6 class="mb-3">Products</h6>
                         <div class="d-flex justify-content-between">
-                            <p>***</p>
-                            <p>Ksh.***</p>
+                            <p>Product 1</p>
+                            <p>Ksh.100.00</p>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p>***</p>
-                            <p>Ksh.***</p>
+                            <p>Product 2</p>
+                            <p>Ksh.200.00</p>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p>***</p>
-                            <p>Ksh.***</p>
+                            <p>Product 3</p>
+                            <p>Ksh.300.00</p>
                         </div>
                     </div>
                     <div class="border-bottom pt-3 pb-2">
                         <div class="d-flex justify-content-between mb-3">
                             <h6>Subtotal</h6>
-                            <h6>Ksh.***</h6>
+                            <h6 id="checkout-subtotal-price">Ksh.***</h6>
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">Ksh.***</h6>
+                            <h6 class="font-weight-medium" id="checkout-shipping-price">Ksh.50.00</h6>
                         </div>
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total</h5>
-                            <h5>Ksh.***</h5>
+                            <h5 id="checkout-total-price">Ksh.***</h5>
                         </div>
                     </div>
                 </div>
@@ -688,9 +688,25 @@
                     </div>
                 </div>
             </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Retrieve total price from local storage
+                    const totalPrice = localStorage.getItem('totalPrice');
+                    
+                    if (totalPrice) {
+                        // Update the checkout page with the total price
+                        document.getElementById('checkout-total-price').textContent = 'Ksh.' + totalPrice;
+                        
+                        // Calculate and update subtotal and shipping if necessary
+                        const shippingPrice = parseFloat(document.getElementById('checkout-shipping-price').textContent.split('Ksh.')[1]);
+                        const subtotal = parseFloat(totalPrice) - shippingPrice;
+                        document.getElementById('checkout-subtotal-price').textContent = 'Ksh.' + subtotal.toFixed(2);
+                    }
+                });
+            </script>
         </div>
     </div>
-    <!-- Checkout End -->
 
 
    <!-- Footer Start -->

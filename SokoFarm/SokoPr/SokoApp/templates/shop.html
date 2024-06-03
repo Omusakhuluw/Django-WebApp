@@ -697,7 +697,12 @@
                             <div class="product-img position-relative overflow-hidden" style="height: 200px;"> <!-- Set a fixed height for the image container -->
                                 <img class="img-fluid w-100 rounded-top" src="{{ product.image1.url }}" alt="{{ product.name }}" style="object-fit: cover; height: 100%;"> <!-- Use object-fit: cover; for autozooming -->
                                 <div class="product-action">
-                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square add-to-cart" href="#" 
+                                        data-product-id="{{ product.id }}" 
+                                        data-product-name="{{ product.name }}" 
+                                        data-product-price="{{ product.price }}">
+                                            <i class="fa fa-shopping-cart"></i>
+                                    </a>
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
@@ -733,6 +738,8 @@
             </div>
             <!-- Shop Product End -->
 
+            
+
                 <!-- Pagination Start -->
                 <div class="col-12 mb-30">
                     <nav>
@@ -754,6 +761,56 @@
     </div>
 
     <!-- Shop End -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();  // Prevent the default link behavior
+    
+                    const productId = this.getAttribute('data-product-id');
+                    const productName = this.getAttribute('data-product-name');
+                    const productPrice = this.getAttribute('data-product-price');
+    
+                    // Create a form dynamically
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = "{% url 'cart' %}";  // Adjust the URL to your cart page
+    
+                    // Add CSRF token
+                    const csrfToken = '{{ csrf_token }}';  // Ensure this is being rendered by Django
+                    const csrfInput = document.createElement('input');
+                    csrfInput.type = 'hidden';
+                    csrfInput.name = 'csrfmiddlewaretoken';
+                    csrfInput.value = csrfToken;
+                    form.appendChild(csrfInput);
+    
+                    // Create hidden inputs for product data
+                    const inputId = document.createElement('input');
+                    inputId.type = 'hidden';
+                    inputId.name = 'product_id';
+                    inputId.value = productId;
+                    form.appendChild(inputId);
+    
+                    const inputName = document.createElement('input');
+                    inputName.type = 'hidden';
+                    inputName.name = 'product_name';
+                    inputName.value = productName;
+                    form.appendChild(inputName);
+    
+                    const inputPrice = document.createElement('input');
+                    inputPrice.type = 'hidden';
+                    inputPrice.name = 'product_price';
+                    inputPrice.value = productPrice;
+                    form.appendChild(inputPrice);
+    
+                    // Append form to body and submit it
+                    document.body.appendChild(form);
+                    form.submit();
+                });
+            });
+        });
+    </script>
 
 
     <!-- Footer Start -->

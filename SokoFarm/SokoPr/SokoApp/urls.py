@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from .views import upload_product, fetch_products, fisheries, vegetables, fruits, potatoes, onions, spices, cereals, birds, feeds, animals, upload_offers, user_login
-from .views import contact_view, contact_success_view
+from .views import contact_view, contact_success_view, delete_from_cart
 
 
 urlpatterns = [
@@ -52,4 +52,5 @@ urlpatterns = [
     path('contact/', contact_view, name='contact'),
     path('contact/', views.contact_view, name='contact'),
     path('contact/success/', views.contact_success_view, name='success'),
+    path('delete-from-cart/', delete_from_cart, name='delete_from_cart'),
 ]

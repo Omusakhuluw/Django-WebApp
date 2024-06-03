@@ -14,9 +14,37 @@ from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from .forms import ContactMessageForm
 from .models import ContactMessage
+from django.views.decorators.csrf import csrf_protect
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
+import json
 import logging
 
 logger = logging.getLogger(__name__)
+
+@csrf_exempt
+@require_POST
+def delete_from_cart(request):
+    try:
+        data = json.loads(request.body)
+        product_id = data.get('product_id')
+        logger.info(f"Received request to delete product with ID: {product_id}")
+
+        # Logic to delete the item from the cart (this could be from the session, database, etc.)
+        # Assuming a cart stored in session for this example:
+        cart = request.session.get('cart', {})
+        if product_id in cart:
+            del cart[product_id]
+            request.session['cart'] = cart
+            logger.info(f"Product with ID {product_id} deleted successfully.")
+            return JsonResponse({'success': True})
+        else:
+            logger.warning(f"Product with ID {product_id} not found in cart.")
+            return JsonResponse({'success': False})
+    except Exception as e:
+        logger.error(f"Error while trying to delete product: {e}")
+        return JsonResponse({'success': False})
 
 
 def contact_view(request):
@@ -235,8 +263,65 @@ def upload_product(request):
     return render(request, 'upload_product.html', {'form': form})
 
 
+
+@csrf_protect
 def cart(request):
-    return render(request, 'cart.html')
+    if request.method == 'POST':
+        product_id = request.POST.get('product_id')
+        product_name = request.POST.get('product_name')
+        product_price = request.POST.get('product_price')
+
+        # You can store these details in the session or process them as needed
+        # For simplicity, we'll just pass them to the template
+        context = {
+            'product_id': product_id,
+            'product_name': product_name,
+            'product_price': product_price
+        }
+        return render(request, 'cart.html', context)
+    else:
+        # Handle GET requests or redirect if needed
+        return render(request, 'cart.html')
+
+
+def add_to_cart(request):
+    product_id = request.POST.get('product_id')
+    product_name = request.POST.get('product_name')
+    product_price = request.POST.get('product_price')
+
+    cart = request.session.get('cart', {})
+    if product_id in cart:
+        cart[product_id]['quantity'] += 1
+    else:
+        cart[product_id] = {
+            'name': product_name,
+            'price': product_price,
+            'quantity': 1
+        }
+    request.session['cart'] = cart
+    return JsonResponse({'success': True})
+
+
+@csrf_exempt
+@require_POST
+def delete_from_cart(request):
+    try:
+        data = json.loads(request.body)
+        product_id = data.get('product_id')
+        logger.info(f"Received request to delete product with ID: {product_id}")
+
+        cart = request.session.get('cart', {})
+        if product_id in cart:
+            del cart[product_id]
+            request.session['cart'] = cart
+            logger.info(f"Product with ID {product_id} deleted successfully.")
+            return JsonResponse({'success': True})
+        else:
+            logger.warning(f"Product with ID {product_id} not found in cart.")
+            return JsonResponse({'success': False, 'error': 'Product not found in cart'})
+    except Exception as e:
+        logger.error(f"Error while trying to delete product: {e}")
+        return JsonResponse({'success': False, 'error': str(e)})
 
 
 def checkout(request):

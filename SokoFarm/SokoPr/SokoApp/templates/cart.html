@@ -491,52 +491,33 @@
 
 
     <!-- Cart Start -->
-    <div class="container-fluid">
+    <div class="container-fluid" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
         <div class="row px-xl-5">
             <div class="col-lg-8 table-responsive mb-5">
                 <table class="table table-light table-borderless table-hover text-center mb-0">
                     <thead class="thead-dark">
                         <tr>
+                            <th>ID</th>
                             <th>Products</th>
-                            <th>Price</th>
+                            <th>Price (Ksh)</th>
                             <th>Quantity</th>
-                            <th>Total</th>
+                            <th>Total (Ksh)</th>
                             <th>Remove</th>
                         </tr>
                     </thead>
-                    <tbody class="align-middle">
+                    <tbody class="align-middle" style="color: black;">
                         <tr>
-                            <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> ***</td>
-                            <td class="align-middle">Ksh.***</td>
+                            <td class="align-middle"><img src="" alt="" style="width: 50px;">{{ product_id }}</td>
+                            <td class="align-middle">{{ product_name }}</td>
+                            <td class="align-middle"><span class="product-price">{{ product_price }}</span></td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
+                                        <button class="btn btn-sm btn-primary btn-minus">
+                                            <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td> <!--
-                            <td class="align-middle">Ksh.5,000</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-2.jpg" alt="" style="width: 50px;"> Rice</td>
-                            <td class="align-middle">Ksh.5,000</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="1">
+                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center quantity-input" value="1">
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-primary btn-plus">
                                             <i class="fa fa-plus"></i>
@@ -544,75 +525,17 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle">Ksh.5,000</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-3.jpg" alt="" style="width: 50px;"> Rice</td>
-                            <td class="align-middle">Ksh.5,000</td>
+                            <td class="align-middle"><b><span class="total-price">{{ product_price }}</b></span></td>
                             <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                                <button class="btn btn-sm btn-danger delete-item" data-product-id="{{ product_id }}">
+                                    <i class="fa fa-times"></i>
+                                </button>
                             </td>
-                            <td class="align-middle">Ksh.5,000</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
                         </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-4.jpg" alt="" style="width: 50px;"> Rice</td>
-                            <td class="align-middle">Ksh.5,000</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">Ksh.5,000</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><img src="img/product-5.jpg" alt="" style="width: 50px;"> Rice</td>
-                            <td class="align-middle">Ksh.5,000</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">Ksh.5,000</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td> 
-                        </tr>
-                    </tbody>-->
+                    </tbody>
                 </table>
             </div> 
+    
             <div class="col-lg-4">
                 <form class="mb-30" action="">
                     <div class="input-group">
@@ -626,24 +549,107 @@
                 <div class="bg-light p-30 mb-5">
                     <div class="border-bottom pb-2">
                         <div class="d-flex justify-content-between mb-3">
-                            <h6>Subtotal</h6>
-                            <h6>***</h6>
+                            <h6>Subtotal (Ksh)</h6>
+                            <h6 class="align-middle"><span id="subtotal-price">0.00</span></h6>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">***</h6>
+                            <h6 class="font-weight-medium">Shipping (Ksh)</h6>
+                            <h6 class="font-weight-medium" id="shipping-price">0.00</h6>
                         </div>
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
-                            <h5>Total</h5>
-                            <h5>***</h5>
+                            <h5>Total (Ksh)</h5>
+                            <h5 class="align-middle"><span id="total-price">0.00</span></h5>
                         </div>
-                        <a href="{% url 'checkout' %}"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3"> Proceed To Checkout</button></a>
+                        <a href="{% url 'checkout' %}"><button class="btn btn-block btn-success font-weight-bold my-3 py-3"> Proceed To Checkout</button></a>
                     </div>
+                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black;"> *Shipping costs will be discussed over the phone with one of our representatives. </p>
                 </div>
             </div>
         </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.querySelectorAll('.delete-item').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const productId = this.getAttribute('data-product-id');
+                        console.log(`Attempting to delete product with ID: ${productId}`);
+        
+                        fetch("{% url 'delete_from_cart' %}", {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': '{{ csrf_token }}'
+                            },
+                            body: JSON.stringify({ 'product_id': productId })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                console.log(`Product with ID ${productId} deleted successfully.`);
+                                this.closest('tr').remove();
+                                updateSubtotalAndTotal();
+                            } else {
+                                console.error(`Failed to delete the item. Error: ${data.error}`);
+                                alert(`Failed to delete the item. Error: ${data.error}`);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error during fetch:', error);
+                        });
+                    });
+                });
+    
+                document.body.addEventListener('click', function(event) {
+                    if (event.target.closest('.btn-plus')) {
+                        const button = event.target.closest('.btn-plus');
+                        const input = button.closest('.quantity').querySelector('.quantity-input');
+                        let quantity = parseInt(input.value, 10);
+                        input.value = ++quantity;
+                        updateTotalPrice(button);
+                    }
+    
+                    if (event.target.closest('.btn-minus')) {
+                        const button = event.target.closest('.btn-minus');
+                        const input = button.closest('.quantity').querySelector('.quantity-input');
+                        let quantity = parseInt(input.value, 10);
+                        if (quantity > 1) {
+                            input.value = --quantity;
+                            updateTotalPrice(button);
+                        }
+                    }
+                });
+    
+                function updateTotalPrice(button) {
+                    const row = button.closest('tr');
+                    const quantityInput = row.querySelector('.quantity-input');
+                    const quantity = parseInt(quantityInput.value, 10);
+                    const productPrice = parseFloat(row.querySelector('.product-price').textContent);
+                    const totalPriceElement = row.querySelector('.total-price');
+                    const totalPrice = productPrice * quantity;
+                    totalPriceElement.textContent = totalPrice.toFixed(2);
+                    updateSubtotalAndTotal();
+                }
+    
+                function updateSubtotalAndTotal() {
+                    let subtotal = 0;
+                    document.querySelectorAll('tbody .total-price').forEach(element => {
+                        subtotal += parseFloat(element.textContent);
+                    });
+                    document.getElementById('subtotal-price').textContent = subtotal.toFixed(2);
+                    
+                    const shippingPrice = parseFloat(document.getElementById('shipping-price').textContent);
+                    const total = subtotal + shippingPrice;
+                    document.getElementById('total-price').textContent = total.toFixed(2);
+                    
+                    // Save total price to local storage
+                    localStorage.setItem('totalPrice', total.toFixed(2));
+                }
+    
+                updateSubtotalAndTotal();
+            });
+        </script>
     </div>
     <!-- Cart End -->
 

@@ -537,56 +537,6 @@
                     <h5><i class="fa fa-map-marker-alt text-primary mr-2"></i>  {{ product.location }} </h5><br>
                     <h5 class="font-weight-semi-bold mb-4">Price: Ksh.{{ product.price }}</h5>
                     
-                    <!-- <div class="d-flex mb-3">
-                        <strong class="text-dark mr-3">Sizes:</strong>
-                        <form>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-1" name="size">
-                                <label class="custom-control-label" for="size-1">XS</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-2" name="size">
-                                <label class="custom-control-label" for="size-2">S</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-3" name="size">
-                                <label class="custom-control-label" for="size-3">M</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-4" name="size">
-                                <label class="custom-control-label" for="size-4">L</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="size-5" name="size">
-                                <label class="custom-control-label" for="size-5">XL</label>
-                            </div>
-                        </form>
-                    </div> -->
-                    <!-- <div class="d-flex mb-4">
-                        <strong class="text-dark mr-3">Colors:</strong>
-                        <form>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-1" name="color">
-                                <label class="custom-control-label" for="color-1">Black</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-2" name="color">
-                                <label class="custom-control-label" for="color-2">White</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-3" name="color">
-                                <label class="custom-control-label" for="color-3">Red</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-4" name="color">
-                                <label class="custom-control-label" for="color-4">Blue</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" id="color-5" name="color">
-                                <label class="custom-control-label" for="color-5">Green</label>
-                            </div>
-                        </form>
-                    </div> -->
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <div class="input-group quantity mr-3" style="width: 130px;">
                             <div class="input-group-btn">
@@ -594,19 +544,81 @@
                                     <i class="fa fa-minus"></i>
                                 </button>
                             </div>
-                            <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+                            <input type="text" class="form-control bg-secondary border-0 text-center quantity-input" value="1">
                             <div class="input-group-btn">
                                 <button class="btn btn-primary btn-plus">
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </div>
                         </div>
-                        <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button><br>
-
+                        <button class="btn btn-primary px-3 add-to-cart"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button><br>
+                    
                         <div class="ml-3">
-                        <button class="btn btn-primary px-3"><i class="fa fa-phone-alt mr-1"></i> {{ product.contacts }}</button>
+                            <button class="btn btn-primary px-3"><i class="fa fa-phone-alt mr-1"></i> {{ product.contacts }}</button>
                         </div>
                     </div>
+                    
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Event delegation to handle click events on dynamically generated buttons
+                            document.body.addEventListener('click', function(event) {
+                                if (event.target.closest('.btn-plus')) {
+                                    const button = event.target.closest('.btn-plus');
+                                    const input = button.closest('.quantity').querySelector('.quantity-input');
+                                    let quantity = parseInt(input.value, 10);
+                                    input.value = ++quantity;
+                                }
+                    
+                                if (event.target.closest('.btn-minus')) {
+                                    const button = event.target.closest('.btn-minus');
+                                    const input = button.closest('.quantity').querySelector('.quantity-input');
+                                    let quantity = parseInt(input.value, 10);
+                                    if (quantity > 1) {
+                                        input.value = --quantity;
+                                    }
+                                }
+                    
+                                if (event.target.classList.contains('add-to-cart')) {
+                                    // Redirect to cart page
+                                    window.location.href = "{% url 'cart' %}";
+                                }
+                            });
+                        });
+
+                        document.addEventListener('DOMContentLoaded', function() {
+                                // Event delegation to handle click events on dynamically generated buttons
+                                document.body.addEventListener('click', function(event) {
+                                    if (event.target.closest('.btn-plus')) {
+                                        const button = event.target.closest('.btn-plus');
+                                        const input = button.closest('.quantity').querySelector('.quantity-input');
+                                        let quantity = parseInt(input.value, 10);
+                                        input.value = ++quantity;
+                                        updateTotalPrice(button);
+                                    }
+        
+                                    if (event.target.closest('.btn-minus')) {
+                                        const button = event.target.closest('.btn-minus');
+                                        const input = button.closest('.quantity').querySelector('.quantity-input');
+                                        let quantity = parseInt(input.value, 10);
+                                        if (quantity > 1) {
+                                            input.value = --quantity;
+                                            updateTotalPrice(button);
+                                        }
+                                    }
+                                });
+
+                                function updateTotalPrice(button) {
+                                    const row = button.closest('tr');
+                                    const quantityInput = row.querySelector('.quantity-input');
+                                    const quantity = parseInt(quantityInput.value, 10);
+                                    const productPrice = parseFloat(row.querySelector('.product-price').textContent);
+                                    const totalPriceElement = row.querySelector('.total-price');
+                                    const totalPrice = productPrice * quantity;
+                                    totalPriceElement.textContent = totalPrice.toFixed(2);
+                                }
+                            }); 
+                    </script>
+
                     <div class="d-flex pt-2">
                         <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-flex">
@@ -620,7 +632,6 @@
                                 <i class="fab fa-instagram" style="color: purple;"></i></a>
                             <a class="btn btn-light btn-square" href="https://www.instagram.com/your_username=www.sokofarm.co.ke" target="_blank">
                                 <i class="fab fa-pinterest" style="color: red;"></i></a>
-                        </div>
                         </div>
                     </div>
                 </div>
