@@ -496,7 +496,6 @@
     <div class="container-fluid pb-5">
         <div class="row px-xl-5">
             <div class="col-lg-5 mb-30">
-
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner bg-light">
                         <div class="carousel-item active">
@@ -532,11 +531,8 @@
                         <small class="pt-1">(99 Reviews)</small>
                     </div>
                     <h6 class="mb-4">Quantity: {{ product.quantity }}</h6>
-                    <h6 class="mb-4"></h6>
-                    
-                    <h5><i class="fa fa-map-marker-alt text-primary mr-2"></i>  {{ product.location }} </h5><br>
-                    <h5 class="font-weight-semi-bold mb-4">Price: Ksh.{{ product.price }}</h5>
-                    
+                    <h5><i class="fa fa-map-marker-alt text-primary mr-2"></i> {{ product.location }}</h5><br>
+                    <h5 class="font-weight-semi-bold mb-4">Price: {{ product.price }}</h5>
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <div class="input-group quantity mr-3" style="width: 130px;">
                             <div class="input-group-btn">
@@ -551,74 +547,16 @@
                                 </button>
                             </div>
                         </div>
-                        <button class="btn btn-primary px-3 add-to-cart"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button><br>
-                    
-                        <div class="ml-3">
-                            <button class="btn btn-primary px-3"><i class="fa fa-phone-alt mr-1"></i> {{ product.contacts }}</button>
-                        </div>
+                        <form method="post" action="{% url 'cart' %}" style="display:inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                            <input type="hidden" name="product_name" value="{{ product.name }}">
+                            <input type="hidden" name="product_price" value="{{ product.price }}">
+                            <button class="btn btn-primary px-3" type="submit">
+                                <i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+                            </button>
+                        </form>
                     </div>
-                    
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Event delegation to handle click events on dynamically generated buttons
-                            document.body.addEventListener('click', function(event) {
-                                if (event.target.closest('.btn-plus')) {
-                                    const button = event.target.closest('.btn-plus');
-                                    const input = button.closest('.quantity').querySelector('.quantity-input');
-                                    let quantity = parseInt(input.value, 10);
-                                    input.value = ++quantity;
-                                }
-                    
-                                if (event.target.closest('.btn-minus')) {
-                                    const button = event.target.closest('.btn-minus');
-                                    const input = button.closest('.quantity').querySelector('.quantity-input');
-                                    let quantity = parseInt(input.value, 10);
-                                    if (quantity > 1) {
-                                        input.value = --quantity;
-                                    }
-                                }
-                    
-                                if (event.target.classList.contains('add-to-cart')) {
-                                    // Redirect to cart page
-                                    window.location.href = "{% url 'cart' %}";
-                                }
-                            });
-                        });
-
-                        document.addEventListener('DOMContentLoaded', function() {
-                                // Event delegation to handle click events on dynamically generated buttons
-                                document.body.addEventListener('click', function(event) {
-                                    if (event.target.closest('.btn-plus')) {
-                                        const button = event.target.closest('.btn-plus');
-                                        const input = button.closest('.quantity').querySelector('.quantity-input');
-                                        let quantity = parseInt(input.value, 10);
-                                        input.value = ++quantity;
-                                        updateTotalPrice(button);
-                                    }
-        
-                                    if (event.target.closest('.btn-minus')) {
-                                        const button = event.target.closest('.btn-minus');
-                                        const input = button.closest('.quantity').querySelector('.quantity-input');
-                                        let quantity = parseInt(input.value, 10);
-                                        if (quantity > 1) {
-                                            input.value = --quantity;
-                                            updateTotalPrice(button);
-                                        }
-                                    }
-                                });
-
-                                function updateTotalPrice(button) {
-                                    const row = button.closest('tr');
-                                    const quantityInput = row.querySelector('.quantity-input');
-                                    const quantity = parseInt(quantityInput.value, 10);
-                                    const productPrice = parseFloat(row.querySelector('.product-price').textContent);
-                                    const totalPriceElement = row.querySelector('.total-price');
-                                    const totalPrice = productPrice * quantity;
-                                    totalPriceElement.textContent = totalPrice.toFixed(2);
-                                }
-                            }); 
-                    </script>
-
                     <div class="d-flex pt-2">
                         <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-flex">
@@ -627,7 +565,7 @@
                             <a class="btn btn-light btn-square mr-2" href="https://www.facebook.com/sharer/sharer.php?u=www.sokofarm.co.ke" target="_blank">
                                 <i class="fab fa-facebook-f" style="color: blue;"></i></a>
                             <a class="btn btn-light btn-square mr-2" href="https://www.linkedin.com/sharing/share-offsite/?url=www.sokofarm.com" target="_blank">
-                                <i class="fab fa-linkedin-in" style="color:blue ;"></i></a>
+                                <i class="fab fa-linkedin-in" style="color:blue;"></i></a>
                             <a class="btn btn-light btn-square" href="https://www.instagram.com/your_username=www.sokofarm.co.ke" target="_blank">
                                 <i class="fab fa-instagram" style="color: purple;"></i></a>
                             <a class="btn btn-light btn-square" href="https://www.instagram.com/your_username=www.sokofarm.co.ke" target="_blank">
@@ -659,7 +597,7 @@
                                 <div class="col-md-6">
                                     <h4 class="mb-4">1 review for {{ product.name }} </h4>
                                     <div class="media mb-4">
-                                        <img src="{% static 'img\Passport Photo.jpg' %}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                        <img src="{% static 'img/Passport Photo.jpg' %}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                                         <div class="media-body">
                                             <h6>Francis Wekesa<small> - <i>09 Mar 2024</i></small></h6>
                                             <div class="text-primary mb-2">
@@ -712,6 +650,7 @@
         </div>
     </div>
     <!-- Shop Detail End -->
+
 
 
     <!-- Products Start -->

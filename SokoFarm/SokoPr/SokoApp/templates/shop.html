@@ -689,10 +689,11 @@
 
             <!-- Shop Product Start -->
             <div class="col-lg-12 col-md-9">
-                <div class="row pb-2"> <!-- Adjusted padding here -->
+                <div class="row pb-2"> 
+
                     <!-- Product Items Start -->
                     {% for product in latest_products %}
-                    <div class="col-lg-2 col-md-3 col-sm-4 pb-1"> <!-- Adjusted column classes here -->
+                    <div class="col-lg-2 col-md-3 col-sm-4 pb-1"> 
                         <div class="product-item bg-light mb-4">
                             <div class="product-img position-relative overflow-hidden" style="height: 200px;"> <!-- Set a fixed height for the image container -->
                                 <img class="img-fluid w-100 rounded-top" src="{{ product.image1.url }}" alt="{{ product.name }}" style="object-fit: cover; height: 100%;"> <!-- Use object-fit: cover; for autozooming -->
@@ -710,13 +711,13 @@
                             </div>
                             <div class="text-center py-1">
                                 <a class="h5 text-decoration-none text-truncate" href="{% url 'detail' product.id %}" style="color: black; font-size: 16px;">{{ product.name }}</a><br> <!-- Adjusted font size here -->
-                                <div class="d-flex align-items-center justify-content-center mt-1"> <!-- Adjusted margin top here -->
+                                <div class="d-flex align-items-center justify-content-center mt-1"> 
                                     <h5 style="font-size: 14px;">Ksh.{{ product.price }}</h5><!--<h6 class="text-muted ml-2"><del>Ksh.{{ product.price }}</del></h6> -->
                                 </div>
                                 <div>
-                                    <h6 style="color: blue; font-size: 14px;"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ product.location }}</h6> <!-- Adjusted font size here -->
+                                    <h6 style="color: blue; font-size: 14px;"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ product.location }}</h6>
                                 </div>
-                                <!-- <div class="d-flex align-items-center justify-content-center mb-1 mt-1"> <!-- Adjusted margin top and bottom here -->
+                                <!-- <div class="d-flex align-items-center justify-content-center mb-1 mt-1"> 
                                     <!--<small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
@@ -740,19 +741,19 @@
 
             
 
-                <!-- Pagination Start -->
-                <div class="col-12 mb-30">
-                    <nav>
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- Pagination End -->
+            <!-- Pagination Start -->
+            <div class="col-12 mb-30">
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Pagination End -->
 
             </div>
             <!-- Shop Product End -->
